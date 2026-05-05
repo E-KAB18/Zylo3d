@@ -1,0 +1,320 @@
+Zylo3D Website Structure & Pages
+Primary Navigation
+● Products
+● Software
+● indications
+● Store
+● Services
+● Learning
+● Company
+● Contact
+3D printing products
+● ZyloDent (All-in-One)
+● MicroDent (3D Printer)
+● DentCure (Post Processing)
+● ZyloPrep
+Design software
+● AI ZyloCAD
+● Design cloud
+Materials
+● Model (2 types)
+● Restorative (4 types)
+● Splint (2 types)
+● Denture (2 types)
+● Sports Guard (1 type)
+● …
+● …
+Store
+● Hardware Products (with pricing)
+● Software Licenses
+● Materials
+● Accessories & Spare Parts
+● Cart & Checkout (Login Required)
+Services
+● Warranty Plans
+- Standard Plan (1 Year warranty + Chat & Email support + Phone support)
+- Pro Plan (3 Years warranty + Chat & Email support + Phone support + Live training sessions
+and Q&A + Hot swap)
+● Customer support
+Learning
+● Webinars (Upcoming & Recorded)
+● Training (Unboxing, Installation, Maintenance)
+● Best Practice Guides (Indications based)
+● KOLs (Profiles, Reviews, Articles)
+Company
+● About
+● Press
+● Team
+Contact
+● Support
+● Sales
+● Reseller
+User Account & Dashboard
+● Mandatory Sign Up / Login for Checkout
+● Dashboard Overview
+● Registered Products (Serial Number Based)
+● Firmware & Updates
+● Orders & Reorders
+● Warranty Management
+● Learning Access (Product-Based)
+● Support Tickets
+● Account Settings
+1. HOME PAGE
+Block: Hero / Above the Fold
+Component name: Home / Hero
+H1
+The Complete Digital Dentistry Manufacturing Platform
+Subheading (H3)
+Integrated hardware, intelligent software, validated materials, and expert guidance — built to work
+as one.
+Primary CTA (Button – Filled)
+Shop Products
+Secondary CTA (Button – Outline)
+Explore Dental Applications
+Block: Product Highlights
+Component name: Home / Product Highlights
+Card Title (H4)
+ZyloDent
+Card Body
+All-in-one, Automated, seamless workflow integration.
+Body Text
+Validated by: BEGO [Logo], Pro3dure [Logo], Pac-Dent [Logo], …
+Card CTA (Button)
+View Product
+Block: Product Highlights
+Component name: Home / Product Highlights
+Card Title (H4)
+MicroDent
+Card Body
+High-precision dental 3D printer designed for accuracy, reliability, high throughput capacity.
+Body Text
+Validated by: BEGO [Logo], Pro3dure [Logo], Pac-Dent [Logo], …
+Card CTA (Button)
+View Product
+Block: Product Highlights
+Component name: Home / Product Highlights
+Card Title (H4)
+DentCure
+Card Body
+High power post curing unit for high production capacity
+Body Text
+Validated by: BEGO [Logo], Pro3dure [Logo], Pac-Dent [Logo], …
+Card CTA (Button)
+View Product
+Block: Learning & Trust
+Component name: Home / Learning Preview
+Title (H2)
+Learn. Operate. Scale with Confidence.
+Body Text
+Zylo3D provides guided workflows, training, and expert-backed best practices to help you achieve
+predictable results from day one.
+CTA (Button)
+Visit Learning
+2. STORE PAGE
+Block: Store Header
+Component name: Store / Header
+H1
+Zylo3D Store
+Subheading
+Purchase certified Zylo3D products, materials, and accessories optimized for performance and
+reliability.
+Block: Product Card
+Component name: Store / Product Card
+Product Name (H4)
+MicroDent 3D Printer
+Short Description
+High-precision dental 3D printer for clinical and lab workflows.
+Price Label
+From $X,XXX
+Badges
+Discount • Warranty Eligible
+Primary CTA
+Add to Cart
+Secondary CTA
+View Details
+Block: Checkout Notice
+Component name: Store / Checkout Notice
+Microcopy
+A Zylo3D account is required to complete checkout and activate warranty and firmware updates.
+3. PRODUCT PAGE
+Block: Product Hero
+Component name: Product / Hero
+H1
+ZyloDent — Precision Dental 3D Printing, automated
+Subheading
+All-in-one, designed for accuracy, reliability, and seamless integration with Zylo3D software and
+materials.
+Primary CTA
+Buy Now
+Secondary CTA
+Request a Demo
+Block: Key Features
+Component name: Product / Features
+Section Title (H2)
+Key features
+Bullet Items
+● High-resolution dental printing
+● Validated material profiles [Resin companies logos]
+● Automated workflow
+● Remote firmware updates
+Block: Dental indications
+Component name: Product / Indications
+Section Title (H2)
+Validated Dental Indications
+Cards
+● Model [X minutes, Y clicks]
+● Single unit crown [X minutes, Y clicks]
+● Denture base [X minutes, Y clicks]
+● Sports guard [X minutes, Y clicks]
+● …
+● …
+Block: Calculator
+Component name: Product / Calculator
+Section Title (H2)
+Calculate your savings and annual profit increments
+Grid
+Application #Cases/Month Lab
+cost/case
+Zylo
+cost/case
+Profit
+increment/case
+Annual
+profit
+increment
+Aligner Input Auto fill Auto fill Auto fill Auto fill
+Denture Input Auto fill Auto fill Auto fill Auto fill
+Crown &
+bridge
+Input Auto fill Auto fill Auto fill Auto fill
+Veneer Input Auto fill Auto fill Auto fill Auto fill
+Sports
+guard
+Input Auto fill Auto fill Auto fill Auto fill
+Block: Key Specs
+Component name: Product / Specs
+Section Title (H2)
+Specifications
+Table
+Build volume XXX
+Resolution XXX
+XY Accuracy XXX
+Z Accuracy XXX
+… …
+… …
+Block: Compatibility
+Component name: Product / Compatibility
+Title (H3)
+Fully Integrated with the Zylo3D Ecosystem
+Body Text
+ZyloDent works seamlessly with ZyloCAD, ZyloPrep, and all Zylo3D validated materials.
+CTA
+View Compatible Materials →
+Block: Conversion Footer
+Component name: Product / Bottom CTA
+CTA (Large Button)
+Add to Cart
+4. SERVICES PAGE
+Block: Services Header
+Component name: Services / Header
+H1
+Zylo3D Services & Warranty Plans
+Subheading
+Protect your investment and ensure continuous performance.
+Block: Warranty Card — Standard
+Component name: Services / Warranty Card
+Plan Name (H3)
+Standard Plan
+Features
+● 1 Year warranty
+● Chat & Email support
+● Phone support
+CTA
+Warranty plans are available at checkout or by [contacting sales].
+Block: Warranty Card — Pro
+Component name: Services / Warranty Card (Primary)
+Plan Name (H3)
+Pro Plan
+Features
+● 3 Years warranty
+● Chat & Email support
+● Phone support
+● Live training sessions and Q&A
+● Hot swap
+CTA
+Warranty plans are available at checkout or by [contacting sales].
+5. BEST PRACTICE GUIDES
+Block: Guides Header
+Component name: Learning / Best Practices Header
+H1
+Best Practice Guides
+Subheading
+Step-by-step clinical workflows validated by Zylo3D experts.
+Block: Guide Card
+Component name: Learning / Guide Card
+Guide Title (H4)
+Splint Manufacturing Workflow
+Description
+Learn how to produce accurate, durable dental splints using Zylo3D printers, materials, and
+post-processing.
+Meta Info
+Printer • Material • Software • Post-processing
+CTA
+View Guide [Downloadable PDF]
+Block: Login Gate
+Component name: Learning / Access Gate
+Microcopy
+Log in to access product-specific workflows and advanced guides.
+CTA
+Sign In
+6. USER PROFILE / DASHBOARD
+Block: Dashboard Welcome
+Component name: Dashboard / Welcome
+H1
+Welcome to My Zylo3D
+Subheading
+Manage your products, warranties, updates, and orders in one place.
+Block: Registered Products
+Component name: Dashboard / Registered Products
+Title (H2)
+Registered Products
+Body Text
+Register your Zylo3D products to activate warranty coverage and firmware updates.
+Primary CTA
+Register Product
+Block: Firmware Updates
+Component name: Dashboard / Firmware
+Title (H3)
+Firmware & Updates
+Eligible CTA
+Download Firmware
+Ineligible CTA
+Renew Warranty
+Block: Orders & Reorders
+Component name: Dashboard / Reorder
+Body Text
+Quickly reorder materials compatible with your registered products.
+Primary CTA
+Reorder Materials
+Block: Support
+Component name: Dashboard / Support
+CTA
+Open Support Ticket
+Miscellaneous features
+● Chat bot
+● Content creator account
+o Add new blocks
+o Modify content
+o Review and allow KOL articles publishing
+o Write and submit articles
+o Add events, press news
+o Monitor site traffic and statistics
+● KOL account
+o Write and submit articles [Must be reviewed by content creators before publishing]
+● Developer accounts
+o Ability to publish new software and firmware updates
+● Customer support account
+o Monitor support tickets
+o Send emails/newsletters to all users
+● Manager account
+o Create and manage all special accounts mentioned previously

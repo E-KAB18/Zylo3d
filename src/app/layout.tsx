@@ -1,10 +1,16 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
+import { Metadata } from "next";
 import "../styles/index.css";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/images/logo/zylo-logo.webp",
+    apple: "/images/logo/zylo-logo.webp",
+  },
+};
 
 const inter = Inter({ subsets: ["latin"] });
 

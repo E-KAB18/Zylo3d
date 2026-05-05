@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
+import Link from "next/link";
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -18,14 +19,14 @@ const AboutSectionOne = () => {
   );
 
   return (
-    <section id="about" className="pt-16 md:pt-20 lg:pt-28">
+    <section id="learning" className="pt-16 md:pt-20 lg:pt-28">
       <div className="container">
         <div className="border-b border-body-color/[.15] pb-16 dark:border-white/[.15] md:pb-20 lg:pb-28">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
+                title="Learn. Operate. Scale with Confidence."
+                paragraph="Zylo3D provides guided workflows, training, and expert-backed best practices to help you achieve predictable results from day one."
                 mb="44px"
               />
 
@@ -35,33 +36,34 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Premium quality" />
-                    <List text="Tailwind CSS" />
-                    <List text="Use for lifetime" />
+                    <List text="Webinars and live Q&A" />
+                    <List text="Unboxing and installation guides" />
+                    <List text="Maintenance training" />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Next.js" />
-                    <List text="Rich documentation" />
-                    <List text="Developer friendly" />
+                    <List text="Best practice workflows" />
+                    <List text="KOL reviews and articles" />
+                    <List text="Indication-based guides" />
                   </div>
                 </div>
               </div>
+
+              <Link
+                href="/learning"
+                className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 inline-block mt-4"
+              >
+                Visit Learning
+              </Link>
             </div>
 
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative mx-auto aspect-25/24 max-w-[500px] lg:mr-0">
                 <Image
-                  src="/images/about/about-image.svg"
-                  alt="about-image"
+                  src="/images/about/dentpro.webp"
+                  alt="Zylo3D dental 3D printer"
                   fill
-                  className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
-                />
-                <Image
-                  src="/images/about/about-image-dark.svg"
-                  alt="about-image"
-                  fill
-                  className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"
+                  className="mx-auto max-w-full object-contain drop-shadow-three lg:mr-0"
                 />
               </div>
             </div>

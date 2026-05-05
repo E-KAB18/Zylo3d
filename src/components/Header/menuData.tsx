@@ -3,82 +3,68 @@ import { Menu } from "@/types/menu";
 const menuData: Menu[] = [
   {
     id: 1,
-    title: "Home",
-    path: "/",
+    title: "Products",
     newTab: false,
+    submenu: [
+      { id: 11, title: "ZyloDent", path: "/products/zylodent", newTab: false },
+      { id: 12, title: "MicroDent", path: "/products/microdent", newTab: false },
+      { id: 13, title: "DentCure", path: "/products/dentcure", newTab: false },
+    ],
   },
   {
     id: 2,
-    title: "About",
-    path: "/about",
+    title: "Software",
     newTab: false,
-  },
-  {
-    id: 33,
-    title: "Blog",
-    path: "/blog",
-    newTab: false,
+    submenu: [
+      { id: 21, title: "AI ZyloCAD", path: "/software/ai-zyloc-ad", newTab: false },
+
+      { id: 22, title: "Design Cloud", path: "/software/design-cloud", newTab: false },
+    ],
   },
   {
     id: 3,
-    title: "Support",
-    path: "/contact",
+    title: "Indications",
+    path: "/indications",
     newTab: false,
   },
   {
     id: 4,
-    title: "Pages",
+    title: "Store",
+    path: "/store",
+    newTab: false,
+  },
+  {
+    id: 5,
+    title: "Services",
+    path: "/services",
+    newTab: false,
+  },
+  {
+    id: 6,
+    title: "Learning",
     newTab: false,
     submenu: [
-      {
-        id: 41,
-        title: "About Page",
-        path: "/about",
-        newTab: false,
-      },
-      {
-        id: 42,
-        title: "Contact Page",
-        path: "/contact",
-        newTab: false,
-      },
-      {
-        id: 43,
-        title: "Blog Grid Page",
-        path: "/blog",
-        newTab: false,
-      },
-      {
-        id: 44,
-        title: "Blog Sidebar Page",
-        path: "/blog-sidebar",
-        newTab: false,
-      },
-      {
-        id: 45,
-        title: "Blog Details Page",
-        path: "/blog-details",
-        newTab: false,
-      },
-      {
-        id: 46,
-        title: "Sign In Page",
-        path: "/signin",
-        newTab: false,
-      },
-      {
-        id: 47,
-        title: "Sign Up Page",
-        path: "/signup",
-        newTab: false,
-      },
-      {
-        id: 48,
-        title: "Error Page",
-        path: "/error",
-        newTab: false,
-      },
+      { id: 61, title: "Webinars", path: "/learning/webinars", newTab: false },
+      { id: 62, title: "Training", path: "/learning/training", newTab: false },
+      { id: 63, title: "Best Practice Guides", path: "/learning/guides", newTab: false },
+      { id: 64, title: "KOLs", path: "/learning/kols", newTab: false },
     ],
+  },
+  {
+    id: 7,
+    title: "Company",
+    newTab: false,
+    submenu: [
+      { id: 71, title: "About", path: "/about", newTab: false },
+      { id: 72, title: "Press", path: "/company/press", newTab: false },
+      { id: 73, title: "Team", path: "/company/team", newTab: false },
+    ],
+  },
+  {
+    id: 8,
+    title: "Contact",
+    path: "/contact",
+    newTab: false,
   },
 ];
 export default menuData;
