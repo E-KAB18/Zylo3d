@@ -12,31 +12,9 @@ const menuData: Menu[] = [
     ],
   },
   {
-    id: 2,
-    title: "Software",
-    newTab: false,
-    submenu: [
-      { id: 21, title: "AI ZyloCAD", path: "/software/ai-zyloc-ad", newTab: false },
-
-      { id: 22, title: "Design Cloud", path: "/software/design-cloud", newTab: false },
-    ],
-  },
-  {
     id: 3,
     title: "Indications",
     path: "/indications",
-    newTab: false,
-  },
-  {
-    id: 4,
-    title: "Store",
-    path: "/store",
-    newTab: false,
-  },
-  {
-    id: 5,
-    title: "Services",
-    path: "/services",
     newTab: false,
   },
   {
