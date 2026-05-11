@@ -23,9 +23,10 @@ const Footer = () => {
                   The complete digital dentistry manufacturing platform — hardware, software, and validated materials, built to work as one.
                 </p>
                 <div className="flex items-center">
+                  {/* Facebook */}
                   <a
-                    href="/"
-                    aria-label="social-link"
+                    href="https://www.facebook.com/profile.php?id=61554739610170"
+                    aria-label="Facebook"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
@@ -43,31 +44,10 @@ const Footer = () => {
                       />
                     </svg>
                   </a>
+                  {/* YouTube */}
                   <a
-                    href="/"
-                    aria-label="social-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.9831 19.25L9.82094 13.3176L4.61058 19.25H2.40625L8.843 11.9233L2.40625 2.75H8.06572L11.9884 8.34127L16.9034 2.75H19.1077L12.9697 9.73737L19.6425 19.25H13.9831ZM16.4378 17.5775H14.9538L5.56249 4.42252H7.04674L10.808 9.6899L11.4584 10.6039L16.4378 17.5775Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    href="/"
-                    aria-label="social-link"
+                    href="https://www.youtube.com/@Zylo3Ddental"
+                    aria-label="YouTube"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
@@ -81,9 +61,10 @@ const Footer = () => {
                       <path d="M17.5058 2.07119C17.3068 1.2488 16.7099 0.609173 15.9423 0.395963C14.5778 7.26191e-08 9.0627 0 9.0627 0C9.0627 0 3.54766 7.26191e-08 2.18311 0.395963C1.41555 0.609173 0.818561 1.2488 0.619565 2.07119C0.25 3.56366 0.25 6.60953 0.25 6.60953C0.25 6.60953 0.25 9.68585 0.619565 11.1479C0.818561 11.9703 1.41555 12.6099 2.18311 12.8231C3.54766 13.2191 9.0627 13.2191 9.0627 13.2191C9.0627 13.2191 14.5778 13.2191 15.9423 12.8231C16.7099 12.6099 17.3068 11.9703 17.5058 11.1479C17.8754 9.68585 17.8754 6.60953 17.8754 6.60953C17.8754 6.60953 17.8754 3.56366 17.5058 2.07119ZM7.30016 9.44218V3.77687L11.8771 6.60953L7.30016 9.44218Z" />
                     </svg>
                   </a>
+                  {/* LinkedIn */}
                   <a
-                    href="/"
-                    aria-label="social-link"
+                    href="https://www.linkedin.com/company/zylo3d/"
+                    aria-label="LinkedIn"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
@@ -120,11 +101,6 @@ const Footer = () => {
                   <li>
                     <Link href="/products/dentcure" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
                       DentCure
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/store" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
-                      Store
                     </Link>
                   </li>
                 </ul>
@@ -170,21 +146,6 @@ const Footer = () => {
                   <li>
                     <Link href="/contact" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
                       Open Support Ticket
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/legal/terms" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
-                      Terms of Use
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/legal/privacy" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/legal/refund" className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary">
-                      Refund Policy
                     </Link>
                   </li>
                 </ul>

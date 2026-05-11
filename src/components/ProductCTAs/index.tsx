@@ -5,9 +5,10 @@ import RequestModal from "@/components/RequestModal";
 
 type Props = {
   productName?: string;
-};
+  inverted?: boolean;
+}
 
-export default function ProductCTAs({ productName }: Props) {
+export default function ProductCTAs({ productName, inverted }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState<"quote" | "demo">("quote");
 
@@ -21,13 +22,17 @@ export default function ProductCTAs({ productName }: Props) {
       <div className="flex flex-wrap gap-4">
         <button
           onClick={() => open("quote")}
-          className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+          className={inverted
+            ? "rounded-xs bg-white px-8 py-4 text-base font-semibold text-primary duration-300 ease-in-out hover:bg-white/90"
+            : "rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"}
         >
           Request a Quote
         </button>
         <button
           onClick={() => open("demo")}
-          className="rounded-xs border border-body-color/20 px-8 py-4 text-base font-semibold text-black duration-300 ease-in-out hover:border-primary hover:text-primary dark:text-white dark:hover:border-primary"
+          className={inverted
+            ? "rounded-xs border border-white/50 px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:border-white"
+            : "rounded-xs border border-body-color/20 px-8 py-4 text-base font-semibold text-black duration-300 ease-in-out hover:border-primary hover:text-primary dark:text-white dark:hover:border-primary"}
         >
           Schedule a Demo
         </button>

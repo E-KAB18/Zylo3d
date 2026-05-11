@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative pt-[120px] pb-16 md:pt-[150px] md:pb-20 bg-white dark:bg-gray-dark">
+      <section className="relative pt-[140px] pb-16 md:pt-[180px] md:pb-20 bg-white dark:bg-gray-dark">
         <div className="container">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
@@ -218,10 +218,10 @@ export default async function ProductPage({ params }: Props) {
               {product.compatibilityNote}
             </p>
             <Link
-              href="/store"
+              href="/indications"
               className="inline-block text-primary font-semibold hover:underline"
             >
-              View Compatible Materials →
+              View Compatible Indications →
             </Link>
           </div>
         </div>
@@ -237,18 +237,7 @@ export default async function ProductPage({ params }: Props) {
             Join clinics and labs worldwide using Zylo3D to produce faster, better, and more profitably.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/store"
-              className="rounded-xs bg-white px-10 py-4 text-base font-bold text-primary duration-300 hover:bg-white/90"
-            >
-              Add to Cart
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-xs border border-white/50 px-10 py-4 text-base font-semibold text-white duration-300 hover:border-white"
-            >
-              Talk to Sales
-            </Link>
+            <ProductCTAs productName={product.name} inverted />
           </div>
         </div>
       </section>

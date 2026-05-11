@@ -34,8 +34,9 @@ const menuData: Menu[] = [
     newTab: false,
     submenu: [
       { id: 71, title: "About", path: "/about", newTab: false },
-      { id: 72, title: "Press", path: "/company/press", newTab: false },
-      { id: 73, title: "Team", path: "/company/team", newTab: false },
+      { id: 72, title: "Blog", path: "/blog", newTab: false },
+      { id: 73, title: "Press", path: "/company/press", newTab: false },
+      { id: 74, title: "Team", path: "/company/team", newTab: false },
     ],
   },
   {

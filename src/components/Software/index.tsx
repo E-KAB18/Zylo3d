@@ -90,10 +90,10 @@ const SoftwareSection = () => {
                 ))}
               </ul>
               <Link
-                href="/software"
+                href="/contact"
                 className="inline-block text-sm font-semibold text-primary hover:underline"
               >
-                Learn more about our software →
+                Talk to us about ZyloCAD →
               </Link>
             </div>
           </div>
@@ -155,10 +155,7 @@ const SoftwareSection = () => {
               </div>
 
               <p className="mt-6 text-xs text-body-color dark:text-body-color-dark">
-                A Zylo3D account is required to activate your software license.{" "}
-                <Link href="/signup" className="text-primary hover:underline">
-                  Create a free account →
-                </Link>
+                A Zylo3D account is required to activate your software license. Contact our team to get started.
               </p>
             </div>
           </div>
