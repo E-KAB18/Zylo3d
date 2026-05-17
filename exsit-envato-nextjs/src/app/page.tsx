@@ -206,23 +206,23 @@ export default function HomePage() {
 
             {/* ── ZYLODENT PRODUCT + FEATURES (dark section) ───────── */}
             <div className="feature-wrap lg:mx-6">
-                <div className="lg:py-24 py-12 bg-[#111111] rounded-xl px-6">
+                <div className="lg:py-24 py-12 bg-gray-100 dark:bg-[#111111] rounded-xl px-6">
                     <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3 pb-0">
 
                         {/* Section title */}
                         <div className="flex flex-col items-center text-center xl:w-7/12 lg:w-2/3 mx-auto lg:pb-24 pb-12">
                             <PageTitle3
                                 badgeText="The ZyloDent System"
-                                badgeTextBG="bg-white/20"
-                                badgeTextColor="text-white"
+                                badgeTextBG="bg-gray-900/10 dark:bg-white/20"
+                                badgeTextColor="text-gray-900 dark:text-white"
                                 title="From scan to finished restoration in your own lab"
                                 subtitle="ZyloDent integrates the full dental manufacturing workflow — designed, validated, and supported by Zylo3D."
                                 widthClass="w-full mx-auto"
                                 alignment="center"
                                 padding="pb-6"
-                                textColor="text-white"
+                                textColor="text-gray-900 dark:text-white"
                                 textWeigth="font-medium"
-                                subtitleColor="text-gray-300"
+                                subtitleColor="text-gray-600 dark:text-gray-300"
                             />
                             <Button href="/products/zylodent" label="Explore ZyloDent" bgColor="bg-[#df7b26]" textColor="text-white" className="py-4" />
                         </div>
@@ -230,23 +230,23 @@ export default function HomePage() {
                         {/* Workflow steps */}
                         <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-6 pb-5">
                             {[
-                                { icon: <ScanLine className="text-white" size={35} strokeWidth={1} />, title: "Scan", desc: "Import DICOM and STL files directly — no conversion required." },
-                                { icon: <Monitor className="text-white" size={35} strokeWidth={1} />, title: "Design", desc: "AI-assisted crown and denture design with ZyloCAD." },
-                                { icon: <Layers className="text-white" size={35} strokeWidth={1} />, title: "Prepare", desc: "One-click ZyloPrep slicing with validated print profiles." },
-                                { icon: <Printer className="text-white" size={35} strokeWidth={1} />, title: "Print", desc: "Industrial DLP precision — consistent results every run." },
-                                { icon: <FlaskConical className="text-white" size={35} strokeWidth={1} />, title: "Cure", desc: "Integrated post-processing with validated Zylo3D materials." },
-                                { icon: <Wrench className="text-white" size={35} strokeWidth={1} />, title: "Deliver", desc: "Finished restorations ready for chair-side fitting." },
+                                { icon: <ScanLine className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Scan", desc: "Import DICOM and STL files directly — no conversion required." },
+                                { icon: <Monitor className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Design", desc: "AI-assisted crown and denture design with ZyloCAD." },
+                                { icon: <Layers className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Prepare", desc: "One-click ZyloPrep slicing with validated print profiles." },
+                                { icon: <Printer className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Print", desc: "Industrial DLP precision — consistent results every run." },
+                                { icon: <FlaskConical className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Cure", desc: "Integrated post-processing with validated Zylo3D materials." },
+                                { icon: <Wrench className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Deliver", desc: "Finished restorations ready for chair-side fitting." },
                             ].map((step, i) => (
                                 <div
                                     key={i}
-                                    className="bg-white/10 rounded-xl p-6 border border-white/15 hover:border-[#df7b26]/50 transition-all duration-300"
+                                    className="bg-gray-900/5 dark:bg-white/10 rounded-xl p-6 border border-gray-900/10 dark:border-white/15 hover:border-[#df7b26]/50 transition-all duration-300"
                                     data-aos="fade-up"
                                     data-aos-delay={i * 80}
                                     data-aos-duration="400"
                                 >
                                     <div className="mb-4">{step.icon}</div>
-                                    <h4 className="text-white font-semibold text-lg mb-2">{step.title}</h4>
-                                    <p className="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+                                    <h4 className="text-gray-900 dark:text-white font-semibold text-lg mb-2">{step.title}</h4>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{step.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -256,16 +256,16 @@ export default function HomePage() {
                             <div className="w-full">
                                 <PageTitle3
                                     badgeText="ZyloCAD AI"
-                                    badgeTextBG="bg-white/20"
-                                    badgeTextColor="text-white"
+                                    badgeTextBG="bg-gray-900/10 dark:bg-white/20"
+                                    badgeTextColor="text-gray-900 dark:text-white"
                                     icon={<Cpu size={18} />}
                                     title="Intelligent dental design software, built for your workflow."
                                     subtitle="AI ZyloCAD handles everything from scan import to restoration design. ZyloPrep takes care of slicing in one click."
                                     widthClass="w-full"
                                     alignment="start"
                                     padding="pb-8"
-                                    textColor="text-white"
-                                    subtitleColor="text-gray-300"
+                                    textColor="text-gray-900 dark:text-white"
+                                    subtitleColor="text-gray-600 dark:text-gray-300"
                                 />
                                 {[
                                     "AI-assisted crown and denture design",
@@ -275,7 +275,7 @@ export default function HomePage() {
                                     "Cloud case storage and team collaboration",
                                     "Regular updates via Zylo3D account",
                                 ].map((feature, i) => (
-                                    <p key={i} className="text-white font-normal text-[17px] mt-1 mb-2 lg:pr-10 flex gap-3 items-center">
+                                    <p key={i} className="text-gray-900 dark:text-white font-normal text-[17px] mt-1 mb-2 lg:pr-10 flex gap-3 items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-[#df7b26] flex-shrink-0" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                                         </svg>
@@ -294,20 +294,20 @@ export default function HomePage() {
                                 data-aos-duration="400"
                                 data-aos-delay="400"
                             >
-                                <div className="bg-white/10 border border-white/20 rounded-2xl p-8 w-full">
-                                    <h3 className="text-white text-2xl font-semibold mb-2">Download ZyloCAD</h3>
-                                    <p className="text-gray-300 text-sm mb-6">Choose your platform to get started.</p>
+                                <div className="bg-gray-900/5 dark:bg-white/10 border border-gray-900/10 dark:border-white/20 rounded-2xl p-8 w-full">
+                                    <h3 className="text-gray-900 dark:text-white text-2xl font-semibold mb-2">Download ZyloCAD</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">Choose your platform to get started.</p>
                                     <div className="flex flex-col gap-3">
-                                        <a href="#" className="flex items-center gap-3 bg-white/15 hover:bg-white/25 border border-white/20 rounded-xl px-5 py-4 transition-all text-white font-medium">
+                                        <a href="#" className="flex items-center gap-3 bg-gray-900/10 hover:bg-gray-900/20 dark:bg-white/15 dark:hover:bg-white/25 border border-gray-900/10 dark:border-white/20 rounded-xl px-5 py-4 transition-all text-gray-900 dark:text-white font-medium">
                                             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" /></svg>
                                             Download for Windows
                                         </a>
-                                        <a href="#" className="flex items-center gap-3 bg-white/15 hover:bg-white/25 border border-white/20 rounded-xl px-5 py-4 transition-all text-white font-medium">
+                                        <a href="#" className="flex items-center gap-3 bg-gray-900/10 hover:bg-gray-900/20 dark:bg-white/15 dark:hover:bg-white/25 border border-gray-900/10 dark:border-white/20 rounded-xl px-5 py-4 transition-all text-gray-900 dark:text-white font-medium">
                                             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c.947 0 1.856.148 2.71.42L7.172 18.292A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8zm0 16c-.947 0-1.856-.148-2.71-.42l7.538-15.872A7.96 7.96 0 0 1 20 12c0 4.411-3.589 8-8 8z" /></svg>
                                             Download for Mac
                                         </a>
                                     </div>
-                                    <p className="text-gray-400 text-xs mt-5 leading-relaxed">
+                                    <p className="text-gray-500 dark:text-gray-400 text-xs mt-5 leading-relaxed">
                                         A Zylo3D account is required to activate your software license. Contact our team to get started.
                                     </p>
                                 </div>
