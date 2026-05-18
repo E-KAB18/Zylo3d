@@ -58,7 +58,7 @@ export default async function IndicationPage({ params }: PageProps) {
                   href="/contact"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-[#df7b26] text-white font-bold text-sm hover:bg-[#c96d1e] transition shadow-lg shadow-[#df7b26]/25"
                 >
-                  {indication.ctaLabel}
+                  Book a Demo
                 </Link>
                 <Link
                   href="/products/zylodent"
@@ -329,14 +329,11 @@ export default async function IndicationPage({ params }: PageProps) {
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div data-aos="fade-up" data-aos-duration="400">
-              <h2 className="text-3xl font-black text-white leading-tight mb-3">
-                See it on your own cases
+              <h2 className="text-2xl font-bold text-white leading-tight mb-3">
+                {indication.ctaLabel}
               </h2>
               <p className="text-base text-white/80 leading-relaxed">
-                Request a sample, book a demo, and validate fit + finish inside your workflow.
-                <span className="block mt-2 text-white/70 text-sm">
-                  Optional: send 3 scans — receive a workflow plan + ROI estimate.
-                </span>
+                Get a demo, a sample part, and a clinic-ready checklist.
               </p>
             </div>
             <div
@@ -347,13 +344,13 @@ export default async function IndicationPage({ params }: PageProps) {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-white text-[#df7b26] font-black text-sm hover:bg-gray-50 transition shadow-xl"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-[#df7b26] font-bold text-sm hover:bg-gray-50 transition shadow-xl"
               >
-                {indication.ctaLabel}
+                Request a Sample
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl border border-white/30 bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition"
               >
                 Book a Demo
               </Link>

@@ -8,6 +8,11 @@ import DarkToggle from './DarkToggle';
 import Image from 'next/image';
 import Button from '../ui/Button';
 
+interface SubnavItem {
+    label: string;
+    href: string;
+}
+
 interface HeaderProps {
     btnColor?: string;
     btnlinkColor?: string;
@@ -16,9 +21,10 @@ interface HeaderProps {
     headerClass?: string;
     position?: string;
     theme?: 'header-dark' | 'header-light';
+    subnavItems?: SubnavItem[];
 }
 
-const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerClass = "", position = "absolute", btnlinkColor = "text-white", theme = "header-dark", logo = "/images/logo/zylo-logo.webp" }: HeaderProps) => {
+const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerClass = "", position = "absolute", btnlinkColor = "text-white", theme = "header-dark", logo = "/images/logo/zylo-logo.webp", subnavItems }: HeaderProps) => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -93,6 +99,23 @@ const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerC
                         </div>
 
                     </nav>
+
+                    {/* Per-page subnav row — always visible when subnavItems provided */}
+                    {subnavItems && (
+                        <div className="border-t border-white/10 overflow-x-auto scrollbar-hide">
+                            <div className="flex">
+                                {subnavItems.map((item) => (
+                                    <a
+                                        key={item.href}
+                                        href={item.href}
+                                        className="whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#df7b26] dark:hover:text-[#df7b26] transition-colors duration-200"
+                                    >
+                                        {item.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </header >

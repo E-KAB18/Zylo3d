@@ -1027,6 +1027,622 @@ export const indicationsData: IndicationData[] = [
       unitLabel: "guides",
     },
   },
+
+  {
+    slug: "digital-dentures",
+    name: "Digital Dentures",
+    tagline: "Deliver predictable removable prosthetics with a delegatable workflow.",
+    description:
+      "Deliver predictable removable prosthetics with a delegatable workflow: AI-assisted design + one-click file prep + automated print–wash–cure.",
+    proof: [
+      {
+        title: "Fewer visits",
+        description: "Compress multi-visit protocols (case-dependent)",
+      },
+      {
+        title: "Repeatable",
+        description: "Standard workflow your team can run consistently",
+      },
+      {
+        title: "Lower cost",
+        description: "Reduce labor + remake loops with in-house production",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Records & Impressions",
+        duration: "~15–20 min",
+        description:
+          "Impressions or intraoral scan → patient records + bite registration + reference photos. Foundation for AI-assisted design.",
+      },
+      {
+        title: "AI ZyloCAD",
+        duration: "~15–20 min",
+        description:
+          "Upload records → AI-assisted denture design. Adjust tooth setup, tissue adaptation, border extension, and occlusal scheme.",
+      },
+      {
+        title: "ZyloDent (All-in-one)",
+        duration: "~35–50 min",
+        description:
+          "Print + wash + cure in one automated device run. Validated post-processing for denture base and tooth materials.",
+      },
+      {
+        title: "Insertion & Finishing",
+        duration: "~10–15 min",
+        description:
+          "Polish, adjust relief areas, verify occlusion, and deliver. Chairside refinement per material IFU.",
+      },
+    ],
+    totalTime: "~75–105 minutes",
+    whySection: {
+      heading: "The Zylo difference",
+      body: "A removable workflow only matters if it's repeatable — not \"hero technician\" dependent.",
+    },
+    ctaLabel: "Want to see the denture workflow end-to-end?",
+    materials: [
+      {
+        name: "BEGO VarseoWax Denture",
+        tag: "Validated",
+        description: "Validated denture base resin with proven tissue adaptation properties.",
+      },
+      {
+        name: "BEGO VarseoSmile Teeth",
+        tag: "Validated",
+        description: "Esthetic tooth resin with validated shade stability and bonding protocol.",
+      },
+      {
+        name: "BEGO VarseoSmile Try-In",
+        tag: "Validated",
+        description: "Try-in shell resin for denture try-in appointments and patient approval workflow.",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Configure parameters for additional denture base and tooth resins.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 15,
+      labCostPerUnit: 350,
+      zyloCostPerUnit: 40,
+      unitLabel: "denture case",
+    },
+  },
+
+  {
+    slug: "waxups-implant-provisionals",
+    name: "Trial smile try-ins that help patients say yes.",
+    tagline: "Two high-value workflows: Aesthetic Wax-Ups for consults and Single-unit Implant Provisionals for predictable temporization.",
+    description:
+      "Turn an abstract veneer plan into something patients can see and feel—so decisions happen faster and expectations align.",
+    proof: [
+      {
+        title: "Faster decisions",
+        description: "Trial smiles reduce uncertainty.",
+      },
+      {
+        title: "Aligned expectations",
+        description: "Approve shape & length upfront.",
+      },
+      {
+        title: "Delegatable workflow",
+        description: "Standard steps assistants can run.",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Records",
+        duration: "~10 min",
+        description:
+          "Intraoral scan + bite registration + reference photos. Scanbody scan if needed for implant provisional.",
+      },
+      {
+        title: "AI ZyloCAD",
+        duration: "~10–15 min",
+        description:
+          "AI-assisted design: wax-up for trial smile consults, or custom abutment / Ti-Base / monolithic provisional for implant temporization.",
+      },
+      {
+        title: "ZyloPrep (one-click)",
+        duration: "~3 min",
+        description:
+          "One-click supports + nesting. Validated print profiles applied automatically per material.",
+      },
+      {
+        title: "ZyloDent (All-in-one)",
+        duration: "~20–30 min",
+        description:
+          "Automated print → wash → cure in one device. Multiple units in a single build.",
+      },
+      {
+        title: "Finish + Deliver",
+        duration: "~5–10 min",
+        description:
+          "Polish, try-in with patient (wax-up), or chairside delivery and adjustment (implant provisional).",
+      },
+    ],
+    totalTime: "~50–70 minutes",
+    whySection: {
+      heading: "A consult tool is only valuable if it's repeatable",
+      body: "Wax-ups don't increase acceptance when they're a one-off \"doctor art project.\" Zylo compresses the chain into a delegatable, standard workflow.",
+    },
+    ctaLabel: "Request a Sample",
+    materials: [
+      {
+        name: "Rodin Titan",
+        tag: "Validated",
+        description: "Validated for implant provisionals (per IFU).",
+      },
+      {
+        name: "Rodin Rapid Ceram",
+        tag: "Validated",
+        description: "Validated for implant provisionals (per IFU).",
+      },
+      {
+        name: "Pro3dure temp Gr17.1",
+        tag: "Validated",
+        description: "Validated for implant provisionals (per IFU).",
+      },
+      {
+        name: "Bego Triniq",
+        tag: "Validated",
+        description: "Validated for implant provisionals (per IFU).",
+      },
+      {
+        name: "Sarameco crowntec",
+        tag: "Validated",
+        description: "Validated for implant provisionals (per IFU).",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Configure parameters for additional try-in and provisional-grade resins.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 15,
+      labCostPerUnit: 150,
+      zyloCostPerUnit: 25,
+      unitLabel: "wax-up / provisional",
+    },
+  },
+
+  {
+    slug: "surgical-guides",
+    name: "Surgical Guides",
+    tagline: "Predictable, guided implant surgery with an integrated digital workflow—so your team can deliver consistent guides without becoming printing experts.",
+    description:
+      "Predictable, guided implant surgery with an integrated digital workflow: planning + guide design + one-click file prep + automated print–wash–cure—so your team can deliver consistent guides without becoming 'printing experts.'",
+    proof: [
+      {
+        title: "Accuracy you can trust",
+        description: "Standardize drill position & angulation.",
+      },
+      {
+        title: "Faster appointments",
+        description: "Smoother guided placements.",
+      },
+      {
+        title: "Repeatable workflow",
+        description: "From plan to sterilization.",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Planning + Design",
+        duration: "~15–20 min",
+        description:
+          "Import CBCT + intraoral scan → plan implant positions → AI-assisted or cloud guide design with drill sleeve integration.",
+      },
+      {
+        title: "ZyloPrep (one-click)",
+        duration: "~5 min",
+        description:
+          "One-click file prep with standardized surgical guide print settings. Validated biocompatible resin profiles applied automatically.",
+      },
+      {
+        title: "ZyloDent (All-in-one)",
+        duration: "~35–50 min",
+        description:
+          "Automated print + wash + cure with validated post-processing for biocompatible guide materials.",
+      },
+      {
+        title: "Sleeves & Sterilize",
+        duration: "~15–20 min",
+        description:
+          "Insert drill sleeves, QC fit on model, then autoclave sterilize per material IFU before surgery.",
+      },
+    ],
+    totalTime: "~70–95 minutes (same-day production possible)",
+    whySection: {
+      heading: "A guide is only valuable if it's repeatable.",
+      body: "Surgical guides often fail operationally when the chain is scattered across too many devices and too much \"tribal knowledge.\" Zylo compresses the chain into a delegatable, standard workflow.",
+    },
+    ctaLabel: "Ready to standardize guided surgery in-house?",
+    materials: [
+      {
+        name: "BEGO VarseoWax Surgical Guide",
+        tag: "Validated",
+        description: "Biocompatible surgical guide resin validated for wash, cure, and autoclave sterilization.",
+      },
+      {
+        name: "Pro3dure GR-10 Guide",
+        tag: "Validated",
+        description: "Surgical guide resin with documented biocompatibility and accuracy validation.",
+      },
+      {
+        name: "Sarameco GuideTec",
+        tag: "Validated",
+        description: "Validated guide material with sterilization protocol and IFU documentation.",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Configure parameters for additional biocompatible guide resins.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 20,
+      labCostPerUnit: 250,
+      zyloCostPerUnit: 40,
+      unitLabel: "guides",
+    },
+  },
+
+  {
+    slug: "sports-guards",
+    name: "Sports Guards",
+    tagline: "Same-day, high-custom sports guards with an integrated workflow: design + one-click prep + automated print–wash–cure.",
+    description:
+      "Same-day, high-custom sports guards with an integrated workflow: design + one-click prep + automated print–wash–cure.",
+    proof: [
+      {
+        title: "High customization",
+        description: "Logos + colors designed digitally and printed repeatably.",
+      },
+      {
+        title: "Repeatable outcomes",
+        description: "Assistant-friendly workflow with consistent results across shifts.",
+      },
+      {
+        title: "Validated materials + workflow",
+        description: "Validated materials + workflow validated as one system.",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Scan",
+        duration: "~5 min",
+        description:
+          "Intraoral scan of the patient's arch. Full-arch capture for accurate guard adaptation.",
+      },
+      {
+        title: "Design + Customize",
+        duration: "~10–15 min",
+        description:
+          "Design sports guard with thickness zones, comfort edges, logo placement, and color layer options.",
+      },
+      {
+        title: "ZyloPrep (one-click)",
+        duration: "~3 min",
+        description:
+          "Auto-orient with validated sports guard material profiles. Supports placed on internal surfaces.",
+      },
+      {
+        title: "ZyloDent (All-in-one)",
+        duration: "~35–45 min",
+        description:
+          "Automated print + wash + cure in one device run. Multiple guards in a single build.",
+      },
+      {
+        title: "Finish + Deliver",
+        duration: "~5–10 min",
+        description:
+          "Remove supports, polish edges, verify fit and logo depth. Deliver same visit.",
+      },
+    ],
+    totalTime: "~55–70 minutes",
+    whySection: {
+      heading: "The Zylo difference",
+      body: "A sports-guard workflow is only valuable if it's repeatable.",
+    },
+    ctaLabel: "Request a Sample Sports Guard",
+    materials: [
+      {
+        name: "Pro3dure GR-10 Guard",
+        tag: "Validated",
+        description: "Biocompatible sports guard resin with validated mechanical performance.",
+      },
+      {
+        name: "Keystone KeySplint Flex",
+        tag: "Validated",
+        description: "Flexible guard material validated for sports guard indication and impact loading.",
+      },
+      {
+        name: "BEGO VarseoSmile Guard",
+        tag: "Validated",
+        description: "Guard resin validated for sports protection with documented durability testing.",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Configure parameters for additional guard materials and custom color workflows.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 25,
+      labCostPerUnit: 180,
+      zyloCostPerUnit: 25,
+      unitLabel: "guards",
+    },
+  },
+
+  {
+    slug: "provisional-all-on-x",
+    name: "Provisional All-on-X",
+    tagline: "Fully digital conversion provisional",
+    description:
+      "Make surgery-day delivery predictable with a monolithic printed provisional that preserves VDO, tooth position, and planned occlusion—while protecting screw-channel accuracy and controlling tissue pressure.",
+    proof: [
+      {
+        title: "Faster surgery-day delivery",
+        description: "Skip denture conversion chaos with a digital conversion workflow.",
+      },
+      {
+        title: "Preserved VDO & esthetics",
+        description: "Carry diagnostic wax-up reference points through to delivery.",
+      },
+      {
+        title: "Passive-fit focused",
+        description: "Screw channels + supports oriented for accuracy and repeatability.",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Records",
+        duration: "Day before",
+        description:
+          "Pre-op scan + bite + smile references (photos / records).",
+      },
+      {
+        title: "Design",
+        duration: "~20–30 min",
+        description:
+          "Diagnostic wax-up / tooth setup + tissue design intent.",
+      },
+      {
+        title: "Surgery-day capture",
+        duration: "Intraop",
+        description:
+          "Implant position record + relationship record to the plan.",
+      },
+      {
+        title: "Align",
+        duration: "Intraop",
+        description:
+          "Preserve VDO + tooth position while matching implant reality.",
+      },
+      {
+        title: "Automate",
+        duration: "~5 min",
+        description:
+          "One-click file prep + standardized production settings.",
+      },
+      {
+        title: "Produce",
+        duration: "~35–50 min",
+        description:
+          "Print + Wash + Cure in one delegated run.",
+      },
+      {
+        title: "Finish",
+        duration: "~10–15 min",
+        description:
+          "Support removal + polish + QC.",
+      },
+      {
+        title: "Deliver",
+        duration: "~5–10 min",
+        description:
+          "Seat → torque → occlusion check → tissue pressure verification.",
+      },
+    ],
+    totalTime: "~90–120 minutes (production phase)",
+    whySection: {
+      heading: "THE ZYLO DIFFERENCE",
+      body: "A provisional is only valuable if it's repeatable. Wax-ups and conversion prostheses don't help acceptance or outcomes when they're one-off \"doctor art projects.\" Zylo compresses the chain into a delegatable, standard workflow.",
+    },
+    ctaLabel: "Want to see the provisional All-on-X workflow end-to-end?",
+    materials: [
+      {
+        name: "Titan Rodin Resin",
+        tag: "Validated",
+        description: "High-strength provisional resin validated for full-arch All-on-X applications.",
+      },
+      {
+        name: "BEGO VarseoSmile Temp",
+        tag: "Validated",
+        description: "Temporary crown and bridge resin validated for extended provisional use.",
+      },
+      {
+        name: "Pro3dure GR-17 Temp",
+        tag: "Validated",
+        description: "Biocompatible provisional resin with validated All-on-X workflow documentation.",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Configure parameters for additional provisional-grade resins.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 6,
+      labCostPerUnit: 800,
+      zyloCostPerUnit: 120,
+      unitLabel: "arches",
+    },
+  },
+
+  {
+    slug: "pediatric-crown",
+    name: "Pediatric crowns — same-visit, without the crown drawer chaos.",
+    tagline: "Same-visit pediatric crowns without the crown drawer chaos.",
+    description:
+      "A connected workflow that feels like one system: Scan → AI design (AlphaByte) → one-click prep (ZyloPrep) → automated print–wash–cure (ZyloDent).",
+    proof: [
+      {
+        title: "Same-visit delivery",
+        description: "Keep patient momentum. Reduce reschedules driven by missing sizes and lab turnaround.",
+      },
+      {
+        title: "Lower overhead",
+        description: "Replace recurring lab spend and reduce inventory burden from rarely-used sizes.",
+      },
+      {
+        title: "Predictable workflow",
+        description: "Standard steps your team can repeat—without a \"printing expert\" dependency.",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "Scan",
+        duration: "~5 min",
+        description:
+          "Quick capture for the indication.",
+      },
+      {
+        title: "Design (AlphaByte)",
+        duration: "~5–8 min",
+        description:
+          "AI-assisted crown workflow + sizing guidance.",
+      },
+      {
+        title: "Send to ZyloPrep",
+        duration: "~3 min",
+        description:
+          "One-click prep. Less guesswork.",
+      },
+      {
+        title: "ZyloDent runs it",
+        duration: "~20–30 min",
+        description:
+          "Automated print + wash + cure.",
+      },
+      {
+        title: "Finish + seat",
+        duration: "~5 min",
+        description:
+          "Designed for same-visit delivery.",
+      },
+    ],
+    totalTime: "~38–51 minutes",
+    whySection: {
+      heading: "The difference is repeatability—not another gadget.",
+      body: "Most systems break because they rely on a power user. Zylo compresses the chain into a standard workflow.",
+    },
+    ctaLabel: "Ready to upgrade your pediatric crown workflow?",
+    materials: [
+      {
+        name: "White crown material",
+        tag: "Validated",
+        description: "Validated workflow parameters across print + wash + cure for consistent outcomes.",
+      },
+      {
+        name: "Try-in / diagnostic",
+        tag: "Validated",
+        description: "Fast iteration for confidence: communicate outcome and reduce uncertainty.",
+      },
+      {
+        name: "Model / workflow support",
+        tag: "Validated",
+        description: "Smooth anatomy models to support predictable chairside flow.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 20,
+      labCostPerUnit: 25,
+      zyloCostPerUnit: 5,
+      unitLabel: "crowns",
+    },
+  },
+
+  {
+    slug: "occlusal-splints",
+    name: "Occlusal Splints and Guards",
+    tagline: "Predictable, same-day splints and guards with an integrated workflow: AI-assisted design + one-click prep + automated print–wash–cure.",
+    description:
+      "Predictable, same-day splints and guards with an integrated workflow: AI-assisted design + one-click prep + automated print–wash–cure.",
+    proof: [
+      {
+        title: "Delegation-ready",
+        description: "Automated workflow designed for delegation (assistant-friendly)",
+      },
+      {
+        title: "Open, validated materials",
+        description: "Open, validated splint materials (per material IFU)",
+      },
+      {
+        title: "Same-day delivery",
+        description: "Deliver within the same day",
+      },
+    ],
+    workflowSteps: [
+      {
+        title: "ZyloCAD (AI-assisted)",
+        duration: "~10 min",
+        description:
+          "Upload upper/lower + bite → generate a splint/guard; adjust thickness, relief, and contact strategy.",
+      },
+      {
+        title: "ZyloPrep",
+        duration: "~3 min",
+        description:
+          "Auto-orient + place supports away from functional surfaces → apply validated profiles by material.",
+      },
+      {
+        title: "ZyloDent (All-in-one)",
+        duration: "~40–45 min",
+        description:
+          "Print → automated transfer → wash → cure in one device.",
+      },
+      {
+        title: "Finish / Polish",
+        duration: "~5–10 min",
+        description:
+          "Remove supports, quick polish, and final fit check.",
+      },
+    ],
+    totalTime: "~60 minutes",
+    whySection: {
+      heading: "If you already scan digitally, why are splints still a multi-day process?",
+      body: "If you already own an intraoral scanner, manufacturing shouldn't be the bottleneck. Yet outsourcing splints to a third-party lab often means ~5 days of turnaround and about $100 per unit—plus remakes that steal chair time. Many guards are still thermoformed without a true 3D bite scheme, so fit and comfort can vary. Bringing splints in-house improves margins and patient satisfaction, but most stacks require CAD, file prep, a printer, a washer, and a curing unit—and a skilled operator to keep it all running. Zylo integrates the missing steps: ZyloCAD and ZyloPrep streamline design and file prep with AI, and ZyloDent automates print–wash–cure in one cabinet-ready footprint so your assistant can produce consistent splints with minimal manual steps.",
+    },
+    ctaLabel: "See it on your own cases",
+    materials: [
+      {
+        name: "Keystone",
+        tag: "Validated",
+        description: "Night guards / hard splints (per IFU)",
+      },
+      {
+        name: "Pro3dure",
+        tag: "Validated",
+        description: "Splints/guards (per IFU)",
+      },
+      {
+        name: "Open system mode",
+        tag: "Configurable",
+        description: "Dial in custom resin profiles (exposure, lift, wash/cure cycles) for new materials and R&D.",
+      },
+    ],
+    roiDefaults: {
+      casesPerMonth: 40,
+      labCostPerUnit: 90,
+      zyloCostPerUnit: 15,
+      unitLabel: "splints",
+    },
+  },
 ];
 
 export function getIndicationBySlug(slug: string): IndicationData | undefined {

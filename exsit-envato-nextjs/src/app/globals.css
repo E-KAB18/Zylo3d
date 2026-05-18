@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @import "aos/dist/aos.css";
+
+/* offset anchor jumps on product pages so fixed header+subnav don't cover content */
+.product-section-anchor {
+    scroll-margin-top: 110px;
+}
 @custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
@@ -293,11 +298,7 @@ body.dark {
 }
 :where(.dark) .zylo-hero-bg {
     background: #080808;
-    background-image:
-        radial-gradient(ellipse 80% 55% at 65% 5%, rgba(223,123,38,0.16) 0%, transparent 55%),
-        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
-    background-size: auto, 80px 80px, 80px 80px;
+    background-image: radial-gradient(ellipse 80% 55% at 65% 5%, rgba(223,123,38,0.16) 0%, transparent 55%);
 }
 
 /* Light mode: make header-light nav text dark (otherwise white-on-white) */

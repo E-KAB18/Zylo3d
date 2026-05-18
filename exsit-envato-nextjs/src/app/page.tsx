@@ -9,12 +9,12 @@ import { ArrowUpRight, CheckCircle } from "react-feather";
 import Link from "next/link";
 
 const indications = [
-    { name: "Night Guard", slug: "night-guard", image: "/images/indications/night_guard_large.png", desc: "Same-day, delegatable workflow." },
-    { name: "Surgical Guide", slug: "surgical-guide", image: "/images/indications/surgical_guide_large.png", desc: "Accuracy-first, standardized output." },
-    { name: "Diagnostic Model", slug: "model", image: "/images/indications/model_large.png", desc: "Clean, consistent in-house models." },
-    { name: "Crown", slug: "crown", image: "/images/indications/crown_large.png", desc: "Faster turnaround, fewer remakes." },
-    { name: "Bridge", slug: "bridge", image: "/images/indications/bridge_large.png", desc: "Same precision, lower cost." },
-    { name: "All-on-X", slug: "all-on-x", image: "/images/indications/all_on_x_large.png", desc: "Full-arch, fully automated." },
+    { name: "Digital Dentures",          slug: "digital-dentures",            image: "/images/indications/denture_base_large.png",  desc: "Fewer visits. Repeatable. Lower cost." },
+    { name: "Surgical Guides",           slug: "surgical-guides",             image: "/images/indications/surgical_guide_large.png", desc: "Accuracy-first, standardized output." },
+    { name: "Occlusal Splints",          slug: "occlusal-splints",            image: "/images/indications/night_guard_large.png",   desc: "Scan to splint in ~60 minutes." },
+    { name: "Sports Guards",             slug: "sports-guards",               image: "/images/indications/sports_guard_large.png",  desc: "Custom colors + logos, same visit." },
+    { name: "Provisional All-on-X",      slug: "provisional-all-on-x",        image: "/images/indications/all_on_x_large.png",      desc: "Surgery-day full-arch provisionals." },
+    { name: "Pediatric Crown",           slug: "pediatric-crown",             image: "/images/indications/crown_large.png",         desc: "Same-visit, no crown drawer chaos." },
 ];
 
 const cx = "max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3";

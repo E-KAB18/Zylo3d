@@ -78,14 +78,24 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     const systemCost = parseInt(product.price.replace(/[^0-9]/g, "")) || 8900;
     const isZyloDent = slug === "zylodent";
 
+    const indicationImage: Record<string, string> = {
+        "Digital Dentures":      "/images/indications/denture_base_large.png",
+        "Waxups & Provisionals": "/images/indications/model_large.png",
+        "Surgical Guides":       "/images/indications/surgical_guide_large.png",
+        "Sports Guards":         "/images/indications/sports_guard_large.png",
+        "Provisional All-on-X":  "/images/indications/all_on_x_large.png",
+        "Pediatric Crown":       "/images/indications/crown_large.png",
+        "Occlusal Splints":      "/images/indications/night_guard_large.png",
+    };
+
     const indicationDesc: Record<string, string> = {
-        "Diagnostic Model": "Ortho & restorative models with fast, consistent turnarounds.",
-        "Single Unit Crown": "Chairside restorations with predictable sizing and delivery.",
-        "Denture Base": "Fast iterations to align esthetics and occlusion.",
-        "Dental Splint": "Same-day splints and night guards with consistent fits.",
-        "Sports Guard": "Custom output with efficient batch production.",
-        "Surgical Guide": "Guides with validated protocols and accuracy reporting.",
-        "Implant Guide": "Implant surgical guides with validated accuracy protocols.",
+        "Digital Dentures":       "Delegatable removable workflow — fewer visits, lower lab cost, consistent outcomes.",
+        "Waxups & Provisionals":  "Trial smiles and implant temps that help patients say yes — same visit.",
+        "Surgical Guides":        "Verified accuracy for predictable, repeatable implant placement.",
+        "Sports Guards":          "Custom colors + logos with validated materials — a high-margin same-day add-on.",
+        "Provisional All-on-X":   "Surgery-day full-arch provisionals that preserve VDO and give patients immediate function.",
+        "Pediatric Crown":        "Scan-to-crown in minutes — no crown drawer, no lab wait, no failed seating.",
+        "Occlusal Splints":       "Scan to splint in ~60 minutes — delegatable, high-margin, no lab dependency.",
     };
 
     const faq = [
@@ -115,80 +125,65 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
     return (
         <>
-            <Header theme="header-light" />
-
-            {/* ── STICKY SUBNAV ─────────────────────────────── */}
-            <div className="sticky top-16 z-20 bg-white/90 dark:bg-[#0f0f0f]/90 backdrop-blur border-b border-gray-200 dark:border-gray-800">
-                <div className={cx}>
-                    <div className="flex gap-2 overflow-x-auto py-3 scrollbar-hide">
-                        {[
-                            { label: "Overview",    href: "#overview" },
-                            { label: "Workflow",    href: "#workflow" },
-                            { label: "Indications", href: "#indications" },
-                            { label: "Materials",   href: "#materials" },
-                            { label: "Software",    href: "#software" },
-                            { label: "ROI",         href: "#roi" },
-                            { label: "Compare",     href: "#comparison" },
-                            { label: "Specs",       href: "#specs" },
-                            { label: "Support",     href: "#service" },
-                            { label: "FAQ",         href: "#faq" },
-                        ].map((item) => (
-                            <a
-                                key={item.href}
-                                href={item.href}
-                                className="whitespace-nowrap px-4 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-[#df7b26]/40 text-sm font-medium transition-all"
-                            >
-                                {item.label}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            <Header theme="header-light" subnavItems={[
+                { label: "Overview",    href: "#overview" },
+                { label: "Workflow",    href: "#workflow" },
+                { label: "Indications", href: "#indications" },
+                { label: "Materials",   href: "#materials" },
+                { label: "Software",    href: "#software" },
+                { label: "ROI",         href: "#roi" },
+                { label: "Compare",     href: "#comparison" },
+                { label: "Specs",       href: "#specs" },
+                { label: "Support",     href: "#service" },
+                { label: "FAQ",         href: "#faq" },
+            ]} />
 
             {/* ── HERO ──────────────────────────────────────── */}
-            <section className="zylo-hero-bg relative overflow-hidden lg:pt-32 pt-24 pb-16" id="overview">
+            <section className="zylo-hero-bg relative overflow-hidden lg:pt-40 pt-32 pb-16 product-section-anchor" id="overview">
                 <div className={cx}>
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <span className="inline-block px-3 py-1 bg-[#df7b26]/15 text-[#df7b26] text-sm font-semibold rounded-full mb-4 uppercase tracking-wide">
                                 {isZyloDent ? "All-in-one automated manufacturing" : product.tagline}
                             </span>
-                            <h1 className="text-gray-900 dark:text-white font-extrabold text-5xl lg:text-6xl mb-4" data-aos="fade-up" data-aos-duration="400">
+                            <h1 className="text-gray-900 dark:text-white font-extrabold text-4xl lg:text-5xl mb-4" data-aos="fade-up" data-aos-duration="400">
                                 {product.name}
                             </h1>
                             {isZyloDent && (
-                                <p className="text-gray-700 dark:text-gray-200 text-xl mb-3 leading-relaxed">
-                                    Automated <strong className="text-gray-900 dark:text-white">print + wash + cure</strong> in one unit — built for delegation and same-visit delivery.
+                                <p className="text-gray-700 dark:text-gray-200 text-lg mb-2 leading-relaxed">
+                                    Automated <strong>print + wash + cure</strong> in one unit — built for delegation and same-visit delivery.
                                 </p>
                             )}
-                            <p className="text-gray-500 dark:text-gray-400 text-base mb-8 leading-relaxed">{product.description}</p>
+                            <p className="text-gray-500 dark:text-gray-400 text-base mb-7 leading-relaxed">
+                                {product.description}
+                            </p>
 
-                            <div className="flex flex-wrap gap-3 mb-8">
-                                <Button href="/contact" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />
-                                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
+                            <div className="flex flex-wrap gap-3 mb-7">
+                                <Button href="/contact" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-6" icon={<ArrowUpRight size={17} />} />
+                                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                     Request a Sample Part
                                 </Link>
-                                <Link href="#specs" className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
+                                <Link href="#specs" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                     Download Spec Sheet
                                 </Link>
                             </div>
 
                             {/* Proof pills */}
-                            <div className="flex flex-wrap gap-2 mb-6">
+                            <div className="flex flex-wrap gap-2 mb-5">
                                 {["All-in-one automation", "Predictable outcomes", "Validated materials", "Remote monitoring"].map((pill) => (
-                                    <span key={pill} className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#df7b26]/30 bg-[#df7b26]/5 text-gray-700 dark:text-gray-300 text-sm font-medium">
-                                        <CheckCircle size={13} className="text-[#df7b26]" />
+                                    <span key={pill} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#df7b26]/30 bg-[#df7b26]/5 text-gray-700 dark:text-gray-300 text-xs font-medium">
+                                        <CheckCircle size={12} className="text-[#df7b26]" />
                                         {pill}
                                     </span>
                                 ))}
                             </div>
 
                             {/* Compatibility strip */}
-                            <div className="pt-5 border-t border-gray-200 dark:border-gray-700">
-                                <p className="text-xs text-gray-400 dark:text-gray-500 mb-3 uppercase tracking-wider font-medium">Compatible with</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {["Open input (STL / PLY)", "Any intraoral scanner", "ZyloCAD · ZyloPrep"].map((chip) => (
-                                        <span key={chip} className="px-3 py-1.5 border border-dashed border-gray-300 dark:border-gray-600 rounded-xl text-gray-500 dark:text-gray-400 text-xs font-mono">
+                            <div className="flex items-center gap-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <span className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider font-medium shrink-0">Works with:</span>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {["STL / PLY", "Any IOS", "ZyloCAD"].map((chip) => (
+                                        <span key={chip} className="px-2.5 py-1 border border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-gray-500 dark:text-gray-400 text-xs">
                                             {chip}
                                         </span>
                                     ))}
@@ -197,7 +192,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         </div>
 
                         <div data-aos="zoom-in" data-aos-duration="500">
-                            <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10">
+                            <div className="rounded-2xl overflow-hidden">
                                 <Image src={product.image} alt={product.name} width={600} height={400} className="w-full object-cover" />
                             </div>
                         </div>
@@ -290,7 +285,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             )}
 
             {/* ── WORKFLOW ──────────────────────────────────── */}
-            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a]" id="workflow">
+            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a] product-section-anchor" id="workflow">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Assistant-Friendly Workflow</h2>
@@ -321,7 +316,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── INDICATIONS ───────────────────────────────── */}
-            <section className="lg:py-24 py-16" id="indications">
+            <section className="lg:py-24 py-16 product-section-anchor" id="indications">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">What you can make</h2>
@@ -329,26 +324,32 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     </div>
                     <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5">
                         {product.indications.map((ind, i) => (
-                            <div key={i} className="bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden" data-aos="fade-up" data-aos-delay={i * 60} data-aos-duration="400">
-                                <div className="h-24 bg-gray-100 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 flex items-center justify-center">
-                                    <span className="text-gray-400 dark:text-gray-600 text-xs font-mono">Image placeholder</span>
+                            <Link key={i} href={`/indications/${ind.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`} className="group bg-white dark:bg-[#111111] rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-[#df7b26]/40 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay={i * 60} data-aos-duration="400">
+                                <div className="h-36 bg-gray-50 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 relative overflow-hidden">
+                                    <Image
+                                        src={indicationImage[ind.name] ?? "/images/indications/model_large.png"}
+                                        alt={ind.name}
+                                        fill
+                                        className="object-contain p-4"
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                    />
                                 </div>
                                 <div className="p-5">
-                                    <h4 className="text-gray-900 dark:text-white font-semibold text-base mb-2">{ind.name}</h4>
+                                    <h4 className="text-gray-900 dark:text-white font-semibold text-base mb-2 group-hover:text-[#df7b26] transition-colors">{ind.name}</h4>
                                     <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">{indicationDesc[ind.name] ?? "Validated protocol with consistent outcomes."}</p>
                                     <div className="flex gap-4 text-xs">
                                         <span className="text-gray-400 dark:text-gray-500"><span className="text-[#df7b26] font-bold">{ind.minutes} min</span> cycle time</span>
                                         <span className="text-gray-400 dark:text-gray-500"><span className="text-[#df7b26] font-bold">{ind.clicks} clicks</span> to start</span>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
             {/* ── MATERIALS ─────────────────────────────────── */}
-            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a]" id="materials">
+            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a] product-section-anchor" id="materials">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Validated Materials + Guided Presets</h2>
@@ -403,7 +404,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── SOFTWARE STACK ────────────────────────────── */}
-            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a]" id="software">
+            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a] product-section-anchor" id="software">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Software Stack</h2>
@@ -431,7 +432,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── ROI CALCULATOR ────────────────────────────── */}
-            <section className="lg:py-24 py-16" id="roi">
+            <section className="lg:py-24 py-16 product-section-anchor" id="roi">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">ROI Calculator</h2>
@@ -442,7 +443,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── COMPARISON TABLE ──────────────────────────── */}
-            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a]" id="comparison">
+            <section className="lg:py-24 py-16 bg-gray-50 dark:bg-[#1a1a1a] product-section-anchor" id="comparison">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Compare</h2>
@@ -481,7 +482,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── TECH SPECS ────────────────────────────────── */}
-            <section className="lg:py-24 py-16" id="specs">
+            <section className="lg:py-24 py-16 product-section-anchor" id="specs">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Technical Specifications</h2>
@@ -561,7 +562,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── SERVICE & SUPPORT ─────────────────────────── */}
-            <section className="lg:py-24 py-16" id="service">
+            <section className="lg:py-24 py-16 product-section-anchor" id="service">
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Service & Support</h2>
@@ -612,7 +613,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </section>
 
             {/* ── FAQ ───────────────────────────────────────── */}
-            <section className="lg:py-24 py-16" id="faq">
+            <section className="lg:py-24 py-16 product-section-anchor" id="faq">
                 <div className="max-w-3xl mx-auto px-3 sm:px-6">
                     <h2 className="text-gray-900 dark:text-white text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
                     <div className="space-y-4">
