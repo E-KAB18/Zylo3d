@@ -2,343 +2,254 @@
 
 import Header from '@/components/layout/Header';
 import ZyloFooter from '@/components/layout/ZyloFooter';
-import PageTitle3 from "@/components/ui/PageTitle3";
-import { Cpu, FlaskConical, Layers, Printer, ScanLine, Wrench, Monitor, ArrowRight } from "lucide-react";
+import { Monitor, Layers, Printer } from "lucide-react";
 import Button from "@/components/ui/Button";
-import CounterSection from "@/components/ui/CounterSection";
 import Image from "next/image";
-import TestimonialCarousel from "@/components/ui/TestimonialCarousel";
-import testimonials from "@/data/testimonials.json";
-import { ArrowUpRight, Star } from "react-feather";
+import { ArrowUpRight, CheckCircle } from "react-feather";
 import Link from "next/link";
 
-const blogPosts = [
-    {
-        id: 1,
-        title: "How in-house 3D printing is reshaping the modern dental lab",
-        category: "Workflow",
-        date: "2026",
-        image: "/images/blog/blog-01.jpg",
-        href: "/blog",
-    },
-    {
-        id: 2,
-        title: "Validated materials: why not all dental resins are equal",
-        category: "Materials",
-        date: "2026",
-        image: "/images/blog/blog-02.jpg",
-        href: "/blog",
-    },
-    {
-        id: 3,
-        title: "Surgical guides in 90 minutes: a step-by-step protocol",
-        category: "Surgical",
-        date: "2026",
-        image: "/images/blog/blog-03.jpg",
-        href: "/blog",
-    },
+const indications = [
+    { name: "Night Guard", slug: "night-guard", image: "/images/indications/night_guard_large.png", desc: "Same-day, delegatable workflow." },
+    { name: "Surgical Guide", slug: "surgical-guide", image: "/images/indications/surgical_guide_large.png", desc: "Accuracy-first, standardized output." },
+    { name: "Diagnostic Model", slug: "model", image: "/images/indications/model_large.png", desc: "Clean, consistent in-house models." },
+    { name: "Crown", slug: "crown", image: "/images/indications/crown_large.png", desc: "Faster turnaround, fewer remakes." },
+    { name: "Bridge", slug: "bridge", image: "/images/indications/bridge_large.png", desc: "Same precision, lower cost." },
+    { name: "All-on-X", slug: "all-on-x", image: "/images/indications/all_on_x_large.png", desc: "Full-arch, fully automated." },
 ];
 
-const indications = [
-    { name: "Diagnostic Model", slug: "model", image: "/images/indications/model_large.png" },
-    { name: "Crown", slug: "crown", image: "/images/indications/crown_large.png" },
-    { name: "Bridge", slug: "bridge", image: "/images/indications/bridge_large.png" },
-    { name: "Surgical Guide", slug: "surgical-guide", image: "/images/indications/surgical_guide_large.png" },
-    { name: "Night Guard", slug: "night-guard", image: "/images/indications/night_guard_large.png" },
-    { name: "All-on-X", slug: "all-on-x", image: "/images/indications/all_on_x_large.png" },
-];
+const cx = "max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3";
 
 export default function HomePage() {
     return (
         <>
-            {/* Header */}
             <Header theme="header-light" />
 
             {/* ── HERO ─────────────────────────────────────────────── */}
-            <div className="zylo-hero-bg banner-wrap items-center justify-center relative flex overflow-hidden h-auto lg:pt-44 pt-28 pb-4">
-                <div className="max-w-screen-xl w-full px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3 flex flex-col justify-center relative z-10">
-                    <div className="xl:w-10/12 w-full mx-auto text-center">
+            <div className="zylo-hero-bg banner-wrap relative flex items-center overflow-hidden min-h-[92vh] pt-24">
+                {/* Decorative glows */}
+                <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-[#df7b26]/10 blur-[140px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
-                        {/* Badge */}
-                        <div className="flex flex-row mb-3 mt-auto justify-center">
-                            <div className="flex flex-row items-center gap-2 pt-1 pb-2 px-5 mx-auto rounded-full w-auto bg-gray-100 dark:bg-white/20 border border-gray-300 dark:border-white/30">
-                                <span className="text-gray-700 dark:text-white font-medium text-sm">Digital Dentistry Manufacturing Platform</span>
+                <div className={`${cx} w-full relative z-10 py-16`}>
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
+
+                        {/* Left column */}
+                        <div>
+                            {/* Kicker */}
+                            <div
+                                className="inline-flex items-center gap-2 mb-6 py-1.5 px-4 rounded-full border border-[#df7b26]/40 bg-[#df7b26]/10 w-fit"
+                                data-aos="fade-up"
+                                data-aos-duration="300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#df7b26] inline-block" />
+                                <span className="text-[#df7b26] font-semibold text-xs tracking-widest uppercase">Workflow-forward manufacturing</span>
+                            </div>
+
+                            {/* H1 */}
+                            <h1
+                                className="text-gray-900 dark:text-white font-extrabold xl:text-[72px] lg:text-6xl md:text-5xl text-4xl mb-6 leading-[1.04] tracking-tight"
+                                data-aos="fade-up"
+                                data-aos-duration="400"
+                                data-aos-delay="100"
+                            >
+                                Chairside output.<br />
+                                <span style={{ color: "#df7b26" }}>Finally automated.</span>
+                            </h1>
+
+                            <p
+                                className="text-gray-600 dark:text-gray-300 text-xl leading-relaxed max-w-lg mb-8"
+                                data-aos="fade-up"
+                                data-aos-duration="400"
+                                data-aos-delay="150"
+                            >
+                                Zylo turns digital dentistry into a standard workflow: AI design + one-click prep + automated print–wash–cure—so your team delivers consistent results in-house.
+                            </p>
+
+                            {/* Trust badges */}
+                            <div className="flex flex-wrap gap-3 mb-8" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
+                                {["Validated workflows", "Training included", "Support plans"].map(badge => (
+                                    <span key={badge} className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[#df7b26]/25 bg-[#df7b26]/10 text-gray-700 dark:text-gray-200 font-medium">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#df7b26] flex-shrink-0" />
+                                        {badge}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* CTAs */}
+                            <div className="flex flex-wrap gap-3 mb-10" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
+                                <Button
+                                    label="Book a Demo"
+                                    bgColor="bg-[#df7b26]"
+                                    textColor="text-white"
+                                    icon={<ArrowUpRight size={20} />}
+                                    padding="py-4 px-7"
+                                    href="/contact"
+                                />
+                                <Button
+                                    label="Calculate ROI"
+                                    bgColor="bg-gray-100 dark:bg-white/10"
+                                    textColor="text-gray-700 dark:text-white"
+                                    icon={<ArrowUpRight size={20} />}
+                                    padding="py-4 px-7"
+                                    href="/products/zylodent#roi"
+                                    className="border border-gray-300 dark:border-white/15"
+                                />
+                            </div>
+
+                            {/* Chips */}
+                            <div className="flex flex-wrap gap-2">
+                                {["AI design", "One-click prep", "Automated output", "Assistant-friendly"].map(chip => (
+                                    <span key={chip} className="text-xs px-3 py-1.5 rounded-full border border-gray-300 dark:border-white/15 text-gray-500 dark:text-gray-500 bg-gray-50 dark:bg-white/5">{chip}</span>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Heading */}
-                        <h1
-                            className="text-gray-900 dark:text-white font-extrabold 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl mt-2 mb-3 py-3 leading-tight"
-                            data-aos="fade-up"
-                            data-aos-duration="400"
-                            data-aos-delay="300"
-                        >
-                            The Complete Digital<br />
-                            <span style={{ color: "#df7b26" }}>Dentistry</span> Manufacturing<br />
-                            Platform
-                        </h1>
-
-                        <p
-                            className="font-normal text-gray-700 dark:text-white/90 text-lg text-center max-w-2xl mx-auto"
-                            data-aos="fade-up"
-                            data-aos-duration="500"
-                            data-aos-delay="400"
-                        >
-                            Hardware, software, and validated materials — built to work as one integrated system for your dental lab or clinic.
-                        </p>
-
-                        {/* CTAs */}
-                        <div className="flex flex-col sm:flex-row gap-3 mt-8 justify-center mx-auto">
-                            <Button
-                                label="Request a Quote"
-                                bgColor="bg-[#df7b26]"
-                                textColor="text-white"
-                                icon={<ArrowUpRight size={20} />}
-                                padding="py-4 px-6"
-                                href="/contact"
-                            />
-                            <Button
-                                label="Explore Dental Applications"
-                                bgColor="bg-gray-100 dark:bg-white/15"
-                                textColor="text-gray-700 dark:text-white"
-                                icon={<ArrowUpRight size={20} />}
-                                padding="py-4 px-6"
-                                href="/indications"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Hero image / product visual */}
-                    <div className="xl:w-9/12 w-full mx-auto lg:pt-20 pt-12">
+                        {/* Right column — hero image */}
                         <div
-                            className="overflow-hidden rounded-2xl border border-gray-200 dark:border-white/20 shadow-2xl"
-                            data-aos="fade-up"
+                            className="relative"
+                            data-aos="fade-left"
                             data-aos-duration="600"
-                            data-aos-delay="500"
+                            data-aos-delay="200"
                         >
+                            <div className="absolute -inset-4 bg-[#df7b26]/15 rounded-3xl blur-2xl" />
                             <Image
                                 src="/images/about/dentpro.webp"
                                 alt="ZyloDent 3D Printer"
-                                width={1100}
-                                height={550}
-                                className="w-full object-cover"
+                                width={700}
+                                height={560}
+                                className="relative w-full object-cover drop-shadow-2xl"
                                 priority
                             />
                         </div>
+
                     </div>
                 </div>
             </div>
 
-            {/* ── STATS ────────────────────────────────────────────── */}
-            <section className="service-wrap lg:py-24 py-12">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-20 pb-0 py-0">
-                    <PageTitle3
-                        badgeText=""
-                        title="Built for dental professionals who demand more"
-                        subtitle="From single-chair practices to full-service labs — Zylo3D grows with you."
-                        widthClass="w-full xl:w-7/12 lg:w-2/3 mx-auto"
-                        alignment="center"
-                        padding="pb-16"
-                    />
-                    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center gap-6">
-                        <CounterSection textcolor="text-gray-900" subtextcolor="text-gray-700" target={12} suffix="+" duration={1000} subtitle="Supported clinical indications" />
-                        <CounterSection textcolor="text-gray-900" subtextcolor="text-gray-700" target={90} suffix=" min" duration={1000} subtitle="Average workflow time" />
-                        <CounterSection textcolor="text-gray-900" subtextcolor="text-gray-700" target={98.5} suffix="%" duration={1000} subtitle="Clinically validated accuracy" />
+            {/* ── PROBLEM ──────────────────────────────────────────── */}
+            <section className="lg:py-24 py-12">
+                <div className={cx}>
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
+                        <div>
+                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Printing isn&apos;t hard. Workflow is.</h2>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                                Clinics don&apos;t fail because of the printer. They fail because the workflow is fragmented—too many tools, too many handoffs, too much dependence on a &quot;champion user.&quot;
+                            </p>
+                            <ul className="space-y-3">
+                                {[
+                                    "CAD → slicer → printer → wash → cure → variability",
+                                    "Training burden lands on one person",
+                                    "Remakes steal chair time",
+                                    "Resin handling becomes a daily headache",
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+                                        <span className="mt-2 w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-500 flex-shrink-0" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div
+                            className="rounded-2xl border border-dashed border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 min-h-[280px] flex items-center justify-center text-gray-400 dark:text-gray-500 text-center p-8"
+                            data-aos="fade-up"
+                            data-aos-duration="400"
+                            data-aos-delay="200"
+                        >
+                            <div>
+                                <p className="font-semibold text-base">DIAGRAM PLACEHOLDER</p>
+                                <p className="text-sm mt-2">&quot;Fragmented workflow&quot; illustration</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── PLATFORM PILLARS ─────────────────────────────────── */}
-            <section className="feature-wrap lg:pb-24 pb-12">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3 pb-0 lg:py-4 py-0">
-                    <div className="flex flex-wrap justify-between pb-16 gap-y-4">
-                        <PageTitle3
-                            badgeText=""
-                            title="Hardware, software, and materials — validated together"
-                            subtitle="Every component of the Zylo3D system is tested and certified to work as one. No more fragmented workflows."
-                            widthClass="w-full xl:w-8/12 lg:w-7/12"
-                            alignment="start"
-                            padding="pb-0"
-                            subtitleClass="xl:w-[75%]"
-                        />
-                        <div className="lg:text-right mt-auto">
-                            <Button href="/products/zylodent" label="Explore ZyloDent" bgColor="bg-[#df7b26]" textColor="text-white" className="py-4" />
-                        </div>
+            {/* ── THE ZYLO SYSTEM ──────────────────────────────────── */}
+            <section className="lg:py-24 py-12 bg-gray-50 dark:bg-[#0f0f0f]">
+                <div className={cx}>
+                    <div className="text-center mb-12">
+                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">The Zylo system</h2>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg">One chain. Standard steps. Assistant-friendly.</p>
                     </div>
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-6">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-4">
                         {[
-                            {
-                                icon: <Printer size={40} strokeWidth={1.5} className="text-[#df7b26]" />,
-                                title: "ZyloDent Hardware",
-                                description: "Industrial DLP 3D printer engineered specifically for dental-grade accuracy and throughput.",
-                                delay: 0,
-                            },
-                            {
-                                icon: <Monitor size={40} strokeWidth={1.5} className="text-[#df7b26]" />,
-                                title: "ZyloCAD AI Software",
-                                description: "AI-assisted design software with direct DICOM/STL import and one-click ZyloPrep file preparation.",
-                                delay: 200,
-                            },
-                            {
-                                icon: <FlaskConical size={40} strokeWidth={1.5} className="text-[#df7b26]" />,
-                                title: "Validated Materials",
-                                description: "Certified dental resins for every indication — tested and validated together with the Zylo3D system.",
-                                delay: 400,
-                            },
+                            { icon: <Monitor size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "1", title: "ZyloCAD", desc: "AI-assisted design—or cloud design services when you want it done-for-you.", delay: 0 },
+                            { icon: <Layers size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "2", title: "ZyloPrep", desc: "One-click file preparation with indication presets.", delay: 150 },
+                            { icon: <Printer size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "3", title: "ZyloDent", desc: "Automated print + wash + cure for consistent output.", delay: 300 },
                         ].map((card, i) => (
                             <div
                                 key={i}
-                                className="rounded-2xl p-8 bg-gradient-to-b from-[#B3D2FF] to-[#F2F7FF] dark:from-[#111] dark:to-[#333]"
+                                className="rounded-2xl p-8 bg-gradient-to-b from-[#B3D2FF] to-[#F2F7FF] dark:from-[#111] dark:to-[#1e1e1e] border border-transparent dark:border-white/10"
                                 data-aos="fade-up"
                                 data-aos-duration="400"
                                 data-aos-delay={card.delay}
                             >
-                                <div className="mb-6 w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                                    {card.icon}
+                                <div className="mb-6">
+                                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 flex items-center justify-center shadow-sm">
+                                        {card.icon}
+                                    </div>
                                 </div>
                                 <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">{card.title}</h3>
-                                <p className="text-gray-700 dark:text-gray-300 text-lg">{card.description}</p>
+                                <p className="text-gray-700 dark:text-gray-300 text-lg">{card.desc}</p>
                             </div>
                         ))}
                     </div>
+                    <p className="text-center text-gray-500 dark:text-gray-400 text-sm mt-4">Fewer steps → fewer failures → predictable outcomes.</p>
                 </div>
             </section>
 
-            {/* ── ZYLODENT PRODUCT + FEATURES (dark section) ───────── */}
-            <div className="feature-wrap lg:mx-6">
-                <div className="lg:py-24 py-12 bg-gray-100 dark:bg-[#111111] rounded-xl px-6">
-                    <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3 pb-0">
-
-                        {/* Section title */}
-                        <div className="flex flex-col items-center text-center xl:w-7/12 lg:w-2/3 mx-auto lg:pb-24 pb-12">
-                            <PageTitle3
-                                badgeText="The ZyloDent System"
-                                badgeTextBG="bg-gray-900/10 dark:bg-white/20"
-                                badgeTextColor="text-gray-900 dark:text-white"
-                                title="From scan to finished restoration in your own lab"
-                                subtitle="ZyloDent integrates the full dental manufacturing workflow — designed, validated, and supported by Zylo3D."
-                                widthClass="w-full mx-auto"
-                                alignment="center"
-                                padding="pb-6"
-                                textColor="text-gray-900 dark:text-white"
-                                textWeigth="font-medium"
-                                subtitleColor="text-gray-600 dark:text-gray-300"
-                            />
-                            <Button href="/products/zylodent" label="Explore ZyloDent" bgColor="bg-[#df7b26]" textColor="text-white" className="py-4" />
+            {/* ── SOCIAL PROOF / TRACTION ──────────────────────────── */}
+            <section className="lg:py-24 py-12">
+                <div className={cx}>
+                    <div className="text-center mb-12">
+                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Built in real practices</h2>
+                    </div>
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-10">
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">KOL Quote</span>
+                            <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg italic leading-relaxed">
+                                &quot;[Insert 1–2 sentences focused on consistency / speed / delegation.]&quot;
+                            </p>
+                            <span className="inline-block mt-4 text-sm px-3 py-1 rounded-full border border-gray-200 dark:border-white/15 text-gray-500 dark:text-gray-400">KOL name</span>
                         </div>
-
-                        {/* Workflow steps */}
-                        <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-6 pb-5">
-                            {[
-                                { icon: <ScanLine className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Scan", desc: "Import DICOM and STL files directly — no conversion required." },
-                                { icon: <Monitor className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Design", desc: "AI-assisted crown and denture design with ZyloCAD." },
-                                { icon: <Layers className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Prepare", desc: "One-click ZyloPrep slicing with validated print profiles." },
-                                { icon: <Printer className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Print", desc: "Industrial DLP precision — consistent results every run." },
-                                { icon: <FlaskConical className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Cure", desc: "Integrated post-processing with validated Zylo3D materials." },
-                                { icon: <Wrench className="text-gray-800 dark:text-white" size={35} strokeWidth={1} />, title: "Deliver", desc: "Finished restorations ready for chair-side fitting." },
-                            ].map((step, i) => (
-                                <div
-                                    key={i}
-                                    className="bg-gray-900/5 dark:bg-white/10 rounded-xl p-6 border border-gray-900/10 dark:border-white/15 hover:border-[#df7b26]/50 transition-all duration-300"
-                                    data-aos="fade-up"
-                                    data-aos-delay={i * 80}
-                                    data-aos-duration="400"
-                                >
-                                    <div className="mb-4">{step.icon}</div>
-                                    <h4 className="text-gray-900 dark:text-white font-semibold text-lg mb-2">{step.title}</h4>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{step.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* ZyloCAD software section */}
-                        <div className="grid lg:grid-cols-2 grid-cols-1 lg:pt-24 pt-12 xl:gap-20 gap-6 pb-5">
-                            <div className="w-full">
-                                <PageTitle3
-                                    badgeText="ZyloCAD AI"
-                                    badgeTextBG="bg-gray-900/10 dark:bg-white/20"
-                                    badgeTextColor="text-gray-900 dark:text-white"
-                                    icon={<Cpu size={18} />}
-                                    title="Intelligent dental design software, built for your workflow."
-                                    subtitle="AI ZyloCAD handles everything from scan import to restoration design. ZyloPrep takes care of slicing in one click."
-                                    widthClass="w-full"
-                                    alignment="start"
-                                    padding="pb-8"
-                                    textColor="text-gray-900 dark:text-white"
-                                    subtitleColor="text-gray-600 dark:text-gray-300"
-                                />
-                                {[
-                                    "AI-assisted crown and denture design",
-                                    "Direct DICOM and STL import",
-                                    "One-click ZyloPrep file preparation",
-                                    "Validated print profiles for all Zylo3D printers",
-                                    "Cloud case storage and team collaboration",
-                                    "Regular updates via Zylo3D account",
-                                ].map((feature, i) => (
-                                    <p key={i} className="text-gray-900 dark:text-white font-normal text-[17px] mt-1 mb-2 lg:pr-10 flex gap-3 items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="text-[#df7b26] flex-shrink-0" viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                        </svg>
-                                        {feature}
-                                    </p>
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Traction</span>
+                            <ul className="mt-4 space-y-3">
+                                {["[Success rate / reliability metric]", "[Cases run / clinics live]", "[Time saved / cost per case delta]"].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+                                        <CheckCircle size={16} className="text-[#df7b26] mt-0.5 flex-shrink-0" />
+                                        {item}
+                                    </li>
                                 ))}
-                                <Link href="/contact" className="text-[#df7b26] hover:underline font-medium inline-flex items-center gap-1 mt-6 text-base">
-                                    Talk to us about ZyloCAD <ArrowRight size={16} />
-                                </Link>
-                            </div>
-
-                            {/* Download card */}
-                            <div
-                                className="flex items-start py-3 relative w-full"
-                                data-aos="zoom-in"
-                                data-aos-duration="400"
-                                data-aos-delay="400"
-                            >
-                                <div className="bg-gray-900/5 dark:bg-white/10 border border-gray-900/10 dark:border-white/20 rounded-2xl p-8 w-full">
-                                    <h3 className="text-gray-900 dark:text-white text-2xl font-semibold mb-2">Download ZyloCAD</h3>
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">Choose your platform to get started.</p>
-                                    <div className="flex flex-col gap-3">
-                                        <a href="#" className="flex items-center gap-3 bg-gray-900/10 hover:bg-gray-900/20 dark:bg-white/15 dark:hover:bg-white/25 border border-gray-900/10 dark:border-white/20 rounded-xl px-5 py-4 transition-all text-gray-900 dark:text-white font-medium">
-                                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" /></svg>
-                                            Download for Windows
-                                        </a>
-                                        <a href="#" className="flex items-center gap-3 bg-gray-900/10 hover:bg-gray-900/20 dark:bg-white/15 dark:hover:bg-white/25 border border-gray-900/10 dark:border-white/20 rounded-xl px-5 py-4 transition-all text-gray-900 dark:text-white font-medium">
-                                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c.947 0 1.856.148 2.71.42L7.172 18.292A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8zm0 16c-.947 0-1.856-.148-2.71-.42l7.538-15.872A7.96 7.96 0 0 1 20 12c0 4.411-3.589 8-8 8z" /></svg>
-                                            Download for Mac
-                                        </a>
-                                    </div>
-                                    <p className="text-gray-500 dark:text-gray-400 text-xs mt-5 leading-relaxed">
-                                        A Zylo3D account is required to activate your software license. Contact our team to get started.
-                                    </p>
-                                </div>
+                            </ul>
+                        </div>
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8 flex flex-col">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Validation</span>
+                            <div className="flex-1 flex items-center justify-center mt-4 rounded-xl border border-dashed border-gray-300 dark:border-white/15 min-h-[140px] text-gray-400 dark:text-gray-500 text-sm text-center p-4">
+                                LOGOS PLACEHOLDER<br />Materials / workflow partners
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* ── INDICATIONS PREVIEW ──────────────────────────────── */}
-            <section className="lg:py-24 py-12">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3">
-                    <div className="flex flex-wrap justify-between pb-16 gap-y-4">
-                        <PageTitle3
-                            badgeText=""
-                            title="12 clinical indications — one integrated platform"
-                            subtitle="From crowns and bridges to surgical guides and dentures — ZyloDent handles every indication your lab needs."
-                            widthClass="w-full xl:w-8/12 lg:w-7/12"
-                            alignment="start"
-                            padding="pb-0"
-                        />
-                        <div className="lg:text-right mt-auto">
-                            <Button href="/indications" label="View all indications" bgColor="bg-[#df7b26]" textColor="text-white" />
+                </div>
+            </section>
+
+            {/* ── INDICATIONS ──────────────────────────────────────── */}
+            <section className="lg:py-24 py-12 bg-gray-50 dark:bg-[#0f0f0f]">
+                <div className={cx}>
+                    <div className="flex flex-wrap justify-between pb-12 gap-y-4 items-end">
+                        <div>
+                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Start with your first indication</h2>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg max-w-xl">Choose a workflow you&apos;ll run weekly—then expand.</p>
                         </div>
+                        <Button href="/indications" label="View all indications" bgColor="bg-[#df7b26]" textColor="text-white" />
                     </div>
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                         {indications.map((ind, i) => (
                             <Link
                                 key={ind.slug}
                                 href={`/indications/${ind.slug}`}
-                                className="group overflow-hidden rounded-xl relative aspect-[4/3] block bg-gray-100"
+                                className="group overflow-hidden rounded-xl relative aspect-[4/3] block bg-gray-100 dark:bg-[#111]"
                                 data-aos="fade-up"
                                 data-aos-delay={i * 80}
                                 data-aos-duration="400"
@@ -353,6 +264,7 @@ export default function HomePage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
                                 <div className="absolute bottom-0 left-0 p-5">
                                     <h3 className="text-white font-semibold text-lg">{ind.name}</h3>
+                                    <p className="text-gray-300 text-sm mt-0.5">{ind.desc}</p>
                                     <span className="text-[#df7b26] text-sm font-medium flex items-center gap-1 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
                                         Learn more <ArrowUpRight size={14} />
                                     </span>
@@ -363,140 +275,90 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-            <section className="feedback-wrap lg:pt-0 pt-0 lg:pb-24 pb-12">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-14 pb-0">
-                    <PageTitle3
-                        badgeText=""
-                        title="Trusted by dental professionals"
-                        subtitle="Hear from labs and clinics already using the Zylo3D system."
-                        widthClass="xl:w-8/12 lg:w-2/3 mx-auto"
-                        alignment="center"
-                        padding="pb-16"
-                    />
-                    <div className="flex lg:flex-nowrap flex-wrap lg:space-x-6 space-x-0 lg:space-y-0 space-y-6 pb-6">
-                        <div className="lg:w-4/12">
-                            <div className="overflow-hidden rounded-xl w-full h-full min-h-[300px] relative">
-                                <Image src="/images/about/dentpro.webp" fill alt="Dental lab" className="object-cover" />
-                            </div>
+            {/* ── ROI ──────────────────────────────────────────────── */}
+            <section className="lg:py-24 py-12">
+                <div className={cx}>
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
+                        <div>
+                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Make in-house output predictable</h2>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                                See what happens when you reduce labor time and remake loops—while bringing turnaround in-house.
+                            </p>
+                            <Button href="/products/zylodent#roi" label="Calculate ROI" bgColor="bg-[#df7b26]" textColor="text-white" icon={<ArrowUpRight size={18} />} />
                         </div>
-                        <div className="lg:w-8/12">
-                            <div className="feedback-div bg-white border border-gray-200 rounded-xl p-4 relative h-full">
-                                <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-cols-1 lg:gap-6 gap-6 h-full relative">
-                                    <div className="lg:col-span-2 w-full h-full static">
-                                        <div className="flex flex-col p-2 h-full static">
-                                            <TestimonialCarousel testimonials={testimonials} />
-                                        </div>
-                                    </div>
-                                    <div className="lg:col-span-1 lg:flex hidden flex-col">
-                                        <div className="mt-auto text-end p-3 pb-0">
-                                            <span className="lg:text-7xl text-5xl text-gray-900 font-medium">4.9</span>
-                                            <div className="flex flex-row gap-1 justify-end">
-                                                <Star fill="#df7b26" strokeWidth={0} size={20} />
-                                                <Star fill="#df7b26" strokeWidth={0} size={20} />
-                                                <Star fill="#df7b26" strokeWidth={0} size={20} />
-                                                <Star fill="#df7b26" strokeWidth={0} size={20} />
-                                                <Star fill="#df7b26" strokeWidth={0} size={20} />
-                                            </div>
-                                            <p className="font-medium text-gray-900 mt-1 mb-0">Dental professionals</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 block">What you&apos;ll see</span>
+                            <ul className="space-y-0">
+                                {["Cases / month", "Lab spend / month", "Staff time per case", "Output: cost per case, payback estimate, time saved"].map((item, i) => (
+                                    <li key={i} className="flex items-center gap-3 text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-white/10 py-3 first:border-0 first:pt-0">
+                                        <CheckCircle size={16} className="text-[#df7b26] flex-shrink-0" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── BLOG ─────────────────────────────────────────────── */}
-            <section className="blog-wrap lg:py-24 py-12 bg-gray-50 dark:bg-[#1e1e1e]">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3">
-                    <div className="flex flex-wrap justify-center text-center pb-16 gap-y-4">
-                        <PageTitle3
-                            badgeText=""
-                            title="Insights from the Zylo3D team"
-                            subtitle="Clinical guides, material science, and workflow tips for dental professionals."
-                            widthClass="w-full xl:w-5/12 lg:w-7/12"
-                            alignment="center"
-                            padding="pb-0"
-                        />
+            {/* ── MARKET INSIGHT ───────────────────────────────────── */}
+            <section className="lg:py-16 py-10 bg-gray-50 dark:bg-[#0f0f0f]">
+                <div className={cx}>
+                    <div className="max-w-2xl">
+                        <h2 className="text-gray-900 dark:text-white font-bold text-2xl lg:text-3xl mb-3">Inputs digitized. Outputs still stuck.</h2>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg">
+                            Scanners are everywhere. Output adoption lags because workflow complexity doesn&apos;t scale. Automation is the unlock.
+                        </p>
                     </div>
-                    <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 sm:grid-cols-1">
-                        {blogPosts.map((post, i) => (
-                            <Link
-                                key={post.id}
-                                href={post.href}
-                                className="group bg-white dark:bg-[#111111] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
+                </div>
+            </section>
+
+            {/* ── GETTING STARTED ──────────────────────────────────── */}
+            <section className="lg:py-24 py-12">
+                <div className={cx}>
+                    <div className="grid lg:grid-cols-4 grid-cols-1 gap-6">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Go live in weeks</h2>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg">Standard steps to first clinical cases.</p>
+                        </div>
+                        {[
+                            { step: "1", title: "Workflow call + ROI", desc: "Align indications, team roles, economics." },
+                            { step: "2", title: "Install + onboarding", desc: "Remote or onsite training for your team." },
+                            { step: "3", title: "First cases (guided)", desc: "Validated workflows + support on early runs." },
+                        ].map((item, i) => (
+                            <div
+                                key={i}
+                                className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8"
                                 data-aos="fade-up"
-                                data-aos-delay={i * 100}
                                 data-aos-duration="400"
+                                data-aos-delay={i * 100}
                             >
-                                <div className="overflow-hidden aspect-[16/9] relative">
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                    />
-                                </div>
-                                <div className="p-5">
-                                    <span className="text-[#df7b26] text-xs font-semibold uppercase tracking-wider">{post.category}</span>
-                                    <h3 className="text-gray-900 dark:text-white font-semibold text-lg mt-2 mb-3 leading-snug group-hover:text-[#df7b26] transition-colors">
-                                        {post.title}
-                                    </h3>
-                                    <span className="text-gray-400 text-sm">{post.date} · Zylo3D Team</span>
-                                </div>
-                            </Link>
+                                <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-2">{item.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
+                            </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* ── CTA BAND ─────────────────────────────────────────── */}
-            <section className="lg:py-24 py-16 bg-[#df7b26]">
-                <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3 text-center">
-                    <h2
-                        className="text-white font-bold 2xl:text-5xl lg:text-4xl text-3xl mb-4"
-                        data-aos="fade-up"
-                        data-aos-duration="400"
-                    >
-                        Ready to bring dental manufacturing in-house?
-                    </h2>
-                    <p
-                        className="text-white/90 text-lg mb-8 max-w-2xl mx-auto"
-                        data-aos="fade-up"
-                        data-aos-duration="400"
-                        data-aos-delay="100"
-                    >
-                        Talk to our team and discover how ZyloDent can transform your dental workflow.
-                    </p>
-                    <div
-                        className="flex flex-col sm:flex-row gap-4 justify-center"
-                        data-aos="fade-up"
-                        data-aos-duration="400"
-                        data-aos-delay="200"
-                    >
-                        <Button
-                            href="/contact"
-                            label="Request a Quote"
-                            bgColor="bg-white"
-                            textColor="text-[#df7b26]"
-                            padding="py-4 px-8"
-                        />
-                        <Button
-                            href="/contact"
-                            label="Schedule a Demo"
-                            bgColor="bg-transparent"
-                            textColor="text-white"
-                            padding="py-4 px-8"
-                            className="border-2 border-white hover:bg-white hover:text-[#df7b26] transition-all"
-                        />
+                    <div className="mt-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                        <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-2">Ongoing support</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Training track · Knowledge base · Service plans · Remote diagnostics</p>
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
+            {/* ── FINAL CTA ────────────────────────────────────────── */}
+            <section className="lg:py-16 py-10 bg-[#df7b26]">
+                <div className={`${cx} flex flex-col sm:flex-row items-center justify-between gap-6`}>
+                    <div>
+                        <h2 className="text-white font-bold text-2xl lg:text-3xl mb-2">See it on your cases</h2>
+                        <p className="text-white/90">Book a demo or run ROI in minutes.</p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Button href="/contact" label="Book a Demo" bgColor="bg-white" textColor="text-[#df7b26]" padding="py-4 px-8" />
+                        <Button href="/products/zylodent#roi" label="Calculate ROI" bgColor="bg-transparent" textColor="text-white" padding="py-4 px-8" className="border-2 border-white hover:bg-white hover:text-[#df7b26] transition-all" />
+                    </div>
+                </div>
+            </section>
+
             <ZyloFooter />
         </>
     );

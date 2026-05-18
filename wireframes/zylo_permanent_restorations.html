@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zylo3D — Permanent Restorations (Indication)</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --muted:#64748b;
+      --text:#0f172a;
+      --sub:#334155;
+      --line:#e2e8f0;
+      --soft:#f8fafc;
+      --btn:#0f172a;
+      --btnHover:#1f2937;
+      --radius:16px;
+      --radius2:24px;
+      --max:1080px;
+      --shadow:none;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);color:var(--text);background:var(--bg);}
+    a{color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px;}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter: blur(10px);border-bottom:1px solid var(--line);}
+    .navRow{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:14px;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+    .logo{width:34px;height:34px;border:1px solid var(--line);border-radius:12px;background:var(--soft);}
+    .navLinks{display:none;gap:18px;color:var(--muted);font-size:14px;}
+    .navLinks a{text-decoration:none}
+    .navLinks a:hover{color:var(--text)}
+    .navBtns{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border-radius:14px;padding:10px 14px;font-weight:700;font-size:13px;cursor:pointer;border:1px solid var(--line);background:#fff;}
+    .btn.primary{background:var(--btn);border-color:var(--btn);color:#fff;}
+    .btn.primary:hover{background:var(--btnHover);border-color:var(--btnHover)}
+    .btn:hover{background:var(--soft)}
+    .section{padding:46px 0;}
+    .borderB{border-bottom:1px solid var(--line);}
+    .borderY{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);}
+    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;padding:7px 10px;font-size:12px;color:var(--muted);font-weight:600;}
+    h1{font-size:44px;line-height:1.05;margin:14px 0 0;letter-spacing:-.03em;}
+    h2{font-size:26px;line-height:1.2;margin:0;letter-spacing:-.02em;}
+    p{margin:12px 0;color:var(--muted);line-height:1.6}
+    .hero{display:grid;gap:22px;}
+    .card{border:1px solid var(--line);border-radius:var(--radius2);background:#fff;padding:18px;}
+    .card.soft{background:var(--soft);border-radius:16px;}
+    .proof{display:grid;gap:12px;}
+    .proofItem{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px;}
+    .proofItem .tick{font-weight:900}
+    .miniTitle{font-size:13px;font-weight:800;color:var(--text)}
+    .small{font-size:12px;color:var(--muted)}
+    .listGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;}
+    .listChip{border:1px solid var(--line);border-radius:var(--radius);background:var(--soft);padding:10px 12px;font-size:13px;color:var(--sub)}
+    .split{display:grid;gap:18px;}
+    .videoWrap{border:1px solid var(--line);border-radius:var(--radius2);overflow:hidden;background:#fff;}
+    .videoWrap iframe{width:100%;height:100%;border:0;}
+    .aspect{aspect-ratio:16/9;background:#000;}
+    .compare{border:1px solid var(--line);border-radius:var(--radius2);background:#fff;padding:18px;}
+    .compareGrid{display:grid;gap:18px;}
+    .blockCol{display:grid;gap:10px;}
+    .blockHdr{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
+    .block{border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;background:#fff;}
+    .block strong{display:block;font-size:13px;}
+    .block span{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+    .block.zylo{background:var(--soft);}
+    .roi{display:grid;gap:18px;}
+    .field{display:grid;gap:6px;}
+    label{font-size:13px;font-weight:800;color:var(--sub)}
+    input{height:42px;border:1px solid var(--line);border-radius:14px;padding:0 12px;font-size:14px;outline:none}
+    input:focus{box-shadow:0 0 0 3px rgba(148,163,184,.35);}
+    .statGrid{display:grid;gap:14px;}
+    .stat{border:1px solid var(--line);border-radius:var(--radius2);background:#fff;padding:18px;}
+    .stat .t{font-size:13px;font-weight:800;color:var(--sub)}
+    .stat .v{margin-top:10px;font-size:30px;font-weight:900;letter-spacing:-.02em}
+    .stat .s{margin-top:6px;font-size:13px;color:var(--muted)}
+    .timeline{display:grid;gap:12px;}
+    .step{border:1px solid var(--line);border-radius:var(--radius2);background:#fff;padding:16px;}
+    .stepTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
+    .badge{border:1px solid var(--line);border-radius:999px;background:var(--soft);padding:4px 9px;font-size:12px;font-weight:800;color:var(--sub)}
+    .step p{margin:8px 0 0}
+    .totalBox{border:1px solid var(--line);border-radius:var(--radius);background:var(--soft);padding:14px;color:var(--muted);font-size:13px}
+    .matGrid{display:grid;gap:14px;}
+    .mat{border:1px solid var(--line);border-radius:var(--radius2);background:#fff;padding:16px;}
+    .matHead{display:flex;justify-content:space-between;gap:10px;align-items:center;}
+    .tag{border:1px solid var(--line);border-radius:999px;background:var(--soft);padding:5px 10px;font-size:12px;font-weight:900;}
+    .mat .record{margin-top:8px;font-size:12px;color:var(--muted)}
+    .matBtns{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;}
+    .btn.sm{padding:9px 12px;border-radius:12px;font-size:12px;}
+    .resGrid{display:grid;gap:14px;}
+    .footerCTA{background:var(--btn);color:#fff;}
+    .footerCTA p{color:rgba(255,255,255,.8)}
+    .footerCTA .btn.primary{background:#fff;border-color:#fff;color:var(--text)}
+    .footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:12px;}
+    @media (min-width: 860px){
+      .navLinks{display:flex;}
+      .hero{grid-template-columns: 7fr 5fr; align-items:start;}
+      .proof{grid-template-columns: repeat(3,minmax(0,1fr));}
+      .split{grid-template-columns: 1fr 1fr; align-items:start;}
+      .compareGrid{grid-template-columns: 1fr 1fr;}
+      .roi{grid-template-columns: 5fr 7fr;}
+      .statGrid{grid-template-columns: repeat(2,minmax(0,1fr));}
+      .matGrid{grid-template-columns: repeat(3,minmax(0,1fr));}
+      .resGrid{grid-template-columns: repeat(2,minmax(0,1fr));}
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <div class="navRow">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>Zylo3D</div>
+      </div>
+
+      <nav class="navLinks">
+        <a href="#reality">Why</a>
+        <a href="#roi">ROI</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#materials">Materials</a>
+        <a href="#resources">Resources</a>
+      </nav>
+
+      <div class="navBtns">
+        <button class="btn" onclick="document.getElementById('ctaSample').scrollIntoView({behavior:'smooth'})">Request a Sample Crown</button>
+        <button class="btn primary" onclick="document.getElementById('ctaDemo').scrollIntoView({behavior:'smooth'})">Book a Demo</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section borderB">
+  <div class="container">
+    <div class="hero">
+      <div>
+        <div class="pill">Indications <span style="color:#cbd5e1;">•</span> Permanent single-unit restorations</div>
+        <h1>Permanent Restorations</h1>
+        <p style="font-size:18px;">
+          Predictable, same-day permanent restorations with an integrated workflow:
+          <b style="color:var(--text)">AI-assisted design</b> +
+          <b style="color:var(--text)">one-click prep</b> +
+          <b style="color:var(--text)">automated print–wash–cure</b>.
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
+          <button class="btn primary" id="ctaSample">Request a Sample Crown</button>
+          <button class="btn" id="ctaDemo">Book a Demo</button>
+        </div>
+
+        <div class="proof" style="margin-top:22px;">
+          <div class="proofItem">
+            <div class="tick">✓</div>
+            <div class="miniTitle" style="margin-top:8px;">Delegation-ready</div>
+            <div class="small" style="margin-top:6px;">Automated workflow designed for assistants.</div>
+          </div>
+          <div class="proofItem">
+            <div class="tick">✓</div>
+            <div class="miniTitle" style="margin-top:8px;">Open + validated</div>
+            <div class="small" style="margin-top:6px;">Restorative materials with IFUs + evidence.</div>
+          </div>
+          <div class="proofItem">
+            <div class="tick">✓</div>
+            <div class="miniTitle" style="margin-top:8px;">Same-visit delivery</div>
+            <div class="small" style="margin-top:6px;">Scan-to-restoration in a clinic-friendly timeline.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="miniTitle">What you can produce</div>
+        <div class="listGrid">
+          <div class="listChip">Single-unit crowns</div>
+          <div class="listChip">Inlays / onlays*</div>
+          <div class="listChip">Veneers*</div>
+          <div class="listChip" style="opacity:.55;">*where indicated by material + IFU</div>
+        </div>
+        <div class="card soft" style="margin-top:14px;">
+          <div class="miniTitle">Quick promise</div>
+          <div class="small" style="margin-top:6px;">
+            Move from scan to seated restoration with a workflow your whole team can follow.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reality">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2>If you already scan digitally, why are restorations still a 5‑day process?</h2>
+        <p>
+          If you own an intraoral scanner but outsource single-unit restorations to a third-party lab,
+          you live in the same loop: <b style="color:var(--text)">~5 days</b> wait,
+          <b style="color:var(--text)">~$150</b> per unit, and occasional remakes that take twice the chair time
+          and reduce patient satisfaction.
+        </p>
+        <p>
+          To bring this in-house, most practices end up managing a fragmented stack:
+          <b style="color:var(--text)">CAD → file prep → printer → wash → cure</b>.
+          Many solutions only cover parts of the chain.
+          Zylo standardizes and automates:
+          <b style="color:var(--text)">AI design, one-click prep, and all-in-one print–wash–cure</b>.
+        </p>
+
+        <div class="compare" style="margin-top:18px;">
+          <div class="compareGrid">
+            <div class="blockCol">
+              <div class="blockHdr">Typical chairside stack (fragmented)</div>
+              <div class="block"><strong>Design (CAD)</strong><span>Separate CAD software</span></div>
+              <div class="block"><strong>File prep</strong><span>Supports / orientation / settings</span></div>
+              <div class="block"><strong>Print</strong><span>Printer</span></div>
+              <div class="block"><strong>Post-process</strong><span>Wash + Cure (often multiple devices)</span></div>
+            </div>
+
+            <div class="blockCol">
+              <div class="blockHdr">Zylo workflow (integrated)</div>
+              <div class="block zylo"><strong>AI Design (ZyloCAD)</strong><span>Auto margins → crown generated</span></div>
+              <div class="block zylo"><strong>One-click prep (ZyloPrep)</strong><span>Supports avoid functional surfaces</span></div>
+              <div class="block zylo"><strong>All‑in‑one (ZyloDent)</strong><span>Print + wash + cure in one device</span></div>
+            </div>
+          </div>
+          <div class="small" style="margin-top:12px;">
+            The gap isn’t the printer. It’s standardizing design, file prep, and post‑processing so the workflow is delegatable.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+            <div>
+              <div class="miniTitle">KOL Review</div>
+              <div style="margin-top:6px;font-size:16px;font-weight:900;letter-spacing:-.02em;">
+                Dr. Rick Ferguson · How great fit it is within 22 minutes
+              </div>
+              <div class="small" style="margin-top:6px;">Short clinical highlight focused on fit.</div>
+            </div>
+            <a class="btn sm" href="https://www.youtube.com/shorts/zP7L8YqgQJU" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </div>
+
+          <div class="videoWrap" style="margin-top:14px;">
+            <div class="aspect">
+              <iframe
+                src="https://www.youtube.com/embed/zP7L8YqgQJU?rel=0"
+                title="Dr. Rick Ferguson · How great fit it is within 22 minutes"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="small" style="margin-top:12px;">
+            Replace this short embed with a longer cut anytime — the layout stays the same.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section borderY" id="roi">
+  <div class="container">
+    <div class="roi">
+      <div>
+        <h2>Does it make economic sense?</h2>
+        <p>Estimate savings based on your monthly restoration volume and lab pricing.</p>
+
+        <div class="card" style="margin-top:16px;">
+          <div class="field">
+            <label for="cases">Restorations per month</label>
+            <input id="cases" type="number" value="30" min="0" />
+          </div>
+
+          <div class="field" style="margin-top:12px;">
+            <label for="labFee">Average lab fee per unit (USD)</label>
+            <input id="labFee" type="number" value="150" min="0" />
+          </div>
+
+          <div class="field" style="margin-top:12px;">
+            <label for="zyloCost">Estimated Zylo cost per unit (USD)</label>
+            <input id="zyloCost" type="number" value="25" min="0" />
+          </div>
+
+          <div class="field" style="margin-top:12px;">
+            <label for="remake">Remake rate (optional %)</label>
+            <input id="remake" type="number" value="5" min="0" max="100" />
+          </div>
+
+          <div class="small" style="margin-top:10px;">
+            Replace Zylo cost/unit with your validated material + consumables estimate.
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+            <button class="btn primary">Request ROI report</button>
+            <button class="btn">Compare workflows</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="statGrid">
+          <div class="stat">
+            <div class="t">Monthly lab spend</div>
+            <div class="v" id="mLab">$4,500</div>
+            <div class="s">Current workflow</div>
+          </div>
+
+          <div class="stat">
+            <div class="t">Monthly in-house cost</div>
+            <div class="v" id="mZylo">$750</div>
+            <div class="s">Estimated</div>
+          </div>
+
+          <div class="stat">
+            <div class="t">Estimated monthly savings</div>
+            <div class="v" id="mSave">$3,375</div>
+            <div class="s">Adjusted for remakes (simple proxy)</div>
+          </div>
+
+          <div class="stat">
+            <div class="t">Estimated annual savings</div>
+            <div class="v" id="aSave">$40,500</div>
+            <div class="s">12-month projection</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="miniTitle">Get a personalized ROI report</div>
+          <p style="margin-top:8px;">Send your monthly restoration volume and lab fees — we’ll return a practice-specific savings estimate.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn primary">Request ROI report</button>
+            <button class="btn">Book a demo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workflow">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2>The Zylo Workflow (Explanation + Diagram + Video)</h2>
+        <p>
+          ZyloCAD generates the restoration design, ZyloPrep prepares the file in one click,
+          and ZyloDent runs a validated print–wash–cure protocol.
+        </p>
+
+        <div class="timeline" style="margin-top:16px;">
+          <div class="step">
+            <div class="stepTop"><div class="miniTitle">AI ZyloCAD</div><div class="badge">~10 min</div></div>
+            <p>Upload upper + lower scans → margin detection → crown generated (no CAD expertise required).</p>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="miniTitle">AI ZyloPrep</div><div class="badge">~3 min</div></div>
+            <p>Detect fitting areas + orient so supports avoid functional surfaces.</p>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="miniTitle">ZyloDent (All‑in‑one)</div><div class="badge">~22 min</div></div>
+            <p>Print + wash + cure in one device with automated gantry transfer.</p>
+          </div>
+          <div class="step">
+            <div class="stepTop"><div class="miniTitle">Finish / Polish</div><div class="badge">~5 min</div></div>
+            <p>Polish + cementation per material IFU.</p>
+          </div>
+          <div class="totalBox">
+            Total workflow time: <b style="color:var(--text)">~35 minutes</b> + polish (~5) ≈ <b style="color:var(--text)">~40 minutes</b>.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+            <div>
+              <div class="miniTitle">Workflow explanation video</div>
+              <div class="small" style="margin-top:6px;">Scan → Design → Prep → Automated print–wash–cure → Finish</div>
+            </div>
+            <a class="btn sm" href="https://www.youtube.com/watch?v=7Fzc0_g1hfs" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </div>
+
+          <div class="videoWrap" style="margin-top:14px;">
+            <div class="aspect">
+              <iframe
+                src="https://www.youtube.com/embed/7Fzc0_g1hfs?rel=0"
+                title="Zylo workflow explanation"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+            <button class="btn primary">Request a demo</button>
+            <button class="btn">Download crown protocol (PDF)</button>
+          </div>
+
+          <div class="small" style="margin-top:10px;">
+            Note: Some resins/IFUs may require specific washing handling (e.g., manual spray) depending on manufacturer.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section borderY" id="materials">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap;">
+      <div>
+        <h2>Open, validated restorative materials</h2>
+        <p>Choose materials by indication and IFU. Each validated material includes supporting documents.</p>
+      </div>
+      <button class="btn">View full material library</button>
+    </div>
+
+    <div class="matGrid" style="margin-top:18px;">
+      <div class="mat"><div class="matHead"><div style="font-weight:900;">PacDent</div><div class="tag">Validated</div></div><div class="record">Clinical record: [add # cases / months]</div><div class="matBtns"><button class="btn sm">Validation doc</button><button class="btn sm">IFU</button><button class="btn sm">More resources →</button></div></div>
+      <div class="mat"><div class="matHead"><div style="font-weight:900;">BEGO</div><div class="tag">Validated</div></div><div class="record">Clinical record: [add # cases / months]</div><div class="matBtns"><button class="btn sm">Study doc</button><button class="btn sm">IFU</button><button class="btn sm">More resources →</button></div></div>
+      <div class="mat"><div class="matHead"><div style="font-weight:900;">Sarameco</div><div class="tag">Validated</div></div><div class="record">Clinical record: [add # cases / months]</div><div class="matBtns"><button class="btn sm">Study doc</button><button class="btn sm">IFU</button><button class="btn sm">More resources →</button></div></div>
+      <div class="mat"><div class="matHead"><div style="font-weight:900;">Senertek</div><div class="tag">Validated</div></div><div class="record">Clinical record: [add # cases / months]</div><div class="matBtns"><button class="btn sm">Study doc</button><button class="btn sm">IFU</button><button class="btn sm">More resources →</button></div></div>
+      <div class="mat"><div class="matHead"><div style="font-weight:900;">Open system mode</div><div class="tag">Configurable</div></div><div class="record">Dial-in resin parameters for additional materials.</div><div class="matBtns"><button class="btn sm">How it works</button><button class="btn sm">Validation steps</button><button class="btn sm">More resources →</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resources">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2>Validation + clinical resources</h2>
+        <p>Protocols, finishing guidance, cementation recommendations, and troubleshooting.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+          <button class="btn primary">Request validation dossier</button>
+          <button class="btn">Visit Learning Center</button>
+        </div>
+      </div>
+
+      <div class="resGrid">
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Step-by-step permanent crown guide (PDF)</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Finishing & polishing guide (by material)</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Cementation recommendations (by IFU)</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Troubleshooting: contacts, occlusion, marginal fit</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Webinar: single-visit permanent restorations</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+        <div class="card"><div class="miniTitle">Resource</div><div style="margin-top:8px;">Case gallery: chairside examples</div><div style="margin-top:14px;"><button class="btn sm">View / Download</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section footerCTA">
+  <div class="container">
+    <div class="split">
+      <div>
+        <h2 style="color:#fff;margin:0;">See it on your own cases</h2>
+        <p style="margin-top:10px;">
+          Request a sample crown, book a demo, and validate fit + finish inside your workflow.
+          <span style="display:block;margin-top:10px;">Optional: Send 3 scans — receive a workflow plan + ROI estimate.</span>
+        </p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;">
+        <button class="btn primary">Request a Sample Crown</button>
+        <button class="btn" style="border-color:rgba(255,255,255,.25);background:transparent;color:#fff;" onclick="window.scrollTo({top:0,behavior:'smooth'})">Book a Demo</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    Mock page for Zylo3D indication: Permanent Restorations. Replace placeholders (X min, costs, clinical record counts, and document links) with validated values.
+  </div>
+</footer>
+
+<script>
+  function $(id){ return document.getElementById(id); }
+  function money(n){
+    return n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:0});
+  }
+  function calc(){
+    const cases = Number($('cases').value || 0);
+    const labFee = Number($('labFee').value || 0);
+    const zyloCost = Number($('zyloCost').value || 0);
+    const remake = Number($('remake').value || 0);
+
+    const monthlyLab = cases * labFee;
+    const monthlyZylo = cases * zyloCost;
+    const monthlySavings = Math.max(0, monthlyLab - monthlyZylo);
+
+    const remakePenalty = (remake/100) * cases * (labFee * 0.5);
+    const adj = Math.max(0, monthlySavings - remakePenalty);
+
+    $('mLab').textContent = money(monthlyLab);
+    $('mZylo').textContent = money(monthlyZylo);
+    $('mSave').textContent = money(adj);
+    $('aSave').textContent = money(adj * 12);
+  }
+  ['cases','labFee','zyloCost','remake'].forEach(id => $(id).addEventListener('input', calc));
+  calc();
+</script>
+
+</body>
+</html>
