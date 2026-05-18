@@ -32,12 +32,7 @@ interface MenuBlockProps {
 }
 
 const menuItems: MenuItem[] = [
-    {
-        title: 'Products',
-        subMenu: [
-            { title: 'ZyloDent', href: '/products/zylodent' },
-        ],
-    },
+    { title: 'ZyloDent', href: '/products/zylodent' },
     { title: 'Indications', href: '/indications' },
     {
         title: 'Learning',
