@@ -154,7 +154,7 @@ export default function IndicationsPage() {
                         Talk to our clinical team about the right Zylo3D setup for your lab.
                     </p>
                     <Link
-                        href="/contact"
+                        href="/contact?action=request-quote"
                         className="inline-flex items-center gap-2 bg-white text-[#df7b26] font-semibold px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
                     >
                         Request a Quote <ArrowUpRight size={18} />

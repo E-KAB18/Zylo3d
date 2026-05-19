@@ -86,7 +86,7 @@ const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerC
                             <DarkToggle />
 
                             {/* Request a Quote Button */}
-                            <Button href='/contact' label='Request a Quote' icon="" className="text-sm register-btn hidden lg:inline-flex" bgColor={` ${btnColor} `} textColor={` ${btnlinkColor} `} />
+                            <Button href='/contact?action=request-quote' label='Request a Quote' icon="" className="text-sm register-btn hidden lg:inline-flex" bgColor={` ${btnColor} `} textColor={` ${btnlinkColor} `} />
 
                             {/* Mobile Menu Button */}
                             <button

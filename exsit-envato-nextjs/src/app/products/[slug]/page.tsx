@@ -159,8 +159,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             </p>
 
                             <div className="flex flex-wrap gap-3 mb-7">
-                                <Button href="/contact" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-6" icon={<ArrowUpRight size={17} />} />
-                                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
+                                <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-6" icon={<ArrowUpRight size={17} />} />
+                                <Link href="/contact?action=request-sample" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                     Request a Sample Part
                                 </Link>
                                 <Link href="#specs" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
@@ -518,7 +518,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <p className="text-gray-500 dark:text-gray-400 text-sm">Contact us for a PDF download and comparison chart.</p>
                         </div>
                         <div className="flex gap-3 flex-wrap">
-                            <Button href="/contact" label="Request a Quote" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-5" icon={<ArrowUpRight size={16} />} />
+                            <Button href="/contact?action=request-quote" label="Request a Quote" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-5" icon={<ArrowUpRight size={16} />} />
                             <Link href="#service" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                 See service plans
                             </Link>
@@ -638,8 +638,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <p className="text-gray-500 dark:text-gray-400">Book a demo or request a sample part — we&#39;ll recommend the best starting indication.</p>
                         </div>
                         <div className="flex gap-3 flex-wrap flex-shrink-0">
-                            <Button href="/contact" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />
-                            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
+                            <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />
+                            <Link href="/contact?action=request-sample" className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                 Request a Sample Part
                             </Link>
                         </div>

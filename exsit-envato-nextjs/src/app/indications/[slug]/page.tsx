@@ -55,7 +55,7 @@ export default async function IndicationPage({ params }: PageProps) {
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3 mb-10">
                 <Link
-                  href="/contact"
+                  href="/contact?action=book-demo"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-[#df7b26] text-white font-bold text-sm hover:bg-[#c96d1e] transition shadow-lg shadow-[#df7b26]/25"
                 >
                   Book a Demo
@@ -343,13 +343,13 @@ export default async function IndicationPage({ params }: PageProps) {
               className="flex flex-col sm:flex-row gap-3 lg:justify-end"
             >
               <Link
-                href="/contact"
+                href="/contact?action=request-sample"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-[#df7b26] font-bold text-sm hover:bg-gray-50 transition shadow-xl"
               >
                 Request a Sample
               </Link>
               <Link
-                href="/contact"
+                href="/contact?action=book-demo"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition"
               >
                 Book a Demo
