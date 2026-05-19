@@ -41,8 +41,10 @@ function ContactForm() {
 
   useEffect(() => {
     setAction(resolveAction());
+    setSubmitted(false);
+    setError("");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,11 +80,17 @@ function ContactForm() {
           </svg>
         </div>
         <h2 className="text-gray-900 dark:text-white text-3xl font-bold mb-3">
-          Message sent!
+          Thanks, {name}!
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 text-lg">
+        <p className="text-gray-500 dark:text-gray-400 text-lg mb-8">
           We&apos;ll be in touch shortly.
         </p>
+        <button
+          onClick={() => { setName(""); setClinic(""); setEmail(""); setPhone(""); setMessage(""); setAction("book-demo"); setSubmitted(false); }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-white/5 transition"
+        >
+          Send another message
+        </button>
       </div>
     );
   }
@@ -159,7 +167,7 @@ function ContactForm() {
           </div>
           <div>
             <label htmlFor="phone" className={labelClass}>
-              Phone
+              Phone <span className="text-[#df7b26]">*</span>
             </label>
             <input
               id="phone"
@@ -168,6 +176,7 @@ function ContactForm() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className={inputClass}
+              required
             />
           </div>
         </div>
