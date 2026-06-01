@@ -24,8 +24,8 @@ interface CtaSectionProps {
 }
 
 export default function CtaSection({
-    title = "Customers who rely on our expertise — honest review.",
-    subtitle = "More balanced you — and works tirelessly to help you get there.",
+    title = "Customers who rely on our expertise, honest review.",
+    subtitle = "More balanced you, and works tirelessly to help you get there.",
     titleColor = "text-gray-900",
     subtitleColor = "text-gray-800",
     firstButtonLabel = "Start trial for 14 days",

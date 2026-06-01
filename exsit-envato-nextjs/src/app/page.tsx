@@ -25,10 +25,9 @@ export default function HomePage() {
             <Header theme="header-light" />
 
             {/* ── HERO ─────────────────────────────────────────────── */}
-            <div className="zylo-hero-bg banner-wrap relative flex items-center overflow-hidden min-h-[92vh] pt-24">
-                {/* Decorative glows */}
+            <div className="zylo-hero-bg banner-wrap relative flex items-center overflow-hidden min-h-[80vh] pt-24">
+                {/* Decorative glow */}
                 <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-[#df7b26]/10 blur-[140px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
                 <div className={`${cx} w-full relative z-10 py-16`}>
                     <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
@@ -37,7 +36,7 @@ export default function HomePage() {
                         <div>
                             {/* Kicker */}
                             <div
-                                className="inline-flex items-center gap-2 mb-6 py-1.5 px-4 rounded-full border border-[#df7b26]/40 bg-[#df7b26]/10 w-fit"
+                                className="inline-flex items-center gap-2 mb-4 py-1.5 px-4 rounded-full border border-[#df7b26]/40 bg-[#df7b26]/10 w-fit"
                                 data-aos="fade-up"
                                 data-aos-duration="300"
                             >
@@ -47,36 +46,25 @@ export default function HomePage() {
 
                             {/* H1 */}
                             <h1
-                                className="text-gray-900 dark:text-white font-extrabold xl:text-[72px] lg:text-6xl md:text-5xl text-4xl mb-6 leading-[1.04] tracking-tight"
+                                className="text-gray-900 dark:text-white font-extrabold xl:text-[40px] lg:text-4xl md:text-3xl text-3xl mb-4 leading-[1.2] tracking-tight"
                                 data-aos="fade-up"
                                 data-aos-duration="400"
                                 data-aos-delay="100"
                             >
-                                Chairside output.<br />
-                                <span style={{ color: "#df7b26" }}>Finally automated.</span>
+                                Zylo helps dentists deliver the care they want to be known for: <span style={{ color: "#df7b26" }}>high-quality, same-visit, and repeatable.</span>
                             </h1>
 
                             <p
-                                className="text-gray-600 dark:text-gray-300 text-xl leading-relaxed max-w-lg mb-8"
+                                className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-lg mb-6"
                                 data-aos="fade-up"
                                 data-aos-duration="400"
                                 data-aos-delay="150"
                             >
-                                Zylo turns digital dentistry into a standard workflow: AI design + one-click prep + automated print–wash–cure—so your team delivers consistent results in-house.
+                                Zylo turns digital dentistry into a standard workflow: AI design + one-click prep + automated print-wash-cure, so your team delivers consistent results in-house.
                             </p>
 
-                            {/* Trust badges */}
-                            <div className="flex flex-wrap gap-3 mb-8" data-aos="fade-up" data-aos-duration="400" data-aos-delay="200">
-                                {["Validated workflows", "Training included", "Support plans"].map(badge => (
-                                    <span key={badge} className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-[#df7b26]/25 bg-[#df7b26]/10 text-gray-700 dark:text-gray-200 font-medium">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-[#df7b26] flex-shrink-0" />
-                                        {badge}
-                                    </span>
-                                ))}
-                            </div>
-
                             {/* CTAs */}
-                            <div className="flex flex-wrap gap-3 mb-10" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
+                            <div className="flex flex-wrap gap-3 mb-6" data-aos="fade-up" data-aos-duration="400" data-aos-delay="250">
                                 <Button
                                     label="Book a Demo"
                                     bgColor="bg-[#df7b26]"
@@ -104,22 +92,25 @@ export default function HomePage() {
                             </div>
                         </div>
 
-                        {/* Right column — hero image */}
+                        {/* Right column - hero video placeholder */}
                         <div
                             className="relative"
                             data-aos="fade-left"
                             data-aos-duration="600"
                             data-aos-delay="200"
                         >
-                            <div className="absolute -inset-4 bg-[#df7b26]/15 rounded-3xl blur-2xl" />
-                            <Image
-                                src="/images/about/dentpro.webp"
-                                alt="ZyloDent 3D Printer"
-                                width={700}
-                                height={560}
-                                className="relative w-full object-cover drop-shadow-2xl"
-                                priority
-                            />
+                            <div className="absolute -inset-4 bg-[#df7b26]/10 rounded-3xl blur-2xl" />
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] aspect-video flex flex-col items-center justify-center gap-5">
+                                <div className="w-14 h-14 rounded-full bg-[#df7b26] flex items-center justify-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <polygon points="5,3 19,12 5,21" />
+                                    </svg>
+                                </div>
+                                <div className="text-center px-8">
+                                    <p className="text-white font-semibold text-sm mb-1">Video coming soon</p>
+                                    <p className="text-gray-500 text-xs leading-relaxed">8-12s loop: design → one-click prep → machine running → finished part</p>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -133,7 +124,7 @@ export default function HomePage() {
                         <div>
                             <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Printing isn&apos;t hard. Workflow is.</h2>
                             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
-                                Clinics don&apos;t fail because of the printer. They fail because the workflow is fragmented—too many tools, too many handoffs, too much dependence on a &quot;champion user.&quot;
+                                Scanners made capture easy. But production still depends on disconnected tools, manual steps, and team members with specialized knowledge.
                             </p>
                             <ul className="space-y-3">
                                 {[
@@ -168,12 +159,12 @@ export default function HomePage() {
             <section className="lg:py-24 py-12 bg-gray-50 dark:bg-[#0f0f0f]">
                 <div className={cx}>
                     <div className="text-center mb-12">
-                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">The Zylo system</h2>
-                        <p className="text-gray-600 dark:text-gray-300 text-lg">One chain. Standard steps. Assistant-friendly.</p>
+                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">One automated workflow from design to delivery.</h2>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg">Fewer steps → deliver same-day → predictable outcomes.</p>
                     </div>
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-4">
                         {[
-                            { icon: <Monitor size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "1", title: "ZyloCAD", desc: "AI-assisted design—or cloud design services when you want it done-for-you.", delay: 0 },
+                            { icon: <Monitor size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "1", title: "ZyloCAD", desc: "AI-assisted design, or cloud design services when you want it done-for-you.", delay: 0 },
                             { icon: <Layers size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "2", title: "ZyloPrep", desc: "One-click file preparation with indication presets.", delay: 150 },
                             { icon: <Printer size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "3", title: "ZyloDent", desc: "Automated print + wash + cure for consistent output.", delay: 300 },
                         ].map((card, i) => (
@@ -194,43 +185,6 @@ export default function HomePage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-center text-gray-500 dark:text-gray-400 text-sm mt-4">Fewer steps → fewer failures → predictable outcomes.</p>
-                </div>
-            </section>
-
-            {/* ── SOCIAL PROOF / TRACTION ──────────────────────────── */}
-            <section className="lg:py-24 py-12">
-                <div className={cx}>
-                    <div className="text-center mb-12">
-                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Built in real practices</h2>
-                    </div>
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-10">
-                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
-                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">KOL Quote</span>
-                            <p className="text-gray-700 dark:text-gray-300 mt-4 text-lg italic leading-relaxed">
-                                &quot;[Insert 1–2 sentences focused on consistency / speed / delegation.]&quot;
-                            </p>
-                            <span className="inline-block mt-4 text-sm px-3 py-1 rounded-full border border-gray-200 dark:border-white/15 text-gray-500 dark:text-gray-400">KOL name</span>
-                        </div>
-                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
-                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Traction</span>
-                            <ul className="mt-4 space-y-3">
-                                {["[Success rate / reliability metric]", "[Cases run / clinics live]", "[Time saved / cost per case delta]"].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                                        <CheckCircle size={16} className="text-[#df7b26] mt-0.5 flex-shrink-0" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8 flex flex-col">
-                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Validation</span>
-                            <div className="flex-1 flex items-center justify-center mt-4 rounded-xl border border-dashed border-gray-300 dark:border-white/15 min-h-[140px] text-gray-400 dark:text-gray-500 text-sm text-center p-4">
-                                LOGOS PLACEHOLDER<br />Materials / workflow partners
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
@@ -240,7 +194,7 @@ export default function HomePage() {
                     <div className="flex flex-wrap justify-between pb-12 gap-y-4 items-end">
                         <div>
                             <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Start with your first indication</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-lg max-w-xl">Choose a workflow you&apos;ll run weekly—then expand.</p>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg max-w-xl">Choose a workflow you&apos;ll run weekly, then expand.</p>
                         </div>
                         <Button href="/indications" label="View all indications" bgColor="bg-[#df7b26]" textColor="text-white" />
                     </div>
@@ -275,6 +229,74 @@ export default function HomePage() {
                 </div>
             </section>
 
+            {/* ── SOCIAL PROOF / TRACTION ──────────────────────────── */}
+            <section className="lg:py-24 py-12">
+                <div className={cx}>
+                    <div className="text-center mb-12">
+                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Built in real practices</h2>
+                        <p className="text-gray-500 dark:text-gray-400">What leading digital dentistry experts are saying about Zylo.</p>
+                    </div>
+
+                    {/* KOL testimonials */}
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-10">
+                        {[
+                            { initials: "JS", name: "Dr. Jay Siddiqui", quote: "It's been very reliable, it's a great system, it's very accurate." },
+                            { initials: "AD", name: "Dr. Adam Davis",    quote: "Zylo is all-in-one, you are able to flow in, and the footprint is so much smaller." },
+                            { initials: "RF", name: "Dr. Rick Ferguson", quote: "On the 3D printed restoration by Zylo, how great this fit is!" },
+                        ].map((kol, i) => (
+                            <div key={i} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8 flex flex-col" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
+                                {/* Avatar placeholder */}
+                                <div className="w-14 h-14 rounded-full bg-[#df7b26]/10 border-2 border-[#df7b26]/30 flex items-center justify-center mb-5">
+                                    <span className="text-[#df7b26] font-bold text-lg">{kol.initials}</span>
+                                </div>
+                                <p className="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed flex-1">&quot;{kol.quote}&quot;</p>
+                                <div className="mt-5 pt-5 border-t border-gray-100 dark:border-white/10">
+                                    <span className="text-gray-900 dark:text-white font-semibold text-sm">{kol.name}</span>
+                                    <div className="mt-3">
+                                        <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-1.5">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-red-500"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.19a8.16 8.16 0 004.77 1.52V7.27a4.85 4.85 0 01-1-.58z"/></svg>
+                                            Video — coming soon
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Metrics + Logos row */}
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Metrics</span>
+                            <div className="grid grid-cols-3 gap-6 mt-6">
+                                {[
+                                    { num: "25 μm",      label: "Accuracy" },
+                                    { num: "98%",        label: "Avg success rate" },
+                                    { num: "$70K",       label: "Avg annual savings" },
+                                ].map((m, i) => (
+                                    <div key={i}>
+                                        <p className="text-[#df7b26] font-bold text-2xl">{m.num}</p>
+                                        <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">{m.label}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Validated FDA-cleared partners</span>
+                            <div className="flex flex-wrap gap-3 mt-6">
+                                {["Bego", "Keystone", "Medit"].map((partner) => (
+                                    <span key={partner} className="px-4 py-2 rounded-lg border border-gray-200 dark:border-white/15 text-gray-700 dark:text-gray-300 font-semibold text-sm bg-gray-50 dark:bg-white/5">
+                                        {partner}
+                                    </span>
+                                ))}
+                                <span className="px-4 py-2 rounded-lg border border-[#df7b26]/40 text-[#df7b26] font-semibold text-sm bg-[#df7b26]/5">
+                                    Open System
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ── ROI ──────────────────────────────────────────────── */}
             <section className="lg:py-24 py-12">
                 <div className={cx}>
@@ -282,7 +304,7 @@ export default function HomePage() {
                         <div>
                             <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Make in-house output predictable</h2>
                             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
-                                See what happens when you reduce labor time and remake loops—while bringing turnaround in-house.
+                                See what happens when you reduce labor time and remake loops, while bringing turnaround in-house.
                             </p>
                             <Button href="/products/zylodent#roi" label="Calculate ROI" bgColor="bg-[#df7b26]" textColor="text-white" icon={<ArrowUpRight size={18} />} />
                         </div>
@@ -314,33 +336,33 @@ export default function HomePage() {
             </section>
 
             {/* ── GETTING STARTED ──────────────────────────────────── */}
-            <section className="lg:py-24 py-12">
+            <section className="lg:py-24 py-12 bg-gray-50 dark:bg-[#0f0f0f]">
                 <div className={cx}>
-                    <div className="grid lg:grid-cols-4 grid-cols-1 gap-6">
-                        <div className="lg:col-span-1">
-                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-3">Go live in weeks</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-lg">Standard steps to first clinical cases.</p>
+                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
+                        {/* Left */}
+                        <div data-aos="fade-up" data-aos-duration="400">
+                            <span className="text-xs font-semibold text-[#df7b26] uppercase tracking-widest mb-4 block">Our plan for your success</span>
+                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-5">We partner with your team to get the workflow off the ground and keep it working consistently.</h2>
+                            <p className="text-gray-600 dark:text-gray-300 text-lg">Zylo helps dental teams turn digital scans into high-quality appliances in the same visit, so patients receive care sooner, teams work with confidence, and dentists bring their vision for modern dentistry to life.</p>
                         </div>
-                        {[
-                            { step: "1", title: "Workflow call + ROI", desc: "Align indications, team roles, economics." },
-                            { step: "2", title: "Install + onboarding", desc: "Remote or onsite training for your team." },
-                            { step: "3", title: "First cases (guided)", desc: "Validated workflows + support on early runs." },
-                        ].map((item, i) => (
-                            <div
-                                key={i}
-                                className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8"
-                                data-aos="fade-up"
-                                data-aos-duration="400"
-                                data-aos-delay={i * 100}
-                            >
-                                <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-2">{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="mt-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
-                        <h3 className="text-gray-900 dark:text-white font-semibold text-xl mb-2">Ongoing support</h3>
-                        <p className="text-gray-600 dark:text-gray-300">Training track · Knowledge base · Service plans · Remote diagnostics</p>
+                        {/* Right - steps list */}
+                        <div className="bg-white dark:bg-[#111111] rounded-2xl border border-gray-200 dark:border-white/10 divide-y divide-gray-100 dark:divide-white/10 overflow-hidden" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                            {[
+                                { step: "1", title: "See it",          desc: "A clear workflow demo from scan to finished appliance." },
+                                { step: "2", title: "Train your team", desc: "Virtual or on-site training built around real practice roles. On Design, 3D printing, finishing." },
+                                { step: "3", title: "Launch with us",  desc: "Live guidance through your first 10 cases." },
+                                { step: "4", title: "Stay supported",  desc: "Support response within 12 hours." },
+                                { step: "5", title: "Protect uptime",  desc: "Virtual support and hardware hot-swap options when needed." },
+                            ].map((item, i) => (
+                                <div key={i} className="flex gap-4 px-6 py-5">
+                                    <span className="w-7 h-7 rounded-full bg-[#df7b26]/10 text-[#df7b26] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">{item.step}</span>
+                                    <div>
+                                        <h3 className="text-gray-900 dark:text-white font-semibold text-sm mb-0.5">{item.title}</h3>
+                                        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

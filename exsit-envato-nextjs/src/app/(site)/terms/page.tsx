@@ -1,4 +1,4 @@
-// app/terms/page.tsx
+﻿// app/terms/page.tsx
 import Link from "next/link";
 import PageTitle from "@/components/ui/PageTitle";
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
                             checklist will ensure that your content covers multiple angles,
                             making it richer and more inclusive. This approach prevents your
                             content from feeling one-dimensional or narrowly
-                            focused—allowing it to resonate with a broader and more diverse
+                            focused, allowing it to resonate with a broader and more diverse
                             audience.
                         </p>
 

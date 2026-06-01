@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -198,7 +198,7 @@ export default function HomePage() {
                                     <CounterSection target={4.5} layout="simple" suffix="m" textcolor="text-gray-900" duration={1000} />
                                 </div>
                                 <div className="col-span-8 lg:col-span-8 xl:col-span-6">
-                                    <p className="text-gray-700 mb-3 text-lg font-medium">Individuals who believe — in our shared vision for success.</p>
+                                    <p className="text-gray-700 mb-3 text-lg font-medium">Individuals who believe, in our shared vision for success.</p>
                                     <Button href="/about" label="Ream more" bgColor="transparent" padding="px-0 py-0" textColor="text-gray-900" />
                                 </div>
                             </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
                                     <CounterSection target={2.8} layout="simple" suffix="x" textcolor="text-gray-900" duration={1000} />
                                 </div>
                                 <div className="col-span-8 lg:col-span-8 xl:col-span-6">
-                                    <p className="text-gray-700 mb-3 text-lg font-medium">Customers who rely — on our honest recommendations.</p>
+                                    <p className="text-gray-700 mb-3 text-lg font-medium">Customers who rely, on our honest recommendations.</p>
                                     <Button href="/about" label="Ream more" bgColor="transparent" padding="px-0 py-0" textColor="text-gray-900" />
                                 </div>
                             </div>
@@ -222,7 +222,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Discover what customers expect and go beyond to amaze them"
-                        subtitle="More balanced you — and works tirelessly to help you get there."
+                        subtitle="More balanced you, and works tirelessly to help you get there."
                         widthClass="w-full xl:w-2/3 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"

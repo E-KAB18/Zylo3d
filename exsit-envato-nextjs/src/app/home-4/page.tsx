@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -80,8 +80,8 @@ export default function HomePage() {
                 <div className="max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-14">
                     <PageTitle3
                         badgeText=""
-                        title="Collaborate scale your — projects switching between tools."
-                        subtitle="A healthier you — and works tirelessly to help you achieve it."
+                        title="Collaborate scale your, projects switching between tools."
+                        subtitle="A healthier you, and works tirelessly to help you achieve it."
                         widthClass="xl:w-9/12 lg:w-7/12 mx-auto"
                         alignment="center"
                         padding="pb-16"
@@ -211,7 +211,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Our awesome services to give you success"
-                        subtitle="A healthier you — and works tirelessly to help you achieve it."
+                        subtitle="A healthier you, and works tirelessly to help you achieve it."
                         widthClass="xl:w-7/12 lg:w-2/3 mx-auto text-white"
                         alignment="center"
                         padding="pb-16"
@@ -235,13 +235,13 @@ export default function HomePage() {
                         <FeatureCard
                             image="/images/feature-2.svg"
                             title="Community who have faith in our ongoing efforts."
-                            description="This approach prevents your content from feeling one-dimensional focused—allowing inclusive."
+                            description="This approach prevents your content from feeling one-dimensional focused, allowing inclusive."
                             icon={<Command size={26} strokeWidth="1.5" className="text-gray-900" />}
                         />
                         <FeatureCard
                             image="/images/feature-2.svg"
                             title="Who confide in our leadership and guidance."
-                            description="This approach prevents your content from feeling one-dimensional focused—allowing inclusive."
+                            description="This approach prevents your content from feeling one-dimensional focused, allowing inclusive."
                             icon={<Box size={26} strokeWidth="1.5" className="text-gray-900" />}
                         />
 

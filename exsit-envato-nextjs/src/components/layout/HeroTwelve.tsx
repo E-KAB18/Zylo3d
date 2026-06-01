@@ -39,7 +39,7 @@ const HeroTwelve: React.FC = () => {
                             data-aos="fade-up"
                             data-aos-duration="500"
                         >
-                            Quizzes are working for them — and they can for you too.
+                            Quizzes are working for them, and they can for you too.
                         </p>
 
                         {/* Buttons */}

@@ -36,7 +36,7 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({ layout = "full" }) => {
                             data-aos="fade-up"
                             data-aos-duration="200"
                         >
-                            Customers who rely on our expertise — honest review.
+                            Customers who rely on our expertise, honest review.
                         </h2>
                         <p
                             className="text-white/80 text-lg font-normal max-w-xl lg:px-4 px-0"

@@ -1,4 +1,4 @@
-// app/terms/page.tsx
+﻿// app/terms/page.tsx
 import Link from "next/link";
 import PageTitle from "@/components/ui/PageTitle";
 
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
                             <li><strong>Usage Data:</strong> IP address, browser type, device information, and pages visited</li>
                             <li><strong>Cookies:</strong> We may use cookies to enhance your experience on our site</li>
                         </ul>
-                        <p className="mb-8 text-gray-800 font-medium text-[17px] leading-7">Fintech startups are rising to meet these expectations by offering tools that go beyond traditional banking. Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused—allowing it to resonate with a broader and more diverse audience.</p>
+                        <p className="mb-8 text-gray-800 font-medium text-[17px] leading-7">Fintech startups are rising to meet these expectations by offering tools that go beyond traditional banking. Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused, allowing it to resonate with a broader and more diverse audience.</p>
                         
                         <h2 className="text-2xl md:text-3xl text-gray-900 font-semibold">2. How We Use Your Information</h2>
                         <ul className="mb-8 list-disc py-6 pl-5 mb-3 text-gray-800 font-medium text-[17px] leading-7">

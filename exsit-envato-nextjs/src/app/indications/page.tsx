@@ -8,7 +8,7 @@ const indications = [
     {
         slug: "digital-dentures",
         name: "Digital Dentures",
-        description: "Deliver predictable removable prosthetics with a delegatable workflow — AI-assisted design, one-click file prep, and automated print–wash–cure.",
+        description: "Deliver predictable removable prosthetics with a delegatable workflow: AI-assisted design, one-click file prep, and automated print–wash–cure.",
         image: "/images/indications/denture_base_large.png",
         material: "Denture Resin",
         products: ["ZyloDent"],
@@ -16,7 +16,7 @@ const indications = [
     {
         slug: "waxups-implant-provisionals",
         name: "Waxups & Implant Provisionals",
-        description: "Trial smiles and implant temporaries that help patients say yes — and give you a clear path to the final restoration.",
+        description: "Trial smiles and implant temporaries that help patients say yes, giving you a clear path to the final restoration.",
         image: "/images/indications/model_large.png",
         material: "Temporary Resin",
         products: ["ZyloDent"],
@@ -24,7 +24,7 @@ const indications = [
     {
         slug: "surgical-guides",
         name: "Surgical Guides",
-        description: "Implant surgical guides with verified accuracy for predictable, repeatable placement — in-house and on demand.",
+        description: "Implant surgical guides with verified accuracy for predictable, repeatable placement, in-house and on demand.",
         image: "/images/indications/surgical_guide_large.png",
         material: "Guide Resin",
         products: ["ZyloDent"],
@@ -32,7 +32,7 @@ const indications = [
     {
         slug: "sports-guards",
         name: "Sports Guards",
-        description: "Custom-fit protective mouthguards with team colors and logos — a high-margin add-on your team can deliver same visit.",
+        description: "Custom-fit protective mouthguards with team colors and logos, a high-margin add-on your team can deliver same visit.",
         image: "/images/indications/sports_guard_large.png",
         material: "Splint Resin",
         products: ["ZyloDent"],
@@ -48,7 +48,7 @@ const indications = [
     {
         slug: "pediatric-crown",
         name: "Pediatric Crown",
-        description: "Scan-to-crown in minutes — no crown drawer chaos, no lab wait, no failed seating appointments.",
+        description: "Scan-to-crown in minutes: no crown drawer chaos, no lab wait, no failed seating appointments.",
         image: "/images/indications/crown_large.png",
         material: "Restorative Resin",
         products: ["ZyloDent"],
@@ -56,7 +56,7 @@ const indications = [
     {
         slug: "occlusal-splints",
         name: "Occlusal Splints",
-        description: "From scan to splint in ~60 minutes — a delegatable, high-margin add-on with no lab dependency.",
+        description: "From scan to splint in ~60 minutes: a delegatable, high-margin add-on with no lab dependency.",
         image: "/images/indications/night_guard_large.png",
         material: "Splint Resin",
         products: ["ZyloDent"],
@@ -84,7 +84,7 @@ export default function IndicationsPage() {
                         data-aos-duration="400"
                         data-aos-delay="100"
                     >
-                        7 validated indications — all supported by the Zylo3D platform. From digital dentures to full-arch All-on-X provisionals.
+                        7 validated indications, all supported by the Zylo3D platform. From digital dentures to full-arch All-on-X provisionals.
                     </p>
                 </div>
             </section>

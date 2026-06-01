@@ -277,7 +277,7 @@ export default function Footer({ layout = "default", foretextColor = "text-white
                                 </Link>
                             </div>
                             <p className={`${layout === "modern" ? "text-gray-800" : "text-gray-400"} mt-5`}>
-                                When you join our journey, you are choosing a partner who believes in a healthier, more balanced you — and works tirelessly to help you get there.
+                                When you join our journey, you are choosing a partner who believes in a healthier, more balanced you, and works tirelessly to help you get there.
                             </p>
                             <div className="flex items-center gap-3">
                                 <ul className="flex gap-2 mt-5">

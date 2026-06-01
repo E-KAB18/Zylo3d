@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 
 import Header from '@/components/layout/Header';
@@ -36,7 +36,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Trusted by 150,000+ content creators agencies"
-                        subtitle="Quizzes are working for them — and they can for you too."
+                        subtitle="Quizzes are working for them, and they can for you too."
                         widthClass="w-full xl:w-2/3 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"

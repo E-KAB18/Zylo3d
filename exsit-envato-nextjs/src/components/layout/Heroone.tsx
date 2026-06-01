@@ -23,7 +23,7 @@ export default function HeroOne() {
 
                             {/* Heading */}
                             <h1 className="text-gray-900 font-semibold xl:text-[80px] lg:text-6xl text-5xl mt-2 mb-3 tracking-tighter aos-init aos-animate" data-aos="fade-up" data-aos-duration="400"> Empowering <span className="text-blue-600">Superior</span>  results  by thinking </h1>
-                            <p className="font-medium text-gray-900 max-w-xl lg:pr-10 text-lg aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you — and works tirelessly to help you get there.</p>
+                            <p className="font-medium text-gray-900 max-w-xl lg:pr-10 text-lg aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you, and works tirelessly to help you get there.</p>
 
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-8 pb-3">
@@ -99,7 +99,7 @@ export default function HeroOne() {
                 <PageTitle3
                     badgeText=""
                     title="Trusted by 150,000+ content creators agencies"
-                    subtitle="Quizzes are working for them — and they can for you too."
+                    subtitle="Quizzes are working for them, and they can for you too."
                     widthClass="w-full xl:w-2/3 lg:w-2/3 mx-auto"
                     alignment="center"
                     padding="pb-16"

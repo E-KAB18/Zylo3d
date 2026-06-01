@@ -4,9 +4,9 @@ import Link from "next/link";
 import { ArrowUpRight } from "react-feather";
 
 const values = [
-    { title: "Fully Integrated", desc: "Hardware, software, and materials validated together — not sold separately and hoped to work." },
+    { title: "Fully Integrated", desc: "Hardware, software, and materials validated together, not sold separately and hoped to work." },
     { title: "Clinically Validated", desc: "Every workflow tested against real clinical requirements. Every material certified for patient use." },
-    { title: "Built to Scale", desc: "From a single-chair practice to a full-service production lab — the platform grows with you." },
+    { title: "Built to Scale", desc: "From a single-chair practice to a full-service production lab: the platform grows with you." },
     { title: "Unmatched Support", desc: "Onboarding, training, and ongoing clinical guidance from a team that knows dental." },
 ];
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
                             The result? Inconsistency, rework, and wasted time.
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 text-xl leading-relaxed mt-6">
-                            We built a platform where every component — from the hardware to the software to the materials — is designed, tested, and validated as one complete system.
+                            We built a platform where every component (from the hardware to the software to the materials) is designed, tested, and validated as one complete system.
                         </p>
                     </div>
 

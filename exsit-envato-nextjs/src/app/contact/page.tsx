@@ -237,7 +237,7 @@ export default function ContactPage() {
             data-aos-duration="400"
             data-aos-delay="100"
           >
-            Request a quote, book a demo, or ask about a sample part — our team is ready to help.
+            Request a quote, book a demo, or ask about a sample part: our team is ready to help.
           </p>
         </div>
       </section>

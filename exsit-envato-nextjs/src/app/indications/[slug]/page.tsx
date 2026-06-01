@@ -116,7 +116,7 @@ export default async function IndicationPage({ params }: PageProps) {
                   The Zylo promise
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Move from scan to finished {indication.name.toLowerCase()} with a workflow your whole team can follow—no printing expert required.
+                  Move from scan to finished {indication.name.toLowerCase()} with a workflow your whole team can follow, no printing expert required.
                 </p>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default async function IndicationPage({ params }: PageProps) {
               Workflow
             </span>
             <h2 className="text-3xl font-black tracking-tight text-gray-900 dark:text-white">
-              How it works — step by step
+              How it works: step by step
             </h2>
             <p className="mt-3 text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               A delegation-first workflow: AI design, one-click prep, then automated print–wash–cure.
@@ -247,7 +247,7 @@ export default async function IndicationPage({ params }: PageProps) {
             </h2>
             <p className="mt-3 text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Estimate monthly and annual savings based on your volume and lab pricing.
-              Use your real numbers—outputs update instantly.
+              Use your real numbers: outputs update instantly.
             </p>
           </div>
 

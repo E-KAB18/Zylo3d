@@ -24,10 +24,10 @@ export default function Herothree() {
                                 </div>
                             </div>
                             <h1 className="text-white text-center font-semibold 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl mt-2 mb-3 py-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">
-                                Enterprises and Startup Build Powerful —
+                                Enterprises and Startup Build Powerful
                                 <span className="bg-[linear-gradient(to_right,#40dfff,#2af294)] bg-clip-text text-transparent">Digital Solutions</span>
                             </h1>
-                            <p className="font-normal text-white/90 text-lg xl:w-9/12 mx-auto text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier. When you join our journey. Quizzes are working for them — and they can for you too.</p>
+                            <p className="font-normal text-white/90 text-lg xl:w-9/12 mx-auto text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier. When you join our journey. Quizzes are working for them, and they can for you too.</p>
                             
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-8 pb-3 justify-center">
                                 <Button href="/pricing" label="Start trial for 14 days" bgColor="bg-cyan-600" textColor="text-white"   padding="py-4 px-6" />

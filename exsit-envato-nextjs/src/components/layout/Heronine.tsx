@@ -27,7 +27,7 @@ const HeroNine: React.FC = () => {
 
                             {/* Heading */}
                             <h1 className="text-blue-900 dark:text-blue-400 text-center font-normal 2xl:text-7xl lg:text-6xl md:text-5xl text-4xl mt-2 mb-1 py-3">
-                                Accelerate workflow — draft contracts 10x faster grow
+                                Accelerate workflow: draft contracts 10x faster grow
                             </h1>
 
                             {/* Description */}

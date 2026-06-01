@@ -27,7 +27,7 @@ export default function Herotwo() {
                                 </div>
                             </div>
                             <h1 className="text-white font-medium 2xl:text-[80px] xl:text-[65px] text-5xl mt-2 mb-3 tracking-tighter py-3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="400">Effortlessly Growth Organize <span className="bg-[linear-gradient(to_bottom,#fd7e14,#fd9843)] rounded-lg py-0 px-4 inline-block ">Product</span> Management</h1>
-                            <p className="font-medium text-white/90 max-w-xl lg:pr-10 text-lg aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you — and works tirelessly to help you get there.</p>
+                            <p className="font-medium text-white/90 max-w-xl lg:pr-10 text-lg aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you, and works tirelessly to help you get there.</p>
                             {/* cta btn */}
                             <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-8 pb-3">
                                 <Button href="/pricing" label="Start trial for 14 days" bgColor="bg-orange-500" textColor="text-white" padding="py-4 px-6" />

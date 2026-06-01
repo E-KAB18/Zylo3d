@@ -15,15 +15,15 @@ export async function POST(req: NextRequest) {
     from: "Zylo3D Contact <onboarding@resend.dev>",
     to: [process.env.CONTACT_EMAIL!],
     replyTo: email,
-    subject: `[Zylo3D] ${action} — from ${name}`,
+    subject: `[Zylo3D] ${action} from ${name}`,
     html: `
       <h2>New contact form submission</h2>
       <table style="border-collapse:collapse;width:100%;max-width:600px">
         <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Action</td><td style="padding:8px;border:1px solid #eee">${action}</td></tr>
         <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Name</td><td style="padding:8px;border:1px solid #eee">${name}</td></tr>
-        <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Clinic</td><td style="padding:8px;border:1px solid #eee">${clinic || "—"}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Clinic</td><td style="padding:8px;border:1px solid #eee">${clinic || "N/A"}</td></tr>
         <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Email</td><td style="padding:8px;border:1px solid #eee">${email}</td></tr>
-        <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Phone</td><td style="padding:8px;border:1px solid #eee">${phone || "—"}</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Phone</td><td style="padding:8px;border:1px solid #eee">${phone || "N/A"}</td></tr>
         <tr><td style="padding:8px;border:1px solid #eee;font-weight:bold">Message</td><td style="padding:8px;border:1px solid #eee">${message}</td></tr>
       </table>
     `,

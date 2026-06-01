@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -55,25 +55,25 @@ export default function HomePage() {
                         <FeatureCard
                             icon={<TrendingUp className="text-white w-7 h-7" />}
                             title="Digital Marketing"
-                            description=" Its flexibility allows you to adapt it for any business need — from fintech and analytics tools to CRM platforms and admin."
+                            description=" Its flexibility allows you to adapt it for any business need, from fintech and analytics tools to CRM platforms and admin."
                             link="/about"
                         />
                         <FeatureCard
                             icon={<Package className="text-white w-7 h-7" />}
                             title="Marketing Strategy"
-                            description=" Its flexibility allows you to adapt it for any business need — from fintech and analytics tools to CRM platforms and admin."
+                            description=" Its flexibility allows you to adapt it for any business need, from fintech and analytics tools to CRM platforms and admin."
                             link="/about"
                         />
                         <FeatureCard
                             icon={<Layers className="text-white w-7 h-7" />}
                             title="Made for Developer"
-                            description=" Its flexibility allows you to adapt it for any business need — from fintech and analytics tools to CRM platforms and admin."
+                            description=" Its flexibility allows you to adapt it for any business need, from fintech and analytics tools to CRM platforms and admin."
                             link="/about"
                         />
                         <FeatureCard
                             icon={<Filter className="text-white w-7 h-7" />}
                             title="24x7 Customer Supports"
-                            description=" Its flexibility allows you to adapt it for any business need — from fintech and analytics tools to CRM platforms and admin."
+                            description=" Its flexibility allows you to adapt it for any business need, from fintech and analytics tools to CRM platforms and admin."
                             link="/about"
                         />
                     </div>
@@ -142,7 +142,7 @@ export default function HomePage() {
                         <PageTitle3
                             badgeText=""
                             title="Built to scale with flexible pricing with your need"
-                            subtitle="A healthier you — and works tirelessly to help you achieve it."
+                            subtitle="A healthier you, and works tirelessly to help you achieve it."
                             widthClass="xl:w-6/12 lg:w-2/3 mx-auto"
                             alignment="center"
                             padding="pb-16"
@@ -206,7 +206,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Transforming into customer expectations and deliver"
-                        subtitle="More balanced you — and works tirelessly to help you get there."
+                        subtitle="More balanced you, and works tirelessly to help you get there."
                         widthClass="xl:w-7/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-10"
@@ -221,7 +221,7 @@ export default function HomePage() {
                         <PageTitle3
                             badgeText=""
                             title="Understand expectations, then delight customers completely"
-                            subtitle="A healthier you — and works tirelessly to help you achieve it."
+                            subtitle="A healthier you, and works tirelessly to help you achieve it."
                             widthClass="xl:w-7/12 lg:w-2/3 mx-auto text-white"
                             alignment="center"
                             padding="pb-16"

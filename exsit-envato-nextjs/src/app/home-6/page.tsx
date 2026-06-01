@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -23,12 +23,12 @@ const faqData2 = [
     {
         question: "Q2. How much does logo design service cost?",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Q3. How long will it take to complete my project?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Q4. What is included in a round of revisions?",
@@ -208,7 +208,7 @@ export default function HomePage() {
                         badgeText="Our core feature"
                         icon={<Command size={18} />}
                         title="Explore customer expectations to leave them delighted"
-                        subtitle="More balanced you — and works tirelessly to help you get there"
+                        subtitle="More balanced you, and works tirelessly to help you get there"
                         widthClass="xl:w-7/12 lg:w-2/3 mx-auto w-full"
                         alignment="center"
                         padding="lg:pb-24 pb-10"
@@ -253,7 +253,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText="Frequently Asked Question"
                         title="Got a question on your mind? here some answers"
-                        subtitle="Its flexibility allows you to adapt it for any business need — from fintech and analytics tools to CRM platforms and admin dashboards."
+                        subtitle="Its flexibility allows you to adapt it for any business need, from fintech and analytics tools to CRM platforms and admin dashboards."
                         widthClass="xl:w-6/12 lg:w-2/3 mx-auto w-full"
                         alignment="center"
                         padding="pb-16"

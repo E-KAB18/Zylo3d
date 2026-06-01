@@ -1,4 +1,4 @@
-export interface WorkflowStep {
+﻿export interface WorkflowStep {
   title: string;
   duration: string;
   description: string;
@@ -45,7 +45,7 @@ export const indicationsData: IndicationData[] = [
     name: "Diagnostic Model",
     tagline: "High-accuracy anatomical models for diagnosis and treatment planning.",
     description:
-      "Produce precise diagnostic models and aesthetic wax-up try-ins with an integrated digital workflow: AI-assisted design + one-click file prep + automated print–wash–cure. Turn treatment plans into something patients can see and approve—same visit.",
+      "Produce precise diagnostic models and aesthetic wax-up try-ins with an integrated digital workflow: AI-assisted design + one-click file prep + automated print–wash–cure. Turn treatment plans into something patients can see and approve, same visit.",
     proof: [
       {
         title: "Faster case acceptance",
@@ -53,7 +53,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Delegation-ready",
-        description: "Standard workflow your entire team can run consistently—no printing expert required.",
+        description: "Standard workflow your entire team can run consistently, no printing expert required.",
       },
       {
         title: "Same-visit delivery",
@@ -89,7 +89,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~45–50 minutes",
     whySection: {
       heading: "If you already plan digitally, why are models still a lab order?",
-      body: "Sending models to a lab adds days and costs per unit—slowing case acceptance and consuming chair time. Bringing model and wax-up production in-house with Zylo compresses the chain: ZyloCAD handles AI-assisted design, ZyloPrep automates file prep, and ZyloDent runs print–wash–cure in a single cabinet-ready device your assistant can operate.",
+      body: "Sending models to a lab adds days and costs per unit, slowing case acceptance and consuming chair time. Bringing model and wax-up production in-house with Zylo compresses the chain: ZyloCAD handles AI-assisted design, ZyloPrep automates file prep, and ZyloDent runs print–wash–cure in a single cabinet-ready device your assistant can operate.",
     },
     ctaLabel: "Request a Sample Model",
     materials: [
@@ -131,7 +131,7 @@ export const indicationsData: IndicationData[] = [
     proof: [
       {
         title: "Delegation-ready",
-        description: "Automated workflow designed for assistants—no CAD expertise required.",
+        description: "Automated workflow designed for assistants, no CAD expertise required.",
       },
       {
         title: "Open + validated",
@@ -170,7 +170,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~40 minutes",
     whySection: {
       heading: "If you already scan digitally, why are restorations still a 5-day process?",
-      body: "If you own an intraoral scanner but outsource single-unit restorations to a third-party lab, you live in the same loop: ~5 days wait, ~$150 per unit, and occasional remakes that take twice the chair time and reduce patient satisfaction. Zylo standardizes and automates the entire chain—AI design, one-click prep, and all-in-one print–wash–cure—so the workflow is delegatable from day one.",
+      body: "If you own an intraoral scanner but outsource single-unit restorations to a third-party lab, you live in the same loop: ~5 days wait, ~$150 per unit, and occasional remakes that take twice the chair time and reduce patient satisfaction. Zylo standardizes and automates the entire chain: AI design, one-click prep, and all-in-one print–wash–cure, so the workflow is delegatable from day one.",
     },
     ctaLabel: "Request a Sample Crown",
     materials: [
@@ -225,7 +225,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Scalable workflow",
-        description: "From single-pontic to full-arch frameworks—your team can run it consistently.",
+        description: "From single-pontic to full-arch frameworks, your team can run it consistently.",
       },
     ],
     workflowSteps: [
@@ -256,7 +256,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~55–65 minutes",
     whySection: {
       heading: "If you scan for single units, why outsource multi-unit bridges?",
-      body: "Bridge cases sent to an external lab mean 5–10 business days of wait, per-unit lab fees stacked across the span, and remake loops when margins or contacts need adjustment. Bringing bridge production in-house with Zylo's integrated stack—ZyloCAD for multi-unit design, ZyloPrep for file automation, and ZyloDent for print–wash–cure—removes the bottleneck without requiring a separate CAD expert on staff.",
+      body: "Bridge cases sent to an external lab mean 5–10 business days of wait, per-unit lab fees stacked across the span, and remake loops when margins or contacts need adjustment. Bringing bridge production in-house with Zylo's integrated stack (ZyloCAD for multi-unit design, ZyloPrep for file automation, and ZyloDent for print–wash–cure) removes the bottleneck without requiring a separate CAD expert on staff.",
     },
     ctaLabel: "Request a Sample Bridge",
     materials: [
@@ -294,7 +294,7 @@ export const indicationsData: IndicationData[] = [
     name: "Inlay",
     tagline: "Conservative inlay restorations with sub-100 µm marginal precision.",
     description:
-      "Produce accurate inlay restorations entirely in-house: AI-assisted cavity design + one-click file prep + automated print–wash–cure. Predictable marginal fit without the lab wait—delivered the same day.",
+      "Produce accurate inlay restorations entirely in-house: AI-assisted cavity design + one-click file prep + automated print–wash–cure. Predictable marginal fit without the lab wait, delivered the same day.",
     proof: [
       {
         title: "Conservative preparation",
@@ -336,8 +336,8 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~40–45 minutes",
     whySection: {
-      heading: "Inlays are one of the most delegatable restorations—so why are they still a lab job?",
-      body: "The inlay preparation is done chairside, yet most practices still outsource the restoration to a lab—adding days of temporization, multiple appointments, and per-unit costs. Zylo closes that gap: ZyloCAD generates the inlay from your scan, ZyloPrep handles file prep in one click, and ZyloDent runs the automated print–wash–cure cycle so your assistant can hand the finished restoration to the dentist in the same appointment.",
+      heading: "Inlays are one of the most delegatable restorations, so why are they still a lab job?",
+      body: "The inlay preparation is done chairside, yet most practices still outsource the restoration to a lab, adding days of temporization, multiple appointments, and per-unit costs. Zylo closes that gap: ZyloCAD generates the inlay from your scan, ZyloPrep handles file prep in one click, and ZyloDent runs the automated print–wash–cure cycle so your assistant can hand the finished restoration to the dentist in the same appointment.",
     },
     ctaLabel: "Request a Sample Inlay",
     materials: [
@@ -387,7 +387,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Delegation-ready",
-        description: "Automated workflow any assistant can run—no CAD background required.",
+        description: "Automated workflow any assistant can run, no CAD background required.",
       },
     ],
     workflowSteps: [
@@ -416,7 +416,7 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~40–45 minutes",
     whySection: {
-      heading: "Onlays offer more tooth preservation than crowns—why should they still take 5 days?",
+      heading: "Onlays offer more tooth preservation than crowns. Why should they still take 5 days?",
       body: "The conservative advantage of an onlay is undercut when the turnaround forces a 5-day lab cycle and a temporary restoration that can fail or fall out. Bringing onlay production in-house with Zylo means the patient gets a permanent, full-coverage cusp restoration in the same visit: ZyloCAD designs from the scan, ZyloPrep preps the file automatically, and ZyloDent delivers print–wash–cure without your team needing to manage separate post-processing equipment.",
     },
     ctaLabel: "Request a Sample Onlay",
@@ -455,7 +455,7 @@ export const indicationsData: IndicationData[] = [
     name: "Veneer",
     tagline: "Esthetic veneers patients can see and approve before final placement.",
     description:
-      "Produce try-in veneers and wax-up shells same-day—so patients approve the result before any irreversible preparation: AI-assisted design + one-click file prep + automated print–wash–cure. Increase case acceptance and eliminate the approval guesswork.",
+      "Produce try-in veneers and wax-up shells same-day, so patients approve the result before any irreversible preparation: AI-assisted design + one-click file prep + automated print–wash–cure. Increase case acceptance and eliminate the approval guesswork.",
     proof: [
       {
         title: "Pre-approval workflow",
@@ -493,13 +493,13 @@ export const indicationsData: IndicationData[] = [
         title: "Try-In & Approval",
         duration: "~5–10 min",
         description:
-          "Patient tries in the veneer shells before any preparation—commits to the final design.",
+          "Patient tries in the veneer shells before any preparation, commits to the final design.",
       },
     ],
     totalTime: "~40–55 minutes",
     whySection: {
-      heading: "Patients hesitate on veneers because they're buying an abstract plan—change that.",
-      body: "Without a tangible preview, veneer cases stall. Patients struggle to visualize the outcome, leading to hesitation, additional consult appointments, and lower acceptance rates. With Zylo, you produce a try-in shell or wax-up mockup during the consultation appointment—ZyloCAD designs from photos and scans, ZyloPrep preps the file in one click, and ZyloDent delivers the printed try-in before the patient leaves. They either approve or refine on the spot.",
+      heading: "Patients hesitate on veneers because they're buying an abstract plan. Change that.",
+      body: "Without a tangible preview, veneer cases stall. Patients struggle to visualize the outcome, leading to hesitation, additional consult appointments, and lower acceptance rates. With Zylo, you produce a try-in shell or wax-up mockup during the consultation appointment: ZyloCAD designs from photos and scans, ZyloPrep preps the file in one click, and ZyloDent delivers the printed try-in before the patient leaves. They either approve or refine on the spot.",
     },
     ctaLabel: "Request a Sample Veneer Try-In",
     materials: [
@@ -579,7 +579,7 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~65–85 minutes",
     whySection: {
-      heading: "A removable workflow only matters if it's repeatable—not 'hero technician' dependent.",
+      heading: "A removable workflow only matters if it's repeatable, not 'hero technician' dependent.",
       body: "Denture cases sent to an external lab mean multiple visits, long waits, and costly remakes when fit requires adjustment. Bringing production in-house with Zylo compresses the chain: ZyloCAD handles AI-assisted design, ZyloPrep automates file prep, and ZyloDent runs validated print–wash–cure in a single cabinet-ready device. Your assistant can operate the full workflow without being a 3D printing specialist.",
     },
     ctaLabel: "Request a Sample Denture Base",
@@ -626,7 +626,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Faster delivery",
-        description: "Skip lab shipping cycles—produce teeth in-house the same day as the try-in.",
+        description: "Skip lab shipping cycles: produce teeth in-house the same day as the try-in.",
       },
       {
         title: "Consistent anatomy",
@@ -661,7 +661,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~65–85 minutes",
     whySection: {
       heading: "Denture teeth that depend on lab shade matching take too long to get right.",
-      body: "When shade selection happens in the clinic but production happens at the lab, every approval step requires another turnaround. Bringing denture teeth in-house closes that loop: ZyloCAD designs the tooth setup from your records and wax-up, ZyloPrep handles file preparation automatically, and ZyloDent runs a validated print–wash–cure cycle. Shade iteration, occlusal adjustment, and try-in all happen in the same workflow—without sending files back and forth.",
+      body: "When shade selection happens in the clinic but production happens at the lab, every approval step requires another turnaround. Bringing denture teeth in-house closes that loop: ZyloCAD designs the tooth setup from your records and wax-up, ZyloPrep handles file preparation automatically, and ZyloDent runs a validated print–wash–cure cycle. Shade iteration, occlusal adjustment, and try-in all happen in the same workflow, without sending files back and forth.",
     },
     ctaLabel: "Request a Sample Denture Teeth Set",
     materials: [
@@ -748,8 +748,8 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~90–120 minutes (production phase)",
     whySection: {
-      heading: "Denture conversion on surgery day is chaos—a digital workflow fixes that.",
-      body: "Traditional All-on-X surgery-day delivery relies on intraoral cylinder pick-ups and denture conversion on an articulator—slow, error-prone, and highly variable across assistants. Digital conversion provisionals preserve the diagnostic wax-up reference points (VDO, tooth position, hinge relationship) so the prosthesis arrives in planned occlusion with minimal guesswork. Zylo compresses the production chain: ZyloCAD handles the alignment, ZyloPrep automates file prep, and ZyloDent runs the automated print–wash–cure cycle.",
+      heading: "Denture conversion on surgery day is chaos. A digital workflow fixes that.",
+      body: "Traditional All-on-X surgery-day delivery relies on intraoral cylinder pick-ups and denture conversion on an articulator: slow, error-prone, and highly variable across assistants. Digital conversion provisionals preserve the diagnostic wax-up reference points (VDO, tooth position, hinge relationship) so the prosthesis arrives in planned occlusion with minimal guesswork. Zylo compresses the production chain: ZyloCAD handles the alignment, ZyloPrep automates file prep, and ZyloDent runs the automated print–wash–cure cycle.",
     },
     ctaLabel: "Request a Sample All-on-X Provisional",
     materials: [
@@ -791,7 +791,7 @@ export const indicationsData: IndicationData[] = [
     proof: [
       {
         title: "Delegation-ready",
-        description: "Automated workflow designed for assistants—no printing expertise required.",
+        description: "Automated workflow designed for assistants, no printing expertise required.",
       },
       {
         title: "Open + validated materials",
@@ -869,7 +869,7 @@ export const indicationsData: IndicationData[] = [
     name: "Sports Guard",
     tagline: "Custom, same-day sports guards with logo and color personalization.",
     description:
-      "Deliver high-custom sports guards in the same appointment: design + one-click prep + automated print–wash–cure. Digital customization—team logos, colors, names, jersey numbers—without the craft variability of thermoforming.",
+      "Deliver high-custom sports guards in the same appointment: design + one-click prep + automated print–wash–cure. Digital customization (team logos, colors, names, jersey numbers) without the craft variability of thermoforming.",
     proof: [
       {
         title: "High customization",
@@ -912,8 +912,8 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~55–70 minutes",
     whySection: {
-      heading: "Customization is what sells sports guards—but it shouldn't depend on handwork.",
-      body: "Traditional thermoformed sports guards make logos and colors an inconsistent craft step—adding chair time and variability every time a patient wants personalization. Digital production with Zylo makes customization repeatable: ZyloCAD embeds logos and color elements in the design file, ZyloPrep handles file prep in one click, and ZyloDent runs the automated production cycle. Your assistant can produce fully custom guards consistently without it being a 'one-person art project.'",
+      heading: "Customization is what sells sports guards, but it shouldn't depend on handwork.",
+      body: "Traditional thermoformed sports guards make logos and colors an inconsistent craft step, adding chair time and variability every time a patient wants personalization. Digital production with Zylo makes customization repeatable: ZyloCAD embeds logos and color elements in the design file, ZyloPrep handles file prep in one click, and ZyloDent runs the automated production cycle. Your assistant can produce fully custom guards consistently without it being a 'one-person art project.'",
     },
     ctaLabel: "Request a Sample Sports Guard",
     materials: [
@@ -963,7 +963,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Repeatable workflow",
-        description: "From planning to sterilization—a standard process any trained assistant can run.",
+        description: "From planning to sterilization: a standard process any trained assistant can run.",
       },
     ],
     workflowSteps: [
@@ -994,8 +994,8 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~70–95 minutes (same-day production possible)",
     whySection: {
-      heading: "A guide is only valuable if it's repeatable—not dependent on one 'printing champion.'",
-      body: "Surgical guides often fail operationally when the production chain is scattered across too many devices and too much tribal knowledge. A separate planning tool, slicer, printer, washer, and curing unit—each requiring its own expert—leads to inconsistent outcomes across shifts and late cancellations when the key person is unavailable. Zylo compresses the chain: ZyloCAD or cloud design for reliable guide output, ZyloPrep for one-click standardized file prep, and ZyloDent for automated print–wash–cure. The result is a consistent process any trained assistant can execute.",
+      heading: "A guide is only valuable if it's repeatable, not dependent on one 'printing champion.'",
+      body: "Surgical guides often fail operationally when the production chain is scattered across too many devices and too much tribal knowledge. A separate planning tool, slicer, printer, washer, and curing unit, each requiring its own expert, leads to inconsistent outcomes across shifts and late cancellations when the key person is unavailable. Zylo compresses the chain: ZyloCAD or cloud design for reliable guide output, ZyloPrep for one-click standardized file prep, and ZyloDent for automated print–wash–cure. The result is a consistent process any trained assistant can execute.",
     },
     ctaLabel: "Request a Sample Surgical Guide",
     materials: [
@@ -1077,7 +1077,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~75–105 minutes",
     whySection: {
       heading: "The Zylo difference",
-      body: "A removable workflow only matters if it's repeatable — not \"hero technician\" dependent.",
+      body: "A removable workflow only matters if it's repeatable, not \"hero technician\" dependent.",
     },
     ctaLabel: "Want to see the denture workflow end-to-end?",
     materials: [
@@ -1115,7 +1115,7 @@ export const indicationsData: IndicationData[] = [
     name: "Trial smile try-ins that help patients say yes.",
     tagline: "Two high-value workflows: Aesthetic Wax-Ups for consults and Single-unit Implant Provisionals for predictable temporization.",
     description:
-      "Turn an abstract veneer plan into something patients can see and feel—so decisions happen faster and expectations align.",
+      "Turn an abstract veneer plan into something patients can see and feel, so decisions happen faster and expectations align.",
     proof: [
       {
         title: "Faster decisions",
@@ -1211,9 +1211,9 @@ export const indicationsData: IndicationData[] = [
   {
     slug: "surgical-guides",
     name: "Surgical Guides",
-    tagline: "Predictable, guided implant surgery with an integrated digital workflow—so your team can deliver consistent guides without becoming printing experts.",
+    tagline: "Predictable, guided implant surgery with an integrated digital workflow, so your team can deliver consistent guides without becoming printing experts.",
     description:
-      "Predictable, guided implant surgery with an integrated digital workflow: planning + guide design + one-click file prep + automated print–wash–cure—so your team can deliver consistent guides without becoming 'printing experts.'",
+      "Predictable, guided implant surgery with an integrated digital workflow: planning + guide design + one-click file prep + automated print–wash–cure, so your team can deliver consistent guides without becoming 'printing experts.'",
     proof: [
       {
         title: "Accuracy you can trust",
@@ -1383,7 +1383,7 @@ export const indicationsData: IndicationData[] = [
     name: "Provisional All-on-X",
     tagline: "Fully digital conversion provisional",
     description:
-      "Make surgery-day delivery predictable with a monolithic printed provisional that preserves VDO, tooth position, and planned occlusion—while protecting screw-channel accuracy and controlling tissue pressure.",
+      "Make surgery-day delivery predictable with a monolithic printed provisional that preserves VDO, tooth position, and planned occlusion, while protecting screw-channel accuracy and controlling tissue pressure.",
     proof: [
       {
         title: "Faster surgery-day delivery",
@@ -1486,7 +1486,7 @@ export const indicationsData: IndicationData[] = [
 
   {
     slug: "pediatric-crown",
-    name: "Pediatric crowns — same-visit, without the crown drawer chaos.",
+    name: "Pediatric crowns: same-visit, without the crown drawer chaos.",
     tagline: "Same-visit pediatric crowns without the crown drawer chaos.",
     description:
       "A connected workflow that feels like one system: Scan → AI design (AlphaByte) → one-click prep (ZyloPrep) → automated print–wash–cure (ZyloDent).",
@@ -1501,7 +1501,7 @@ export const indicationsData: IndicationData[] = [
       },
       {
         title: "Predictable workflow",
-        description: "Standard steps your team can repeat—without a \"printing expert\" dependency.",
+        description: "Standard steps your team can repeat, without a \"printing expert\" dependency.",
       },
     ],
     workflowSteps: [
@@ -1538,7 +1538,7 @@ export const indicationsData: IndicationData[] = [
     ],
     totalTime: "~38–51 minutes",
     whySection: {
-      heading: "The difference is repeatability—not another gadget.",
+      heading: "The difference is repeatability, not another gadget.",
       body: "Most systems break because they rely on a power user. Zylo compresses the chain into a standard workflow.",
     },
     ctaLabel: "Ready to upgrade your pediatric crown workflow?",
@@ -1616,7 +1616,7 @@ export const indicationsData: IndicationData[] = [
     totalTime: "~60 minutes",
     whySection: {
       heading: "If you already scan digitally, why are splints still a multi-day process?",
-      body: "If you already own an intraoral scanner, manufacturing shouldn't be the bottleneck. Yet outsourcing splints to a third-party lab often means ~5 days of turnaround and about $100 per unit—plus remakes that steal chair time. Many guards are still thermoformed without a true 3D bite scheme, so fit and comfort can vary. Bringing splints in-house improves margins and patient satisfaction, but most stacks require CAD, file prep, a printer, a washer, and a curing unit—and a skilled operator to keep it all running. Zylo integrates the missing steps: ZyloCAD and ZyloPrep streamline design and file prep with AI, and ZyloDent automates print–wash–cure in one cabinet-ready footprint so your assistant can produce consistent splints with minimal manual steps.",
+      body: "If you already own an intraoral scanner, manufacturing shouldn't be the bottleneck. Yet outsourcing splints to a third-party lab often means ~5 days of turnaround and about $100 per unit, plus remakes that steal chair time. Many guards are still thermoformed without a true 3D bite scheme, so fit and comfort can vary. Bringing splints in-house improves margins and patient satisfaction, but most stacks require CAD, file prep, a printer, a washer, and a curing unit, and a skilled operator to keep it all running. Zylo integrates the missing steps: ZyloCAD and ZyloPrep streamline design and file prep with AI, and ZyloDent automates print–wash–cure in one cabinet-ready footprint so your assistant can produce consistent splints with minimal manual steps.",
     },
     ctaLabel: "See it on your own cases",
     materials: [

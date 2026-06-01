@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -41,7 +41,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Over 150,000+ content creators trust us"
-                        subtitle="Quizzes are working for them — and they can for you too."
+                        subtitle="Quizzes are working for them, and they can for you too."
                         widthClass="w-full xl:w-7/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"

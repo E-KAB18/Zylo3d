@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 @import "aos/dist/aos.css";
 
 /* offset anchor jumps on product pages so fixed header+subnav don't cover content */
@@ -291,7 +291,7 @@ body.dark {
 }
 
 
-/* Hero section — mode-responsive background */
+/* Hero section, mode-responsive background */
 .zylo-hero-bg {
     background: #ffffff;
     background-image: radial-gradient(ellipse 70% 55% at 70% 30%, rgba(223,123,38,0.07) 0%, transparent 60%);

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -29,12 +29,12 @@ const faqData = [
     {
         question: "How much does logo design service cost?",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Does take a cut of my revenue?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     }
 ];
 
@@ -101,7 +101,7 @@ export default function HomePage() {
                         <PageTitle3
                             badgeText=""
                             title="Trusted by 150,000+ content creators agencies"
-                            subtitle="Quizzes are working for them — and they can for you too."
+                            subtitle="Quizzes are working for them, and they can for you too."
                             widthClass="w-full mx-auto"
                             alignment="center"
                             padding="pb-0"
@@ -125,7 +125,7 @@ export default function HomePage() {
                     <div className="flex flex-wrap justify-between pb-16 gap-y-4">
                         <PageTitle3
                             badgeText=""
-                            title="Our design services are strategy — start to finish"
+                            title="Our design services are strategy, start to finish"
                             subtitle="We start and finish every design project with a world-class experience strategy that builds lasting brands."
                             widthClass="w-full xl:w-6/12 lg:w-7/12"
                             alignment="start"

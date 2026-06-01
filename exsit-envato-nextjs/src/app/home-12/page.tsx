@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { blogPosts } from "@/const/blogData";
 
 import Header from '@/components/layout/Header';
@@ -67,7 +67,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Explore customer expectations to leave them delighted"
-                        subtitle="Never miss a chance to grow—our platform connects you with valuable opportunities never slip through the cracks."
+                        subtitle="Never miss a chance to grow, our platform connects you with valuable opportunities never slip through the cracks."
                         widthClass="xl:w-/12 lg:w-2/3 mx-auto w-full"
                         alignment="center"
                         padding="lg:pb-16 pb-10"
@@ -298,7 +298,7 @@ export default function HomePage() {
                             <PageTitle3
                                 badgeText=""
                                 title="Understand expectations, then delight customers completely"
-                                subtitle="Never miss a chance to grow—our platform connects you with valuable opportunities never slip through the cracks."
+                                subtitle="Never miss a chance to grow, our platform connects you with valuable opportunities never slip through the cracks."
                                 widthClass="w-full xl:w-7/12 lg:w-7/12 mx-auto"
                                 alignment="center"
                                 padding="lg:pb-10 pb-6"

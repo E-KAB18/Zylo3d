@@ -23,7 +23,7 @@ export default function ZyloFooter() {
                             />
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            The complete digital dentistry manufacturing platform — hardware, software, and validated materials, built to work as one.
+                            The complete digital dentistry manufacturing platform: hardware, software, and validated materials, built to work as one.
                         </p>
                         <ul className="flex gap-3">
                             {/* Facebook */}

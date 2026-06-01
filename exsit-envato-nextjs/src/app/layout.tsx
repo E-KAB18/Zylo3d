@@ -17,8 +17,8 @@ const dmSans = DM_Sans({
 
 
 export const metadata = {
-  title: 'Zylo3D — Digital Dentistry Manufacturing Platform',
-  description: 'The complete digital dentistry manufacturing platform — hardware, software, and validated materials, built to work as one.',
+  title: 'Zylo3D: Digital Dentistry Manufacturing Platform',
+  description: 'The complete digital dentistry manufacturing platform: hardware, software, and validated materials, built to work as one.',
   icons: {
     icon: [
       { url: '/images/logo/zylo-logo.webp', type: 'image/webp' },

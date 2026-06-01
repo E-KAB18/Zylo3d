@@ -1,4 +1,4 @@
-// app/blog/single-blog/page.tsx
+﻿// app/blog/single-blog/page.tsx
 import Image from "next/image";
 import React from "react";
 import PopularPost from "@/components/ui/PopularPost";
@@ -24,7 +24,7 @@ const SingleBlogPage = () => {
                             The Role of AI in Revolutionizing Customer Service Across Industries
                         </h2>
                         <p className="text-gray-800 font-medium text-base mb-0" data-aos="fade-up" data-aos-duration="400" data-aos-delay="100">
-                            More balanced you — and works tirelessly to help you get there.
+                            More balanced you, and works tirelessly to help you get there.
                         </p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const SingleBlogPage = () => {
                                 <li>Intuitive user experiences</li>
                                 <li>Ethical, inclusive financial products</li>
                             </ul>
-                            <p className="text-gray-800 font-medium text-[17px] leading-7 mb-3">Fintech startups are rising to meet these expectations by offering tools that go beyond traditional banking. Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused—allowing it to resonate with a broader and more diverse audience.</p>
+                            <p className="text-gray-800 font-medium text-[17px] leading-7 mb-3">Fintech startups are rising to meet these expectations by offering tools that go beyond traditional banking. Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused, allowing it to resonate with a broader and more diverse audience.</p>
                             <div className="my-5">
                                 <Image src="/images/blog-l.svg" alt="banner" width={1200} height={600} className="object-cover w-full rounded-xl my-4" />
                             </div>
@@ -66,7 +66,7 @@ const SingleBlogPage = () => {
                             </ul>
                             <blockquote className="bg-gray-800 lg:p-12 p-8 rounded-xl my-5">
                                 <p className="text-white font-medium text-2xl leading-snug lg:pr-6">“We wanted to make managing money feel like a conversation, not a chore.”</p>
-                                <span className="block mt-2 text-sm text-gray-300 font-medium">— Co-founder of BrightCard</span>
+                                <span className="block mt-2 text-sm text-gray-300 font-medium">Co-founder of BrightCard</span>
                             </blockquote>
                             <h2 className="text-2xl md:text-3xl text-gray-900 font-semibold mt-4 mb-2">The Future of Personal Finance</h2>
                             <p className="text-gray-800 font-medium text-[17px] leading-7 mb-2">With AI and machine learning, fintech will continue to evolve. Expect:</p>
@@ -75,8 +75,8 @@ const SingleBlogPage = () => {
                                 <li>Predictive budgeting insights</li>
                                 <li>Integration with mental wellness tools</li>
                             </ul>
-                            <p className="text-gray-800 font-medium text-[17px] leading-7">Gen Z isn’t just using fintech — they’re helping build it.</p>
-                            <p className="text-gray-800 font-medium text-[17px] leading-7">Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused—allowing it to resonate with a broader and more diverse audience.</p>
+                            <p className="text-gray-800 font-medium text-[17px] leading-7">Gen Z isn’t just using fintech, they’re helping build it.</p>
+                            <p className="text-gray-800 font-medium text-[17px] leading-7">Going through this checklist will ensure that your content covers multiple angles, making it richer and more inclusive. This approach prevents your content from feeling one-dimensional or narrowly focused, allowing it to resonate with a broader and more diverse audience.</p>
                             <p className="text-gray-800 font-medium text-[17px] leading-7 mb-0">When diverse perspectives are incorporated, readers are more likely to see their own experiences reflected, creating a stronger emotional connection with the content.</p>
                         </div>
                         <div className="w-full space-y-6">

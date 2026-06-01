@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -161,7 +161,7 @@ export default function BlogPage() {
                             Catch up on our newest blog and articles
                         </h2>
                         <p className="text-gray-600 text-lg font-medium max-w-xl">
-                            Balanced you — and works tirelessly to help you get there.
+                            Balanced you, and works tirelessly to help you get there.
                         </p>
                     </div>
 

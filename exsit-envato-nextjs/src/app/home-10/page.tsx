@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 
 import Header from '@/components/layout/Header';
@@ -35,7 +35,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText=""
                         title="Over 150,000+ content creators trust us"
-                        subtitle="Quizzes are working for them — and they can for you too."
+                        subtitle="Quizzes are working for them, and they can for you too."
                         widthClass="w-full xl:w-7/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"
@@ -69,7 +69,7 @@ export default function HomePage() {
                             layout="modern"
                             image="/images/feature-2.svg"
                             highlight="No meeting bots,"
-                            title=" no interruptions — just real conversations"
+                            title=" no interruptions, just real conversations"
                         />
                         <GradientFeatureCard
                             layout="modern"
@@ -308,7 +308,7 @@ export default function HomePage() {
                             <FeedbackCard
                                 layout="classic"
                                 rating={3.9}
-                                feedback="Everything works smoothly, but a dark mode option would be great. Really love the clean design — maybe add more customization options."
+                                feedback="Everything works smoothly, but a dark mode option would be great. Really love the clean design, maybe add more customization options."
                                 name="Goria Coast"
                                 role="Founder and CEO of Exsit"
                                 avatar="/images/avatars/user.png"
@@ -318,7 +318,7 @@ export default function HomePage() {
                             <FeedbackCard
                                 layout="classic"
                                 rating={3.9}
-                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern — great job overall!"
+                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern, great job overall!"
                                 name="Goria Coast"
                                 role="Founder and CEO of Exsit"
                                 avatar="/images/avatars/user.png"
@@ -340,7 +340,7 @@ export default function HomePage() {
                             <FeedbackCard
                                 layout="classic"
                                 rating={2.9}
-                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern — great job overall!"
+                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern, great job overall!"
                                 name="Goria Coast"
                                 role="Founder and CEO of Exsit"
                                 avatar="/images/avatars/user.png"
@@ -362,7 +362,7 @@ export default function HomePage() {
                             <FeedbackCard
                                 layout="classic"
                                 rating={3.9}
-                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern — great job overall!"
+                                feedback="Fast and simple to use, though loading times could improve slightly. The interface feels intuitive and modern, great job overall!"
                                 name="Goria Coast"
                                 role="Founder and CEO of Exsit"
                                 avatar="/images/avatars/user.png"

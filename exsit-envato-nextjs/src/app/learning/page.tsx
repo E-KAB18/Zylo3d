@@ -6,7 +6,7 @@ import { ArrowUpRight } from "react-feather";
 const sections = [
     { title: "Webinars", desc: "Live and on-demand clinical webinars from dental experts.", href: "/learning/webinars", badge: "Coming Soon" },
     { title: "Training", desc: "Step-by-step onboarding and operator training courses.", href: "/learning/training", badge: "Coming Soon" },
-    { title: "Best Practice Guides", desc: "PDF protocols for every indication — written by clinicians.", href: "/learning/guides", badge: "Coming Soon" },
+    { title: "Best Practice Guides", desc: "PDF protocols for every indication, written by clinicians.", href: "/learning/guides", badge: "Coming Soon" },
     { title: "KOLs", desc: "Meet the key opinion leaders behind the Zylo3D clinical program.", href: "/learning/kols", badge: "Coming Soon" },
 ];
 

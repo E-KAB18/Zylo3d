@@ -100,7 +100,7 @@ const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerC
 
                     </nav>
 
-                    {/* Per-page subnav row — always visible when subnavItems provided */}
+                    {/* Per-page subnav row - always visible when subnavItems provided */}
                     {subnavItems && (
                         <div className="border-t border-white/10 overflow-x-auto scrollbar-hide">
                             <div className="flex">

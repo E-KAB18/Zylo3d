@@ -1,8 +1,8 @@
-[
+﻿[
     {
         "id": 1,
         "title": "Our personalized lessons are designed to inspire growth balance.",
-        "excerpt": "Whether you're building a startup landing page, a dashboard interface, or a modern web app — gives you full control.",
+        "excerpt": "Whether you're building a startup landing page, a dashboard interface, or a modern web app, gives you full control.",
         "image": "/images/blog-l.svg",
         "date": "4 hours ago",
         "category": "Growth",
@@ -16,7 +16,7 @@
     {
         "id": 2,
         "title": "One-piece garments top and shorts providing comfort.",
-        "excerpt": "More balanced you — and works tirelessly to help you get there.",
+        "excerpt": "More balanced you, and works tirelessly to help you get there.",
         "image": "/images/blog.svg",
         "date": "5 hours ago",
         "category": "Fashion",
@@ -29,7 +29,7 @@
     {
         "id": 3,
         "title": "The post-pandemic consumer is embracing clothes.",
-        "excerpt": "More balanced you — and works tirelessly to help you get there.",
+        "excerpt": "More balanced you, and works tirelessly to help you get there.",
         "image": "/images/blog.svg",
         "date": "5 hours ago",
         "category": "Lifestyle",
@@ -42,7 +42,7 @@
     {
         "id": 4,
         "title": "As people move out of big cities, fashion retail follows.",
-        "excerpt": "More balanced you — and works tirelessly to help you get there.",
+        "excerpt": "More balanced you, and works tirelessly to help you get there.",
         "image": "/images/blog.svg",
         "date": "5 hours ago",
         "category": "Retail",

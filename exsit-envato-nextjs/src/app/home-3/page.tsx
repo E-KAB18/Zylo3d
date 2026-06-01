@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Image from "next/image";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -26,22 +26,22 @@ const faqData = [
     {
         question: "One payment at a time",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Every customer insight place",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Does exsit have app",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "How much does logo design service cost?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     }
 ];
 const faqData2 = [
@@ -53,12 +53,12 @@ const faqData2 = [
     {
         question: "Q2. How much does logo design service cost?",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Q3. How long will it take to complete my project?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Q4. What is included in a round of revisions?",
@@ -171,7 +171,7 @@ export default function HomePage() {
                     <PageTitle3
                         badgeText="Services We Offer"
                         title="Transforming into customer expectations and deliver"
-                        subtitle="Quizzes are working for them — and they can for you too."
+                        subtitle="Quizzes are working for them, and they can for you too."
                         widthClass="xl:w-8/12 lg:w-2/3 mx-auto w-full"
                         alignment="center"
                         padding="pb-16"

@@ -16,12 +16,12 @@ const faqData = [
     {
         question: "Q2. How much does logo design service cost?",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Q3. How long will it take to complete my project?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Q4. What is included in a round of revisions?",

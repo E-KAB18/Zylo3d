@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import FaqSection from "@/components/layout/FaqSection";
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     <PageTitle3
                         badgeText=""
                         title="Understand expectations, then delight customers completely"
-                        subtitle="More balanced you — and works tirelessly to help you get there."
+                        subtitle="More balanced you, and works tirelessly to help you get there."
                         widthClass="xl:w-7/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"

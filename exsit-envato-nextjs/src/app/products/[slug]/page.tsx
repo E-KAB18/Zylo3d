@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { notFound } from "next/navigation";
 import { use, useState } from "react";
@@ -21,7 +21,7 @@ function ROICalculator({ systemCost }: { systemCost: number }) {
     const monthlySavings = (labCost - inHouseCost) * casesPerMonth - platformCost;
     const annualSavings = monthlySavings * 12;
     const paybackMonths = monthlySavings > 0 ? Math.ceil(systemCost / monthlySavings) : 0;
-    const fmt = (n: number) => (n > 0 ? `$${Math.round(n).toLocaleString()}` : "—");
+    const fmt = (n: number) => (n > 0 ? `$${Math.round(n).toLocaleString()}` : "N/A");
 
     return (
         <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
@@ -54,7 +54,7 @@ function ROICalculator({ systemCost }: { systemCost: number }) {
                 {[
                     { label: "Monthly Savings", value: fmt(monthlySavings) },
                     { label: "Annual Profit Lift", value: fmt(annualSavings) },
-                    { label: "Payback Period", value: paybackMonths > 0 ? `${paybackMonths} months` : "—" },
+                    { label: "Payback Period", value: paybackMonths > 0 ? `${paybackMonths} months` : "N/A" },
                 ].map((stat) => (
                     <div key={stat.label} className="bg-white dark:bg-[#111111] rounded-xl p-5 text-center border border-gray-200 dark:border-gray-700">
                         <p className="text-[#df7b26] text-3xl font-bold mb-1">{stat.value}</p>
@@ -89,13 +89,13 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     };
 
     const indicationDesc: Record<string, string> = {
-        "Digital Dentures":       "Delegatable removable workflow — fewer visits, lower lab cost, consistent outcomes.",
-        "Waxups & Provisionals":  "Trial smiles and implant temps that help patients say yes — same visit.",
+        "Digital Dentures":       "Delegatable removable workflow: fewer visits, lower lab cost, consistent outcomes.",
+        "Waxups & Provisionals":  "Trial smiles and implant temps that help patients say yes, same visit.",
         "Surgical Guides":        "Verified accuracy for predictable, repeatable implant placement.",
-        "Sports Guards":          "Custom colors + logos with validated materials — a high-margin same-day add-on.",
+        "Sports Guards":          "Custom colors + logos with validated materials, a high-margin same-day add-on.",
         "Provisional All-on-X":   "Surgery-day full-arch provisionals that preserve VDO and give patients immediate function.",
-        "Pediatric Crown":        "Scan-to-crown in minutes — no crown drawer, no lab wait, no failed seating.",
-        "Occlusal Splints":       "Scan to splint in ~60 minutes — delegatable, high-margin, no lab dependency.",
+        "Pediatric Crown":        "Scan-to-crown in minutes: no crown drawer, no lab wait, no failed seating.",
+        "Occlusal Splints":       "Scan to splint in ~60 minutes: delegatable, high-margin, no lab dependency.",
     };
 
     const faq = [
@@ -117,7 +117,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         },
         {
             q: "What happens if a job fails?",
-            a: "The system logs every job — resin lot, presets, and timestamps — for QA. In the event of a failure, alerts are generated with diagnostic information. Our support team provides remote diagnosis and fast parts fulfillment.",
+            a: "The system logs every job (resin lot, presets, and timestamps) for QA. In the event of a failure, alerts are generated with diagnostic information. Our support team provides remote diagnosis and fast parts fulfillment.",
         },
     ];
 
@@ -151,7 +151,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             </h1>
                             {isZyloDent && (
                                 <p className="text-gray-700 dark:text-gray-200 text-lg mb-2 leading-relaxed">
-                                    Automated <strong>print + wash + cure</strong> in one unit — built for delegation and same-visit delivery.
+                                    Automated <strong>print + wash + cure</strong> in one unit: built for delegation and same-visit delivery.
                                 </p>
                             )}
                             <p className="text-gray-500 dark:text-gray-400 text-base mb-7 leading-relaxed">
@@ -208,7 +208,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <div className="grid md:grid-cols-3 gap-6">
                             {[
                                 { title: "Same-visit output",       desc: "Reduce reschedules and tighten the loop from scan to seat." },
-                                { title: "Delegatable workflow",    desc: "Standard steps assistants can run — not champion-only workflows." },
+                                { title: "Delegatable workflow",    desc: "Standard steps assistants can run, not champion-only workflows." },
                                 { title: "Predictable throughput",  desc: "Consistent daily capacity without juggling multiple devices." },
                             ].map((tile, i) => (
                                 <div key={i} className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
@@ -249,7 +249,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     <div className={cx}>
                         <div className="text-center mb-12">
                             <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">The ZyloDent Difference</h2>
-                            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">One device replaces the printer + wash + cure stack — fewer handoffs, less training burden, more consistent outcomes.</p>
+                            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">One device replaces the printer + wash + cure stack: fewer handoffs, less training burden, more consistent outcomes.</p>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]">
@@ -267,9 +267,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                                 <span className="inline-block px-3 py-1 rounded-full border border-[#df7b26]/40 bg-[#df7b26]/10 text-[#df7b26] text-sm font-medium mb-6">Zylo setup</span>
                                 <ul className="space-y-3">
                                     {[
-                                        "ZyloCAD — AI-assisted design",
-                                        "ZyloPrep — one-click file prep",
-                                        "ZyloDent — print + wash + cure (automated)",
+                                        "ZyloCAD: AI-assisted design",
+                                        "ZyloPrep: one-click file prep",
+                                        "ZyloDent: print + wash + cure (automated)",
                                         "Consistent outcomes across all assistants",
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-gray-800 dark:text-gray-200 text-sm font-medium">
@@ -353,12 +353,12 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Validated Materials + Guided Presets</h2>
-                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Validated-first as the default for repeatability — every resin ships with a tested protocol.</p>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Validated-first as the default for repeatability: every resin ships with a tested protocol.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="p-8 rounded-2xl bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-700">
                             <h3 className="text-gray-900 dark:text-white font-bold text-xl mb-2">Validated material portfolio</h3>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Partners include BEGO, Pro3dure, Keystone, and Pac-Dent — with indication mapping and protocol PDFs.</p>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Partners include BEGO, Pro3dure, Keystone, and Pac-Dent, with indication mapping and protocol PDFs.</p>
                             <div className="grid grid-cols-3 gap-3">
                                 {["BEGO", "Pro3dure", "Keystone", "Pac-Dent", "Open mode", "Protocol PDFs"].map((m) => (
                                     <div key={m} className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 text-xs font-mono text-center px-2">{m}</div>
@@ -367,9 +367,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         </div>
                         <div className="p-8 rounded-2xl bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-700">
                             <h3 className="text-gray-900 dark:text-white font-bold text-xl mb-2">Preset automation</h3>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Every resin ships with validated wash and cure profiles — no manual calibration needed.</p>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Every resin ships with validated wash and cure profiles: no manual calibration needed.</p>
                             <ul className="space-y-3">
-                                {["Wash profiles per resin", "Cure profiles per resin", "Job presets to reduce variability", "Traceability — lot + settings logged"].map((feat, i) => (
+                                {["Wash profiles per resin", "Cure profiles per resin", "Job presets to reduce variability", "Traceability: lot + settings logged"].map((feat, i) => (
                                     <li key={i} className="flex items-center gap-3 text-gray-700 dark:text-gray-300 text-sm">
                                         <CheckCircle size={16} className="text-[#df7b26] flex-shrink-0" />
                                         {feat}
@@ -386,7 +386,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Reliability + QA</h2>
-                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Sensors, calibration, remote monitoring, and job logs — with clear answers for what happens if something goes wrong.</p>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Sensors, calibration, remote monitoring, and job logs with clear answers for what happens if something goes wrong.</p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-6">
                         {[
@@ -414,7 +414,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         {[
                             { name: "ZyloCAD",   badge: "Design",     desc: "AI-assisted workflows. Standardize design outcomes across your team regardless of experience level." },
                             { name: "ZyloPrep",  badge: "Slicing",    desc: "One-click file preparation that eliminates slicing guesswork and validates print parameters automatically." },
-                            { name: "ZyloCloud", badge: "Management", desc: "Job queue, validated presets, analytics, and remote monitoring — all from your Zylo3D account." },
+                            { name: "ZyloCloud", badge: "Management", desc: "Job queue, validated presets, analytics, and remote monitoring: all from your Zylo3D account." },
                         ].map((sw, i) => (
                             <div key={i} className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
                                 <div className="flex items-center justify-between mb-4">
@@ -461,8 +461,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             </thead>
                             <tbody>
                                 {[
-                                    { cap: "Steps & handoffs",           zylo: "Fewer — integrated automation",       sep: "Multiple devices + transfers",          out: "No devices, but shipping delays" },
-                                    { cap: "Hands-on time",              zylo: "Lowest — assistant-friendly",         sep: "Higher (manual steps)",                 out: "Low in-house, high coordination" },
+                                    { cap: "Steps & handoffs",           zylo: "Fewer (integrated automation)",      sep: "Multiple devices + transfers",          out: "No devices, but shipping delays" },
+                                    { cap: "Hands-on time",              zylo: "Lowest (assistant-friendly)",        sep: "Higher (manual steps)",                 out: "Low in-house, high coordination" },
                                     { cap: "Training burden",            zylo: "Standard workflow",                   sep: "Varies by device + staff",              out: "Minimal" },
                                     { cap: "Same-visit feasibility",     zylo: "High",                                sep: "Medium (depends on staff)",             out: "Low (days)" },
                                     { cap: "Consistency across shifts",  zylo: "Preset-driven",                       sep: "Operator-dependent",                    out: "Lab-dependent" },
@@ -532,7 +532,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 <div className={cx}>
                     <div className="text-center mb-12">
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">What&#39;s included + Getting started</h2>
-                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to hit the ground running — hardware, onboarding, and ongoing support.</p>
+                        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Everything you need to hit the ground running: hardware, onboarding, and ongoing support.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="p-8 rounded-2xl bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-700">
@@ -599,9 +599,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         </div>
                         <div className="flex flex-col gap-4">
                             {[
-                                `"We cut hands-on time significantly and standardized outputs across assistants." — Dr. Name`,
-                                `"Same-visit delivery improved patient satisfaction and reduced remakes." — Dr. Name`,
-                                `"The integrated workflow eliminated device juggling." — Lab / Clinic`,
+                                `"We cut hands-on time significantly and standardized outputs across assistants." - Dr. Name`,
+                                `"Same-visit delivery improved patient satisfaction and reduced remakes." - Dr. Name`,
+                                `"The integrated workflow eliminated device juggling." - Lab / Clinic`,
                             ].map((quote, i) => (
                                 <div key={i} className="p-5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]">
                                     <p className="text-gray-600 dark:text-gray-300 text-sm italic leading-relaxed">{quote}</p>
@@ -635,7 +635,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <h2 className="text-gray-900 dark:text-white font-bold text-2xl lg:text-3xl mb-2">
                                 Ready to run same-visit manufacturing without the complexity?
                             </h2>
-                            <p className="text-gray-500 dark:text-gray-400">Book a demo or request a sample part — we&#39;ll recommend the best starting indication.</p>
+                            <p className="text-gray-500 dark:text-gray-400">Book a demo or request a sample part: we&#39;ll recommend the best starting indication.</p>
                         </div>
                         <div className="flex gap-3 flex-wrap flex-shrink-0">
                             <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />

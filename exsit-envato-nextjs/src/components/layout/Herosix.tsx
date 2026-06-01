@@ -23,7 +23,7 @@ export default function Herosix() {
                                         Discover the People power Our vision
                                     </h1>
                                     <p data-aos="fade-up" data-aos-duration="500" className="font-medium text-gray-900 text-dark-black max-w-xl lg:pr-10 text-lg">
-                                        When you join our journey, you are choosing a partner who believes in a healthier, more balanced you — and works tirelessly to help you get there.
+                                        When you join our journey, you are choosing a partner who believes in a healthier, more balanced you, and works tirelessly to help you get there.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-5">
                                         <Button href="/pricing" label="Start trial for 14 days" bgColor="bg-teal-800" textColor="text-white" padding="py-4 px-6" />

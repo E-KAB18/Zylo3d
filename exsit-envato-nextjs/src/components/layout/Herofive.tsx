@@ -11,7 +11,7 @@ export default function Herofive() {
                             Ready to transform your financial life
                             <span className="bg-[linear-gradient(to_bottom,#fd7e14,#fd9843)] rounded-lg py-0 px-4 inline-block "></span>
                         </h1>
-                        <p className="font-normal text-white/90 text-lg xl:pr-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you. When you join our journey. Quizzes are working for them — and they can for you too. or a modern web app gives you full control.</p>
+                        <p className="font-normal text-white/90 text-lg xl:pr-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500"> When you join our journey, you are choosing a partner who believes in a healthier, more balanced you. When you join our journey. Quizzes are working for them, and they can for you too. or a modern web app gives you full control.</p>
                         {/* cta btn  */}
                         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-8 pb-3">
                             <Button href="/pricing" label="Start trial for 14 days" bgColor="bg-green-800" textColor="text-white" padding="py-4 px-6" />

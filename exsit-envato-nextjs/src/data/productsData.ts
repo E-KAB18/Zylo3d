@@ -35,7 +35,7 @@ const productsData: Product[] = [
     name: "ZyloDent",
     tagline: "Precision Dental 3D Printing, Automated",
     description:
-      "All-in-one, designed for accuracy, reliability, and seamless integration with Zylo3D software and materials. ZyloDent is the complete end-to-end dental manufacturing solution — from design to final restoration.",
+      "All-in-one, designed for accuracy, reliability, and seamless integration with Zylo3D software and materials. ZyloDent is the complete end-to-end dental manufacturing solution, from design to final restoration.",
     image: "/images/about/dentpro.webp",
     features: [
       "All-in-one automated dental printing workflow",
@@ -81,15 +81,15 @@ const productsData: Product[] = [
     name: "MicroDent",
     tagline: "High-Precision Dental 3D Printer for Clinical & Lab Workflows",
     description:
-      "Engineered for accuracy, reliability, and high throughput capacity. MicroDent delivers consistent results across every indication — from single-unit restorations to full-arch dentures.",
+      "Engineered for accuracy, reliability, and high throughput capacity. MicroDent delivers consistent results across every indication, from single-unit restorations to full-arch dentures.",
     image: "/images/about/dentpro.webp",
     features: [
       "Ultra-high precision XY resolution for detailed restorations",
-      "High throughput — print multiple cases simultaneously",
+      "High throughput: print multiple cases simultaneously",
       "Validated material profiles for all major dental resins",
       "Open material system with Zylo3D certified profiles",
       "Remote monitoring and firmware updates",
-      "Compact footprint — designed for chairside and lab use",
+      "Compact footprint: designed for chairside and lab use",
     ],
     indications: [
       { name: "Diagnostic Model", minutes: "38", clicks: "3" },
@@ -126,7 +126,7 @@ const productsData: Product[] = [
     name: "DentCure",
     tagline: "High-Power Post-Curing for Maximum Production Capacity",
     description:
-      "DentCure delivers uniform, high-intensity curing across the full build chamber — ensuring every part meets mechanical and biocompatibility requirements for clinical use.",
+      "DentCure delivers uniform, high-intensity curing across the full build chamber, ensuring every part meets mechanical and biocompatibility requirements for clinical use.",
     image: "/images/about/dentpro.webp",
     features: [
       "360° uniform UV curing for consistent results",

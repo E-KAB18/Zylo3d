@@ -42,7 +42,7 @@ export default function HeroEleven() {
                             data-aos="fade-up"
                             data-aos-duration="500"
                         >
-                            Quizzes are working for them — and they can for you too.
+                            Quizzes are working for them, and they can for you too.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 mt-8 justify-center mx-auto">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import FaqSection from "@/components/layout/FaqSection";
 import PageTitle2 from "@/components/ui/PageTitle2";
@@ -14,7 +14,7 @@ export default function ContactPage() {
                 icon={Zap}
                 label="Our Membership plan"
                 title="Zero Cost to Start. Unlock potential as you grow"
-                subtitle="Our pricing is built to support every stage of your journey—from your first booking."
+                subtitle="Our pricing is built to support every stage of your journey, from your first booking."
                 align="center"
                 widthClass="xl:w-9/12 lg:w-9/12"
             />

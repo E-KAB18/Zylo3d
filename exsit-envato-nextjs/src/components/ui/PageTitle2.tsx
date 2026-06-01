@@ -12,7 +12,7 @@ export default function PageTitle2({
     icon: Icon,
     label = "About us",
     title = "Our Customer Our Reach",
-    subtitle = "Making a difference — Our Story to get there.",
+    subtitle = "Making a difference: Our Story to get there.",
     align = "center",
     widthClass = "lg:w-7/12",
 }: PageTitle2Props) {

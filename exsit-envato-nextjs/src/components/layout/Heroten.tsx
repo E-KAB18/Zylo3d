@@ -62,7 +62,7 @@ const HeroTen: React.FC = () => {
                         data-aos-duration="500"
                     >
                         When you join our journey, you are choosing a partner who believes
-                        in a healthier. Quizzes are working for them — and they can for you
+                        in a healthier. Quizzes are working for them, and they can for you
                         too.
                     </p>
 

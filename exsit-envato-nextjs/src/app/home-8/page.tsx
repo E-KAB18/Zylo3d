@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 
 import Header from '@/components/layout/Header';
@@ -26,22 +26,22 @@ const faqData = [
     {
         question: "One payment at a time",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Every customer insight place",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Does exsit have app",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "How much does logo design service cost?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     }
 ];
 const faqData2 = [
@@ -53,12 +53,12 @@ const faqData2 = [
     {
         question: "Q2. How much does logo design service cost?",
         answer:
-            "We do not take a cut of your revenue. Every design begins and ends with strategy — because great brands are not built by accident.",
+            "We do not take a cut of your revenue. Every design begins and ends with strategy, because great brands are not built by accident.",
     },
     {
         question: "Q3. How long will it take to complete my project?",
         answer:
-            "You can cancel your subscription anytime — no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
+            "You can cancel your subscription anytime, no questions asked. We start and finish every design project with a world-class experience strategy that builds lasting brands.",
     },
     {
         question: "Q4. What is included in a round of revisions?",
@@ -268,7 +268,7 @@ export default function Home8Page() {
                     <PageTitle3
                         badgeText=""
                         title="Built to scale with flexible pricing with your need"
-                        subtitle="A healthier you — and works tirelessly to help you achieve it."
+                        subtitle="A healthier you, and works tirelessly to help you achieve it."
                         widthClass="xl:w-6/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-0"
@@ -353,7 +353,7 @@ export default function Home8Page() {
                     <PageTitle3
                         badgeText=""
                         title="Understand expectations, then delight customers completely"
-                        subtitle="More balanced you — and works tirelessly to help you get there."
+                        subtitle="More balanced you, and works tirelessly to help you get there."
                         widthClass="xl:w-7/12 lg:w-2/3 mx-auto"
                         alignment="center"
                         padding="pb-16"
