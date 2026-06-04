@@ -159,31 +159,34 @@ export default function HomePage() {
                     </div>
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-4">
                         {/* ZyloCAD */}
-                        <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={0}>
+                        <div className="relative rounded-2xl p-8 pb-20 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px] overflow-visible" data-aos="fade-up" data-aos-duration="400" data-aos-delay={0}>
                             <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloCAD</h3>
                             <p className="text-gray-600 dark:text-gray-300 text-base">AI-assisted design, or cloud design services when you want it done-for-you.</p>
-                            <div className="absolute -bottom-3 -right-3 drop-shadow-xl">
+                            <div className="absolute bottom-[-20px] right-3 drop-shadow-xl">
                                 <Image src="/images/logo/zylocad-logo.png" alt="ZyloCAD" width={100} height={100} className="rounded-2xl" />
                             </div>
                         </div>
                         {/* ZyloPrep */}
-                        <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={150}>
+                        <div className="relative rounded-2xl p-8 pb-20 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px] overflow-visible" data-aos="fade-up" data-aos-duration="400" data-aos-delay={150}>
                             <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloPrep</h3>
                             <p className="text-gray-600 dark:text-gray-300 text-base">One-click file preparation with indication presets.</p>
-                            <div className="absolute -bottom-3 -right-3 drop-shadow-xl">
+                            <div className="absolute bottom-[-20px] right-3 drop-shadow-xl">
                                 <Image src="/images/logo/zyloprep-logo.png" alt="ZyloPrep" width={100} height={100} className="rounded-2xl" />
                             </div>
                         </div>
-                        {/* ZyloDent — product photo as decorative right-side image */}
-                        <div className="relative rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px] overflow-hidden" data-aos="fade-up" data-aos-duration="400" data-aos-delay={300}>
-                            <div className="p-8 pr-[48%]">
+                        {/* ZyloDent */}
+                        <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 overflow-visible min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={300}>
+                            <div className="relative z-10 w-[55%]">
                                 <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloDent</h3>
                                 <p className="text-gray-600 dark:text-gray-300 text-base">Automated print + wash + cure for consistent output.</p>
                             </div>
-                            <div className="absolute top-0 right-0 h-full w-[52%]">
-                                <Image src="/images/logo/zylodent-logo4.png" alt="ZyloDent" fill className="object-cover object-center" sizes="20vw" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-white/90 dark:from-[#111]/90 via-transparent to-transparent" />
-                            </div>
+                            <Image
+                                src="/images/logo/zylodent-logo4.png"
+                                alt="ZyloDent"
+                                width={220}
+                                height={220}
+                                className="absolute bottom-[-35px] right-0 rounded-2xl object-cover drop-shadow-xl"
+                            />
                         </div>
                     </div>
                 </div>
