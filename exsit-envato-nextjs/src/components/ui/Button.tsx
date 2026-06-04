@@ -13,6 +13,8 @@ interface ButtonProps {
     hoverBgColor?: string;  // optional override e.g. "hover:bg-blue-700"
     textColor?: string;
     className?: string;
+    target?: string;
+    rel?: string;
 }
 
 // ✅ Static Tailwind-safe hover map
@@ -40,6 +42,8 @@ const Button: FC<ButtonProps> = ({
     hoverBgColor,
     textColor = "text-white",
     className = "",
+    target,
+    rel,
 }) => {
     const safeHoverClass = hoverBgColor || HOVER_MAP[bgColor] || "hover:opacity-90";
 
@@ -48,6 +52,8 @@ const Button: FC<ButtonProps> = ({
             href={href}
             className={`inline-flex justify-between items-center group gap-2 ${padding} ${textColor} text-base font-medium rounded-lg ${bgColor} ${safeHoverClass} transition btn-transition duration-300 ${className}`}
             data-aos="zoom-in"
+            target={target}
+            rel={rel}
         >
             <span>{label}</span>
             {icon}

@@ -25,7 +25,7 @@ export default function HomePage() {
             <Header theme="header-light" />
 
             {/* ── HERO ─────────────────────────────────────────────── */}
-            <div className="zylo-hero-bg banner-wrap relative flex items-center overflow-hidden min-h-[80vh] pt-24">
+            <div className="zylo-hero-bg banner-wrap relative flex items-center overflow-hidden min-h-screen pt-24">
                 {/* Decorative glow */}
                 <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-[#df7b26]/10 blur-[140px] pointer-events-none" />
 
@@ -92,7 +92,7 @@ export default function HomePage() {
                             </div>
                         </div>
 
-                        {/* Right column - hero video placeholder */}
+                        {/* Right column - hero video */}
                         <div
                             className="relative"
                             data-aos="fade-left"
@@ -100,16 +100,15 @@ export default function HomePage() {
                             data-aos-delay="200"
                         >
                             <div className="absolute -inset-4 bg-[#df7b26]/10 rounded-3xl blur-2xl" />
-                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] aspect-video flex flex-col items-center justify-center gap-5">
-                                <div className="w-14 h-14 rounded-full bg-[#df7b26] flex items-center justify-center">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                        <polygon points="5,3 19,12 5,21" />
-                                    </svg>
-                                </div>
-                                <div className="text-center px-8">
-                                    <p className="text-white font-semibold text-sm mb-1">Video coming soon</p>
-                                    <p className="text-gray-500 text-xs leading-relaxed">8-12s loop: design → one-click prep → machine running → finished part</p>
-                                </div>
+                            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] aspect-video">
+                                <video
+                                    src="/videos/hero.mp4"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         </div>
 
@@ -120,37 +119,33 @@ export default function HomePage() {
             {/* ── PROBLEM ──────────────────────────────────────────── */}
             <section className="lg:py-24 py-12">
                 <div className={cx}>
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
-                        <div>
-                            <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Printing isn&apos;t hard. Workflow is.</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
-                                Scanners made capture easy. But production still depends on disconnected tools, manual steps, and team members with specialized knowledge.
-                            </p>
-                            <ul className="space-y-3">
-                                {[
-                                    "CAD → slicer → printer → wash → cure → variability",
-                                    "Training burden lands on one person",
-                                    "Remakes steal chair time",
-                                    "Resin handling becomes a daily headache",
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
-                                        <span className="mt-2 w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-500 flex-shrink-0" />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div
-                            className="rounded-2xl border border-dashed border-gray-300 dark:border-white/20 bg-gray-50 dark:bg-white/5 min-h-[280px] flex items-center justify-center text-gray-400 dark:text-gray-500 text-center p-8"
-                            data-aos="fade-up"
-                            data-aos-duration="400"
-                            data-aos-delay="200"
-                        >
-                            <div>
-                                <p className="font-semibold text-base">DIAGRAM PLACEHOLDER</p>
-                                <p className="text-sm mt-2">&quot;Fragmented workflow&quot; illustration</p>
-                            </div>
-                        </div>
+                    <div className="max-w-2xl mb-10">
+                        <h2 className="text-gray-900 dark:text-white font-bold text-3xl lg:text-4xl mb-4">Printing isn&apos;t hard. Workflow is.</h2>
+                        <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                            Scanners made capture easy. But production still depends on disconnected tools, manual steps, and team members with specialized knowledge.
+                        </p>
+                        <ul className="space-y-3">
+                            {[
+                                "CAD → slicer → printer → wash → cure → variability",
+                                "Training burden lands on one person",
+                                "Remakes steal chair time",
+                                "Resin handling becomes a daily headache",
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+                                    <span className="mt-2 w-2 h-2 rounded-full bg-gray-400 dark:bg-gray-500 flex-shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="relative w-full" data-aos="fade-up" data-aos-duration="500">
+                        <Image
+                            src="/images/workflow-diagram.png"
+                            alt="Fragmented workflow diagram"
+                            width={1200}
+                            height={600}
+                            className="w-full h-auto rounded-2xl"
+                        />
                     </div>
                 </div>
             </section>
@@ -163,27 +158,33 @@ export default function HomePage() {
                         <p className="text-gray-600 dark:text-gray-300 text-lg">Fewer steps → deliver same-day → predictable outcomes.</p>
                     </div>
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-4">
-                        {[
-                            { icon: <Monitor size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "1", title: "ZyloCAD", desc: "AI-assisted design, or cloud design services when you want it done-for-you.", delay: 0 },
-                            { icon: <Layers size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "2", title: "ZyloPrep", desc: "One-click file preparation with indication presets.", delay: 150 },
-                            { icon: <Printer size={36} strokeWidth={1.5} className="text-[#df7b26]" />, step: "3", title: "ZyloDent", desc: "Automated print + wash + cure for consistent output.", delay: 300 },
-                        ].map((card, i) => (
-                            <div
-                                key={i}
-                                className="rounded-2xl p-8 bg-gradient-to-b from-[#B3D2FF] to-[#F2F7FF] dark:from-[#111] dark:to-[#1e1e1e] border border-transparent dark:border-white/10"
-                                data-aos="fade-up"
-                                data-aos-duration="400"
-                                data-aos-delay={card.delay}
-                            >
-                                <div className="mb-6">
-                                    <div className="w-14 h-14 rounded-2xl bg-white dark:bg-white/10 flex items-center justify-center shadow-sm">
-                                        {card.icon}
-                                    </div>
-                                </div>
-                                <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">{card.title}</h3>
-                                <p className="text-gray-700 dark:text-gray-300 text-lg">{card.desc}</p>
+                        {/* ZyloCAD */}
+                        <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={0}>
+                            <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloCAD</h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-base">AI-assisted design, or cloud design services when you want it done-for-you.</p>
+                            <div className="absolute -bottom-3 -right-3 drop-shadow-xl">
+                                <Image src="/images/logo/zylocad-logo.png" alt="ZyloCAD" width={100} height={100} className="rounded-2xl" />
                             </div>
-                        ))}
+                        </div>
+                        {/* ZyloPrep */}
+                        <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={150}>
+                            <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloPrep</h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-base">One-click file preparation with indication presets.</p>
+                            <div className="absolute -bottom-3 -right-3 drop-shadow-xl">
+                                <Image src="/images/logo/zyloprep-logo.png" alt="ZyloPrep" width={100} height={100} className="rounded-2xl" />
+                            </div>
+                        </div>
+                        {/* ZyloDent — product photo as decorative right-side image */}
+                        <div className="relative rounded-2xl bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px] overflow-hidden" data-aos="fade-up" data-aos-duration="400" data-aos-delay={300}>
+                            <div className="p-8 pr-[48%]">
+                                <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloDent</h3>
+                                <p className="text-gray-600 dark:text-gray-300 text-base">Automated print + wash + cure for consistent output.</p>
+                            </div>
+                            <div className="absolute top-0 right-0 h-full w-[52%]">
+                                <Image src="/images/logo/zylodent-logo4.png" alt="ZyloDent" fill className="object-cover object-center" sizes="20vw" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-white/90 dark:from-[#111]/90 via-transparent to-transparent" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -205,7 +206,6 @@ export default function HomePage() {
                                 href={`/indications/${ind.slug}`}
                                 className="group overflow-hidden rounded-xl relative aspect-[4/3] block bg-gray-100 dark:bg-[#111]"
                                 data-aos="fade-up"
-                                data-aos-delay={i * 80}
                                 data-aos-duration="400"
                             >
                                 <Image

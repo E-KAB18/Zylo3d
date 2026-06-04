@@ -154,10 +154,12 @@ export default function IndicationsPage() {
                         Talk to our clinical team about the right Zylo3D setup for your lab.
                     </p>
                     <Link
-                        href="/contact?action=request-quote"
+                        href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || 'https://buy.stripe.com/dRm5kD7lc3CL6wxgP7c3m05'}
                         className="inline-flex items-center gap-2 bg-white text-[#df7b26] font-semibold px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        Request a Quote <ArrowUpRight size={18} />
+                        Buy Now <ArrowUpRight size={18} />
                     </Link>
                 </div>
             </section>
