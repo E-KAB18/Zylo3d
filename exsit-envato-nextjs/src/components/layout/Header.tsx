@@ -86,7 +86,7 @@ const Header = ({ btnColor = 'bg-[#df7b26]', bgColor = "bg-transparent", headerC
                             <DarkToggle />
 
                             {/* Buy Now Button */}
-                            <Button href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || 'https://buy.stripe.com/dRm5kD7lc3CL6wxgP7c3m05'} label='Buy Now' icon="" className="text-sm register-btn hidden lg:inline-flex" bgColor={` ${btnColor} `} textColor={` ${btnlinkColor} `} target="_blank" rel="noopener noreferrer" />
+                            <Button href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || '#'} label='Buy Now' icon="" className="text-sm register-btn hidden lg:inline-flex" bgColor={` ${btnColor} `} textColor={` ${btnlinkColor} `} target="_blank" rel="noopener noreferrer" />
 
                             {/* Mobile Menu Button */}
                             <button

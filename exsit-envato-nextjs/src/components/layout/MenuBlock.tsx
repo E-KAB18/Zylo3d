@@ -244,7 +244,7 @@ const MenuBlock: React.FC<MenuBlockProps> = ({ mobileOpen = false, toggleMobileM
                 </ul>
                 <div className="mt-auto p-4">
                     <Link
-                        href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || 'https://buy.stripe.com/dRm5kD7lc3CL6wxgP7c3m05'}
+                        href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || '#'}
                         className={`flex items-center justify-center gap-3 px-6 py-3 rounded-md text-sm font-medium transition-all duration-200 bg-[#df7b26] text-white hover:bg-[#c96b1e]`}
                         target="_blank"
                         rel="noopener noreferrer"
