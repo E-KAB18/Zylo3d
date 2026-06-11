@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle } from "react-feather";
 import Button from "@/components/ui/Button";
+import KOLTestimonialVideo from "@/components/ui/KOLTestimonialVideo";
 
 /* ── ROI Calculator ─────────────────────────────────── */
 function ROICalculator({ systemCost }: { systemCost: number }) {
@@ -122,6 +123,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     ];
 
     const cx = "max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3";
+    const kolTestimonialVideoId = process.env.NEXT_PUBLIC_KOL_TESTIMONIAL_VIDEO_ID;
 
     return (
         <>
@@ -146,7 +148,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <span className="inline-block px-3 py-1 bg-[#df7b26]/15 text-[#df7b26] text-sm font-semibold rounded-full mb-4 uppercase tracking-wide">
                                 {isZyloDent ? "All-in-one automated manufacturing" : product.tagline}
                             </span>
-                            <h1 className="text-gray-900 dark:text-white font-extrabold text-4xl lg:text-5xl mb-4" data-aos="fade-up" data-aos-duration="400">
+                            <h1 className="text-gray-900 dark:text-white font-extrabold text-3xl lg:text-4xl mb-4" data-aos="fade-up" data-aos-duration="400">
                                 {product.name}
                             </h1>
                             {isZyloDent && (
@@ -191,10 +193,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             </div>
                         </div>
 
-                        <div data-aos="zoom-in" data-aos-duration="500">
-                            <div className="rounded-2xl overflow-hidden">
-                                <Image src={product.image} alt={product.name} width={600} height={400} className="w-full object-cover" />
-                            </div>
+                        <div data-aos="zoom-in" data-aos-duration="500" className="flex items-center justify-center lg:scale-110 lg:translate-y-6">
+                            <Image src={product.image} alt={product.name} width={919} height={645} className="w-full h-auto object-contain drop-shadow-2xl" />
                         </div>
                     </div>
                 </div>
@@ -291,26 +291,31 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Assistant-Friendly Workflow</h2>
                         <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Standard steps your team can follow, every time.</p>
                     </div>
-                    <div className="rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-[#111111] h-56 flex items-center justify-center mb-12">
-                        <div className="text-center">
-                            <p className="text-gray-400 dark:text-gray-500 font-medium">Workflow video placeholder</p>
-                            <p className="text-gray-400 dark:text-gray-600 text-sm mt-1">Scan → Design → One-click prep → {product.name} → Finish</p>
+                    <div className="max-w-5xl mx-auto rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-[#111111] px-4 py-5 lg:px-6 lg:py-6">
+                        <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-4 lg:gap-3">
+                            {[
+                                { n: "1", title: "Scan",           image: "/images/workflow/Scan.png",     desc: "Quick capture for the indication.", contain: false },
+                                { n: "2", title: "Design",         image: "/images/workflow/ZyloCAD.png",  desc: "ZyloCAD or partner CAD workflows.", contain: true },
+                                { n: "3", title: "One-click prep", image: "/images/workflow/ZyloPrep.png", desc: "ZyloPrep reduces guesswork.", contain: true },
+                                { n: "4", title: `${product.name} runs it`, image: "/images/workflow/ZyloDent.png", desc: isZyloDent ? "Automated print + wash and cure." : "High-precision automated printing.", contain: false },
+                                { n: "5", title: "Finish",         image: "/images/workflow/Finish.png",   desc: "Designed for same-visit delivery.", contain: false },
+                            ].map((step, i) => (
+                                <div key={i} className="flex flex-col items-center text-center px-1" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
+                                    <div className="w-8 h-8 rounded-xl bg-[#df7b26]/10 border border-[#df7b26]/20 flex items-center justify-center text-[#df7b26] font-black text-sm mb-2.5">{step.n}</div>
+                                    <div className="relative w-32 h-32 rounded-xl overflow-hidden mb-2">
+                                        <Image
+                                            src={step.image}
+                                            alt={step.title}
+                                            fill
+                                            className={step.contain ? "object-contain" : "object-cover"}
+                                            sizes="128px"
+                                        />
+                                    </div>
+                                    <h4 className="text-gray-900 dark:text-white font-bold text-base mb-1">{step.title}</h4>
+                                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-snug">{step.desc}</p>
+                                </div>
+                            ))}
                         </div>
-                    </div>
-                    <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5">
-                        {[
-                            { n: "1", title: "Scan",               desc: "Quick capture for the indication." },
-                            { n: "2", title: "Design",             desc: "ZyloCAD or partner CAD workflows." },
-                            { n: "3", title: "One-click Prep",     desc: "ZyloPrep reduces guesswork." },
-                            { n: "4", title: `${product.name} runs it`, desc: isZyloDent ? "Automated print + wash + cure." : "High-precision automated printing." },
-                            { n: "5", title: "Finish + deliver",   desc: "Designed for same-visit delivery." },
-                        ].map((step, i) => (
-                            <div key={i} className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
-                                <div className="w-9 h-9 rounded-xl bg-[#df7b26]/15 border border-[#df7b26]/30 flex items-center justify-center text-[#df7b26] font-extrabold text-sm mb-4">{step.n}</div>
-                                <h4 className="text-gray-900 dark:text-white font-bold text-base mb-2">{step.title}</h4>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm">{step.desc}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -360,8 +365,37 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <h3 className="text-gray-900 dark:text-white font-bold text-xl mb-2">Validated material portfolio</h3>
                             <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Partners include BEGO, Pro3dure, Keystone, and Pac-Dent, with indication mapping and protocol PDFs.</p>
                             <div className="grid grid-cols-3 gap-3">
-                                {["BEGO", "Pro3dure", "Keystone", "Pac-Dent", "Open mode", "Protocol PDFs"].map((m) => (
-                                    <div key={m} className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 text-xs font-mono text-center px-2">{m}</div>
+                                {[
+                                    { name: "BEGO",          image: "/images/materials/Bego.png" },
+                                    { name: "Pac-Dent",      image: "/images/materials/PacDent.png" },
+                                    { name: "Pro3dure",      image: "/images/materials/Pro3dure.png" },
+                                    { name: "Keystone",      image: "/images/materials/Keystone.png" },
+                                    { name: "Open mode" },
+                                    { name: "Protocol PDFs" },
+                                ].map((m) => (
+                                    m.image ? (
+                                        <div
+                                            key={m.name}
+                                            className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 bg-white flex flex-col overflow-hidden"
+                                        >
+                                            <Image
+                                                src={m.image}
+                                                alt={m.name}
+                                                width={174}
+                                                height={48}
+                                                className="w-full h-auto max-h-12 object-contain object-top shrink-0"
+                                                quality={100}
+                                            />
+                                            <div className="flex-1 min-h-0" aria-hidden="true" />
+                                        </div>
+                                    ) : (
+                                        <div
+                                            key={m.name}
+                                            className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 text-xs font-mono text-center px-2"
+                                        >
+                                            {m.name}
+                                        </div>
+                                    )
                                 ))}
                             </div>
                         </div>
@@ -410,20 +444,26 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Software Stack</h2>
                         <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Built to standardize outcomes across every team member and every shift.</p>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
                         {[
-                            { name: "ZyloCAD",   badge: "Design",     desc: "AI-assisted workflows. Standardize design outcomes across your team regardless of experience level." },
-                            { name: "ZyloPrep",  badge: "Slicing",    desc: "One-click file preparation that eliminates slicing guesswork and validates print parameters automatically." },
-                            { name: "ZyloCloud", badge: "Management", desc: "Job queue, validated presets, analytics, and remote monitoring: all from your Zylo3D account." },
-                        ].map((sw, i) => (
-                            <div key={i} className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111111]" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
-                                <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-gray-900 dark:text-white font-bold text-xl">{sw.name}</h3>
-                                    <span className="px-2 py-0.5 rounded bg-[#df7b26]/10 text-[#df7b26] text-xs font-semibold">{sw.badge}</span>
+                            { name: "ZyloCAD",   badge: "Design",     logo: "/images/logo/zylocad-logo.png",   desc: "AI-assisted workflows. Standardize design outcomes across your team regardless of experience level.", delay: 0 },
+                            { name: "ZyloPrep",  badge: "Slicing",    logo: "/images/logo/zyloprep-logo.png",  desc: "One-click file preparation that eliminates slicing guesswork and validates print parameters automatically.", delay: 150 },
+                            { name: "ZyloCloud", badge: "Management", logo: "/images/logo/zylocloud-logo.png", desc: "Job queue, validated presets, analytics, and remote monitoring: all from your Zylo3D account.", delay: 300 },
+                        ].map((sw) => (
+                            <div
+                                key={sw.name}
+                                className="relative rounded-2xl p-8 pb-20 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 flex flex-col min-h-[220px] overflow-visible"
+                                data-aos="fade-up"
+                                data-aos-delay={sw.delay}
+                                data-aos-duration="400"
+                            >
+                                <div className="flex items-start justify-between gap-3 mb-3">
+                                    <h3 className="text-gray-900 dark:text-white font-semibold text-2xl">{sw.name}</h3>
+                                    <span className="px-2 py-0.5 rounded bg-[#df7b26]/10 text-[#df7b26] text-xs font-semibold shrink-0">{sw.badge}</span>
                                 </div>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">{sw.desc}</p>
-                                <div className="h-28 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-600 text-xs font-mono">
-                                    Screenshot placeholder
+                                <p className="text-gray-600 dark:text-gray-300 text-base">{sw.desc}</p>
+                                <div className="absolute bottom-[-20px] right-3 drop-shadow-xl">
+                                    <Image src={sw.logo} alt={sw.name} width={100} height={100} className="rounded-2xl" />
                                 </div>
                             </div>
                         ))}
@@ -590,13 +630,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">Clinics + KOL proof</h2>
                         <p className="text-gray-500 dark:text-gray-400">Real outcomes from labs and clinics using {product.name}.</p>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-[#111111] h-64 flex items-center justify-center">
-                            <div className="text-center">
-                                <p className="text-gray-400 dark:text-gray-500 font-medium">KOL video placeholder</p>
-                                <p className="text-gray-400 dark:text-gray-600 text-sm mt-1">Embed testimonial video here</p>
-                            </div>
-                        </div>
+                    <div className="grid md:grid-cols-2 gap-6 items-center">
+                        <KOLTestimonialVideo videoId={kolTestimonialVideoId} />
                         <div className="flex flex-col gap-4">
                             {[
                                 `"We cut hands-on time significantly and standardized outputs across assistants." - Dr. Name`,

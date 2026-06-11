@@ -36,7 +36,7 @@ const productsData: Product[] = [
     tagline: "Precision Dental 3D Printing, Automated",
     description:
       "All-in-one, designed for accuracy, reliability, and seamless integration with Zylo3D software and materials. ZyloDent is the complete end-to-end dental manufacturing solution, from design to final restoration.",
-    image: "/images/about/dentpro.webp",
+    image: "/images/zylodent-hero.png",
     features: [
       "All-in-one automated dental printing workflow",
       "High-resolution output for crowns, splints, dentures, and more",

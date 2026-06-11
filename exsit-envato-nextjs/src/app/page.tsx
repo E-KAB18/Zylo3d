@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { ArrowUpRight, CheckCircle } from "react-feather";
 import Link from "next/link";
+import KOLCard from "@/components/ui/KOLCard";
 
 const indications = [
     { name: "Digital Dentures",          slug: "digital-dentures",            image: "/images/indications/denture_base_large.png",  desc: "Fewer visits. Repeatable. Lower cost." },
@@ -176,7 +177,7 @@ export default function HomePage() {
                         </div>
                         {/* ZyloDent */}
                         <div className="relative rounded-2xl p-8 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 overflow-visible min-h-[220px]" data-aos="fade-up" data-aos-duration="400" data-aos-delay={300}>
-                            <div className="relative z-10 w-[55%]">
+                            <div className="relative z-10">
                                 <h3 className="text-gray-900 dark:text-white font-semibold text-2xl mb-3">ZyloDent</h3>
                                 <p className="text-gray-600 dark:text-gray-300 text-base">Automated print + wash + cure for consistent output.</p>
                             </div>
@@ -242,28 +243,9 @@ export default function HomePage() {
 
                     {/* KOL testimonials */}
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 mb-10">
-                        {[
-                            { initials: "JS", name: "Dr. Jay Siddiqui", quote: "It's been very reliable, it's a great system, it's very accurate." },
-                            { initials: "AD", name: "Dr. Adam Davis",    quote: "Zylo is all-in-one, you are able to flow in, and the footprint is so much smaller." },
-                            { initials: "RF", name: "Dr. Rick Ferguson", quote: "On the 3D printed restoration by Zylo, how great this fit is!" },
-                        ].map((kol, i) => (
-                            <div key={i} className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8 flex flex-col" data-aos="fade-up" data-aos-delay={i * 80} data-aos-duration="400">
-                                {/* Avatar placeholder */}
-                                <div className="w-14 h-14 rounded-full bg-[#df7b26]/10 border-2 border-[#df7b26]/30 flex items-center justify-center mb-5">
-                                    <span className="text-[#df7b26] font-bold text-lg">{kol.initials}</span>
-                                </div>
-                                <p className="text-gray-700 dark:text-gray-300 text-base italic leading-relaxed flex-1">&quot;{kol.quote}&quot;</p>
-                                <div className="mt-5 pt-5 border-t border-gray-100 dark:border-white/10">
-                                    <span className="text-gray-900 dark:text-white font-semibold text-sm">{kol.name}</span>
-                                    <div className="mt-3">
-                                        <span className="inline-flex items-center gap-1.5 text-xs text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-white/10 rounded-lg px-3 py-1.5">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-red-500"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.19a8.16 8.16 0 004.77 1.52V7.27a4.85 4.85 0 01-1-.58z"/></svg>
-                                            Video — coming soon
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                        <KOLCard photo="/images/kol/dr-jay.png"      name="Dr. Jay Siddiqui" quote="It's been very reliable, it's a great system, it's very accurate."              videoId="FGcscgareNE"   aosDelay={0} />
+                        <KOLCard photo="/images/kol/dr-adam.png"     name="Dr. Adam Davis"   quote="Zylo is all-in-one, you are able to flow in, and the footprint is so much smaller." videoId="pj6NC6iW7Lo" aosDelay={80} />
+                        <KOLCard photo="/images/kol/dr-ferguson.png" name="Dr. Rick Ferguson" quote="On the 3D printed restoration by Zylo, how great this fit is!"                 videoId="zP7L8YqgQJU"  aosDelay={160} />
                     </div>
 
                     {/* Metrics + Logos row */}
@@ -358,7 +340,7 @@ export default function HomePage() {
                                 { step: "5", title: "Protect uptime",  desc: "Virtual support and hardware hot-swap options when needed." },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4 px-6 py-5">
-                                    <span className="w-7 h-7 rounded-full bg-[#df7b26]/10 text-[#df7b26] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">{item.step}</span>
+                                    <span className="w-7 h-7 rounded-xl bg-[#df7b26]/10 border border-[#df7b26]/20 text-[#df7b26] font-black text-xs flex items-center justify-center shrink-0 mt-0.5">{item.step}</span>
                                     <div>
                                         <h3 className="text-gray-900 dark:text-white font-semibold text-sm mb-0.5">{item.title}</h3>
                                         <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{item.desc}</p>
