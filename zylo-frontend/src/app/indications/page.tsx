@@ -3,6 +3,7 @@ import ZyloFooter from "@/components/layout/ZyloFooter";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "react-feather";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const indications = [
     {
@@ -153,14 +154,14 @@ export default function IndicationsPage() {
                     <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
                         Talk to our clinical team about the right Zylo3D setup for your lab.
                     </p>
-                    <Link
-                        href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || '#'}
+                    <a
+                        href={CALENDLY_URL}
                         className="inline-flex items-center gap-2 bg-white text-[#df7b26] font-semibold px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Buy Now <ArrowUpRight size={18} />
-                    </Link>
+                        Book a Demo <ArrowUpRight size={18} />
+                    </a>
                 </div>
             </section>
 

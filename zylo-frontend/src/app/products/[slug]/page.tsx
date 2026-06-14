@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ArrowUpRight, CheckCircle } from "react-feather";
 import Button from "@/components/ui/Button";
 import KOLTestimonialVideo from "@/components/ui/KOLTestimonialVideo";
+import { CALENDLY_URL } from "@/lib/constants";
 
 /* ── ROI Calculator ─────────────────────────────────── */
 function ROICalculator({ systemCost }: { systemCost: number }) {
@@ -123,7 +124,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     ];
 
     const cx = "max-w-screen-xl mx-auto px-3 sm:px-6 md:px-14 lg:px-14 xl:px-18 2xl:px-3";
-    const kolTestimonialVideoId = process.env.NEXT_PUBLIC_KOL_TESTIMONIAL_VIDEO_ID;
 
     return (
         <>
@@ -161,10 +161,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             </p>
 
                             <div className="flex flex-wrap gap-3 mb-7">
-                                <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-6" icon={<ArrowUpRight size={17} />} />
-                                <Link href="/contact?action=request-sample" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
-                                    Request a Sample Part
-                                </Link>
+                                <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-6" icon={<ArrowUpRight size={17} />} />
                                 <Link href="#specs" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                     Download Spec Sheet
                                 </Link>
@@ -558,7 +555,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <p className="text-gray-500 dark:text-gray-400 text-sm">Contact us for a PDF download and comparison chart.</p>
                         </div>
                         <div className="flex gap-3 flex-wrap">
-                            <Button href="/contact?action=request-quote" label="Request a Quote" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-5" icon={<ArrowUpRight size={16} />} />
+                            <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-3 px-5" icon={<ArrowUpRight size={16} />} />
                             <Link href="#service" className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
                                 See service plans
                             </Link>
@@ -631,7 +628,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <p className="text-gray-500 dark:text-gray-400">Real outcomes from labs and clinics using {product.name}.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6 items-center">
-                        <KOLTestimonialVideo videoId={kolTestimonialVideoId} />
+                        <KOLTestimonialVideo videoId="clvCcl5DSSs" />
                         <div className="flex flex-col gap-4">
                             {[
                                 `"We cut hands-on time significantly and standardized outputs across assistants." - Dr. Name`,
@@ -670,13 +667,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                             <h2 className="text-gray-900 dark:text-white font-bold text-2xl lg:text-3xl mb-2">
                                 Ready to run same-visit manufacturing without the complexity?
                             </h2>
-                            <p className="text-gray-500 dark:text-gray-400">Book a demo or request a sample part: we&#39;ll recommend the best starting indication.</p>
+                            <p className="text-gray-500 dark:text-gray-400">Book a demo and we&#39;ll recommend the best starting indication for your practice.</p>
                         </div>
                         <div className="flex gap-3 flex-wrap flex-shrink-0">
-                            <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />
-                            <Link href="/contact?action=request-sample" className="inline-flex items-center gap-2 px-6 py-4 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition">
-                                Request a Sample Part
-                            </Link>
+                            <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" label="Book a Demo" bgColor="bg-[#df7b26]" textColor="text-white" padding="py-4 px-6" icon={<ArrowUpRight size={18} />} />
                         </div>
                     </div>
                 </div>

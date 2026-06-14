@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import ZyloFooter from '@/components/layout/ZyloFooter';
 import ROICalculator from '@/components/ui/ROICalculator';
 import { indicationsData, getIndicationBySlug } from './indicationsData';
+import { CALENDLY_URL } from '@/lib/constants';
 
 export function generateStaticParams() {
   return indicationsData.map((ind) => ({ slug: ind.slug }));
@@ -54,12 +55,14 @@ export default async function IndicationPage({ params }: PageProps) {
 
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-3 mb-10">
-                <Link
-                  href="/contact?action=book-demo"
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-[#df7b26] text-white font-bold text-sm hover:bg-[#c96d1e] transition shadow-lg shadow-[#df7b26]/25"
                 >
                   Book a Demo
-                </Link>
+                </a>
                 <Link
                   href="/products/zylodent"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-gray-300 dark:border-white/20 text-gray-700 dark:text-white font-bold text-sm hover:bg-gray-50 dark:hover:bg-white/5 transition"
@@ -330,10 +333,10 @@ export default async function IndicationPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div data-aos="fade-up" data-aos-duration="400">
               <h2 className="text-2xl font-bold text-white leading-tight mb-3">
-                {indication.ctaLabel}
+                Ready to get started?
               </h2>
               <p className="text-base text-white/80 leading-relaxed">
-                Get a demo, a sample part, and a clinic-ready checklist.
+                Book a live demo and see how {indication.name} fits into your workflow.
               </p>
             </div>
             <div
@@ -342,18 +345,14 @@ export default async function IndicationPage({ params }: PageProps) {
               data-aos-delay="100"
               className="flex flex-col sm:flex-row gap-3 lg:justify-end"
             >
-              <Link
-                href="/contact?action=request-sample"
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-[#df7b26] font-bold text-sm hover:bg-gray-50 transition shadow-xl"
               >
-                Request a Sample
-              </Link>
-              <Link
-                href="/contact?action=book-demo"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition"
-              >
                 Book a Demo
-              </Link>
+              </a>
             </div>
           </div>
         </div>

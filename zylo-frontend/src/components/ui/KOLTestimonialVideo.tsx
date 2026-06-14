@@ -4,22 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 interface KOLTestimonialVideoProps {
-    videoId?: string;
+    videoId: string;
 }
 
 export default function KOLTestimonialVideo({ videoId }: KOLTestimonialVideoProps) {
     const [playing, setPlaying] = useState(false);
-
-    if (!videoId) {
-        return (
-            <div className="rounded-2xl border border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-[#111111] aspect-video w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                    <p className="text-gray-400 dark:text-gray-500 font-medium">KOL testimonial video</p>
-                    <p className="text-gray-400 dark:text-gray-600 text-sm mt-1">YouTube embed — KOL_TESTIMONIAL_VIDEO_ID </p>
-                </div>
-            </div>
-        );
-    }
 
     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
     const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;

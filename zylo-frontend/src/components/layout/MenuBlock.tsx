@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown, X, ArrowUpRight } from 'react-feather';
 import Image from 'next/image';
+import { STRIPE_BUY_URL } from '@/lib/constants';
 
 interface SubMenuItem {
     title: string;
@@ -244,7 +245,7 @@ const MenuBlock: React.FC<MenuBlockProps> = ({ mobileOpen = false, toggleMobileM
                 </ul>
                 <div className="mt-auto p-4">
                     <Link
-                        href={process.env.NEXT_PUBLIC_STRIPE_BUY_URL || '#'}
+                        href={STRIPE_BUY_URL}
                         className={`flex items-center justify-center gap-3 px-6 py-3 rounded-md text-sm font-medium transition-all duration-200 bg-[#df7b26] text-white hover:bg-[#c96b1e]`}
                         target="_blank"
                         rel="noopener noreferrer"

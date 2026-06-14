@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ArrowUpRight, CheckCircle } from "react-feather";
 import Link from "next/link";
 import KOLCard from "@/components/ui/KOLCard";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const indications = [
     { name: "Digital Dentures",          slug: "digital-dentures",            image: "/images/indications/denture_base_large.png",  desc: "Fewer visits. Repeatable. Lower cost." },
@@ -71,7 +72,9 @@ export default function HomePage() {
                                     textColor="text-white"
                                     icon={<ArrowUpRight size={20} />}
                                     padding="py-4 px-7"
-                                    href="/contact?action=book-demo"
+                                    href={CALENDLY_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 />
                                 <Button
                                     label="Calculate ROI"
@@ -359,7 +362,7 @@ export default function HomePage() {
                         <p className="text-white/90">Book a demo or run ROI in minutes.</p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3">
-                        <Button href="/contact?action=book-demo" label="Book a Demo" bgColor="bg-white" textColor="text-[#df7b26]" padding="py-4 px-8" />
+                        <Button href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" label="Book a Demo" bgColor="bg-white" textColor="text-[#df7b26]" padding="py-4 px-8" />
                         <Button href="/products/zylodent#roi" label="Calculate ROI" bgColor="bg-transparent" textColor="text-white" padding="py-4 px-8" className="border-2 border-white hover:bg-white hover:text-[#df7b26] transition-all" />
                     </div>
                 </div>
