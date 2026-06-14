@@ -1,0 +1,188 @@
+﻿@import "tailwindcss";
+@import "aos/dist/aos.css";
+
+/* Offset anchor jumps on product pages so fixed header+subnav don't cover content */
+.product-section-anchor {
+    scroll-margin-top: 110px;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Theme tokens ──────────────────────────────────────────── */
+:root {
+    --background: #fff;
+    --foreground: #0a0a0a;
+}
+body.dark {
+    --background: #111111;
+    --foreground: #ededed;
+}
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --shadow-xs: 0 4px 80px rgba(0, 0, 0, 0.1);
+    --font-sora: var(--font-sora) var(--font-fallback-sans);
+    --font-dm-sans: var(--font-dm-sans) var(--font-fallback-sans);
+}
+
+@layer base {
+    html {
+        font-family: var(--font-dm-sans);
+    }
+    body {
+        background: var(--background);
+        color: var(--foreground);
+    }
+}
+
+/* ── Zylo hero background ──────────────────────────────────── */
+.zylo-hero-bg {
+    background: #ffffff;
+    background-image: radial-gradient(ellipse 70% 55% at 70% 30%, rgba(223,123,38,0.07) 0%, transparent 60%);
+}
+:where(.dark) .zylo-hero-bg {
+    background: #080808;
+    background-image: radial-gradient(ellipse 80% 55% at 65% 5%, rgba(223,123,38,0.16) 0%, transparent 55%);
+}
+
+/* ── Dark mode overrides ───────────────────────────────────── */
+:where(.dark) .text-gray-400,
+:where(.dark) .text-gray-500,
+:where(.dark) .text-gray-600 {
+    color: theme('colors.gray.400');
+}
+:where(.dark) .text-gray-700,
+:where(.dark) .text-gray-800,
+:where(.dark) .text-gray-900 {
+    color: theme('colors.gray.100');
+}
+:where(.dark) .bg-green-900,
+:where(.dark) .bg-green-50,
+:where(.dark) .bg-teal-900,
+:where(.dark) .bg-gray-100,
+:where(.dark) .bg-orange-50,
+:where(.dark) .bg-gray-200 {
+    background-color: #1e1e1e;
+}
+:where(.dark) .bg-teal-800,
+:where(.dark) .bg-gray-50,
+:where(.dark) .bg-white {
+    background: #141414;
+}
+:where(.dark) .ring-gray-300,
+:where(.dark) .border-gray-100,
+:where(.dark) .border-gray-200 {
+    border-color: theme('colors.gray.800');
+}
+:where(.dark) .border-gray-300 {
+    border-color: theme('colors.gray.800');
+}
+:where(.dark) .text-green-800 {
+    color: theme('colors.green.400');
+}
+:where(.dark) select,
+:where(.dark) textarea,
+:where(.dark) input[type="tel"],
+:where(.dark) input[type="number"],
+:where(.dark) input[type="password"],
+:where(.dark) input[type="text"],
+:where(.dark) input[type="email"] {
+    color: theme('colors.gray.300') !important;
+    background-color: theme('colors.gray.700') !important;
+    border-color: theme('colors.gray.800') !important;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+
+/* Light mode: make header-light nav text dark (otherwise white-on-white) */
+body:not(.dark) .header-wrapper.header-light:not(.scroll-header) .main-menu a,
+body:not(.dark) .header-wrapper.header-light:not(.scroll-header) .main-menu button {
+    color: #1a1a1a !important;
+}
+:where(.dark) .header-wrapper.scroll-header {
+    background: #1a1a1a;
+    border: 0;
+}
+:where(.dark) .menu-block {
+    background: transparent !important;
+}
+
+@layer utilities {
+    .scroll-header {
+        @apply bg-white shadow-xs fixed top-0;
+    }
+
+    /* ── Mobile menu ───────────────────────────────────────── */
+    .menu-block {
+        @apply fixed p-4 top-0 left-[-320px] lg:w-auto w-[280px] z-[1099] transition-[left] duration-300 ease-in-out flex flex-col justify-start gap-4 overflow-y-auto h-screen;
+        @apply lg:static lg:p-0 lg:flex-row lg:overflow-visible lg:h-auto lg:bg-transparent bg-white;
+    }
+    .menu-block.active {
+        @apply left-0;
+    }
+    .menu-overlay {
+        @apply fixed inset-0 bg-black/50 z-[1098] opacity-0 invisible transition-all duration-500 ease-in-out pointer-events-none;
+    }
+    .menu-overlay.active {
+        @apply opacity-100 visible;
+    }
+    .sub-menu.show {
+        @apply block max-h-[500px];
+    }
+    .mega-menu-sub.show {
+        @apply block max-h-[500px];
+    }
+
+    /* ── Header logo / nav color logic ────────────────────── */
+    .header-wrapper .register-btn {
+        @apply lg:flex hidden;
+    }
+    .header-wrapper .main-menu {
+        @apply text-gray-900;
+    }
+    .header-wrapper.header-light .main-menu {
+        @apply text-white;
+    }
+    :where(.dark) .header-wrapper .main-menu {
+        @apply text-white;
+    }
+    .header-wrapper.header-light.scroll-header .main-menu {
+        @apply text-gray-900;
+    }
+    :where(.dark) .header-wrapper.scroll-header.header-light .main-menu {
+        @apply text-white;
+    }
+    .header-wrapper .dark-logo {
+        @apply hidden;
+    }
+    :where(.dark) .header-wrapper .dark-logo {
+        @apply flex;
+    }
+    :where(.dark) .header-wrapper .light-logo {
+        @apply hidden;
+    }
+    .header-wrapper.header-light .dark-logo {
+        @apply flex;
+    }
+    .header-wrapper.scroll-header.header-light .light-logo {
+        @apply flex;
+    }
+    .header-wrapper.scroll-header.header-light .dark-logo {
+        @apply hidden;
+    }
+    .header-wrapper.header-light .light-logo {
+        @apply hidden;
+    }
+    :where(.dark) .header-wrapper.scroll-header.header-light .dark-logo {
+        @apply flex;
+    }
+    :where(.dark) .header-wrapper.scroll-header.header-light .light-logo {
+        @apply hidden;
+    }
+}
+
+@layer components {
+    .btn-transition {
+        transition: all 0.4s ease !important;
+    }
+}
