@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { data, error } = await resend.emails.send({
-    from: "Zylo3D Contact <onboarding@resend.dev>",
+    from: "Zylo3D Contact <noreply@zylo3d.com>",
     to: [process.env.CONTACT_EMAIL!],
     replyTo: email,
     subject: `[Zylo3D] ${action} from ${name}`,
