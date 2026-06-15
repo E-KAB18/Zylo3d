@@ -14,12 +14,11 @@ npm run dev
 Copy `.env.example` to `.env` and fill in:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://zylo3d.com
-NEXT_PUBLIC_STRIPE_BUY_URL=https://buy.stripe.com/...
-NEXT_PUBLIC_KOL_TESTIMONIAL_VIDEO_ID=   # YouTube video ID for ZyloDent page
-RESEND_API_KEY=re_...
-CONTACT_EMAIL=sales@zylo3d.com
+RESEND_API_KEY=re_...          # Resend API key — get from resend.com
+CONTACT_EMAIL=sales@zylo3d.com # Inbox that receives contact form submissions
 ```
+
+Public URLs (Calendly, Stripe) are hardcoded in `src/lib/constants.ts` — no env vars needed.
 
 ## Stack
 

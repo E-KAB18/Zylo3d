@@ -156,7 +156,7 @@ export default function IndicationsPage() {
                     </p>
                     <a
                         href={CALENDLY_URL}
-                        className="inline-flex items-center gap-2 bg-white text-[#df7b26] font-semibold px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
+                        className="inline-flex items-center gap-2 bg-white dark:!bg-white text-[#df7b26] dark:!text-[#df7b26] font-semibold px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

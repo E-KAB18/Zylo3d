@@ -349,7 +349,7 @@ export default async function IndicationPage({ params }: PageProps) {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-[#df7b26] font-bold text-sm hover:bg-gray-50 transition shadow-xl"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white dark:!bg-white text-[#df7b26] dark:!text-[#df7b26] font-bold text-sm hover:bg-gray-50 transition shadow-xl"
               >
                 Book a Demo
               </a>
