@@ -1,0 +1,27 @@
+name: zylo
+
+services:
+  frontend:
+    # Build the image using the Dockerfile in this folder
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Name the running container
+    container_name: zylo-frontend
+
+    # Map port 3000 on your machine → port 3000 inside the container
+    # Format: "host:container"
+    # So http://localhost:3000 on your machine hits the app inside Docker
+    ports:
+      - "3000:3000"
+
+    # Pass environment variables into the container at runtime
+    # These override anything baked into the image
+    environment:
+      - NODE_ENV=production
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - CONTACT_EMAIL=${CONTACT_EMAIL}
+
+    # Always restart the container if it crashes
+    restart: unless-stopped
