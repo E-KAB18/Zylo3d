@@ -1,20 +1,27 @@
 // app/layout.tsx
 import './globals.css';
-import { Sora, DM_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import AOSWrapper from "@/components/layout/AOSWrapper";
 
-// Define a secondary font for headings
-const sora = Sora({
-  subsets: ['latin'],
+const sora = localFont({
+  src: [
+    { path: '../../public/fonts/Sora-400.woff2', weight: '400' },
+    { path: '../../public/fonts/Sora-500.woff2', weight: '500' },
+    { path: '../../public/fonts/Sora-600.woff2', weight: '600' },
+    { path: '../../public/fonts/Sora-700.woff2', weight: '700' },
+  ],
   variable: '--font-sora',
 });
 
-// Define a font for your primary body text
-const dmSans = DM_Sans({
-  subsets: ['latin'],
+const dmSans = localFont({
+  src: [
+    { path: '../../public/fonts/dm-sans-400.woff2', weight: '400' },
+    { path: '../../public/fonts/dm-sans-500.woff2', weight: '500' },
+    { path: '../../public/fonts/dm-sans-600.woff2', weight: '600' },
+    { path: '../../public/fonts/dm-sans-700.woff2', weight: '700' },
+  ],
   variable: '--font-dm-sans',
 });
-
 
 export const metadata = {
   title: 'Zylo3D: Digital Dentistry Manufacturing Platform',

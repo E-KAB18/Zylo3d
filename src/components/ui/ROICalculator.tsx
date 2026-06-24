@@ -1,145 +1,150 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
+import { calculateROI, formatUSD, IndicationKey } from '@/lib/calculateROI';
+
+interface Row {
+  key: IndicationKey;
+  label: string;
+  casesPerMonth: number;
+  labCostPerCase: number;
+}
 
 interface ROICalculatorProps {
-  defaults: {
-    casesPerMonth: number;
-    labCostPerUnit: number;
-    zyloCostPerUnit: number;
-    unitLabel: string;
+  indications: { key: IndicationKey; label: string; defaultCases?: number; defaultLabCost?: number }[];
+  singleRow?: boolean;
+}
+
+export default function ROICalculator({ indications, singleRow = false }: ROICalculatorProps) {
+  const [rows, setRows] = useState<Row[]>(
+    indications.map((ind) => ({
+      key: ind.key,
+      label: ind.label,
+      casesPerMonth: ind.defaultCases ?? 0,
+      labCostPerCase: ind.defaultLabCost ?? 0,
+    }))
+  );
+
+  const update = (key: IndicationKey, field: 'casesPerMonth' | 'labCostPerCase', value: number) => {
+    setRows((prev) => prev.map((r) => (r.key === key ? { ...r, [field]: Math.max(0, value) } : r)));
   };
-}
 
-function formatCurrency(n: number): string {
-  return n.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0,
-  });
-}
+  const result = calculateROI(rows);
 
-export default function ROICalculator({ defaults }: ROICalculatorProps) {
-  const [cases, setCases] = useState(defaults.casesPerMonth);
-  const [labFee, setLabFee] = useState(defaults.labCostPerUnit);
-  const [zyloCost, setZyloCost] = useState(defaults.zyloCostPerUnit);
+  // Light-mode Tailwind classes only — dark mode handled by the <style> block below
+  // because browser UA stylesheets override Tailwind's dark: classes on <input> elements.
+  const inputClass = [
+    'roi-input',
+    'w-24 h-8 px-2 rounded-md text-sm font-semibold text-center outline-none transition',
+    'appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none',
+    'bg-white border border-gray-300 text-gray-900 placeholder:text-gray-400 focus:border-[#df7b26]',
+  ].join(' ');
 
-  const [monthlySavings, setMonthlySavings] = useState(0);
-  const [annualSavings, setAnnualSavings] = useState(0);
-  const [monthlyLab, setMonthlyLab] = useState(0);
-  const [monthlyZylo, setMonthlyZylo] = useState(0);
-
-  useEffect(() => {
-    const mLab = Math.max(0, cases * labFee);
-    const mZylo = Math.max(0, cases * zyloCost);
-    const mSave = Math.max(0, mLab - mZylo);
-    setMonthlyLab(mLab);
-    setMonthlyZylo(mZylo);
-    setMonthlySavings(mSave);
-    setAnnualSavings(mSave * 12);
-  }, [cases, labFee, zyloCost]);
+  // Light: gray-100 (neutral, no blue tint). Dark: handled by .dark .roi-row in <style> block.
+  const separator = 'roi-row border-b border-gray-100';
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      {/* Inputs */}
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-gray-200 dark:border-white/10 p-6">
-        <h3 className="text-base font-bold text-gray-900 dark:text-white mb-5">
-          Enter your numbers
-        </h3>
-        <div className="grid gap-4">
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
-              {defaults.unitLabel.charAt(0).toUpperCase() + defaults.unitLabel.slice(1)} per month
-            </label>
-            <input
-              type="number"
-              min={0}
-              value={cases}
-              onChange={(e) => setCases(Math.max(0, Number(e.target.value)))}
-              className="w-full h-11 px-4 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111111] text-gray-900 dark:text-white text-sm font-semibold outline-none focus:border-[#df7b26] focus:ring-2 focus:ring-[#df7b26]/20 transition"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
-              Average lab fee per unit (USD)
-            </label>
-            <input
-              type="number"
-              min={0}
-              value={labFee}
-              onChange={(e) => setLabFee(Math.max(0, Number(e.target.value)))}
-              className="w-full h-11 px-4 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111111] text-gray-900 dark:text-white text-sm font-semibold outline-none focus:border-[#df7b26] focus:ring-2 focus:ring-[#df7b26]/20 transition"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
-              Estimated Zylo cost per unit (USD)
-            </label>
-            <input
-              type="number"
-              min={0}
-              value={zyloCost}
-              onChange={(e) => setZyloCost(Math.max(0, Number(e.target.value)))}
-              className="w-full h-11 px-4 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111111] text-gray-900 dark:text-white text-sm font-semibold outline-none focus:border-[#df7b26] focus:ring-2 focus:ring-[#df7b26]/20 transition"
-            />
-          </div>
-        </div>
-        <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-          Replace Zylo cost/unit with your validated material + consumables estimate.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-[#df7b26] text-white text-sm font-bold hover:bg-[#c96d1e] transition"
-          >
-            Request ROI Report
-          </Link>
-        </div>
+    <>
+    <style>{`
+      .dark .roi-input {
+        background-color: #141414 !important;
+        border-color: rgba(255, 255, 255, 0.35) !important;
+        color: #ffffff !important;
+      }
+      .dark .roi-input::placeholder {
+        color: rgba(255, 255, 255, 0.65) !important;
+      }
+      .dark .roi-input:focus {
+        border-color: #df7b26 !important;
+      }
+      .dark .roi-row {
+        border-bottom-color: rgba(255, 255, 255, 0.18) !important;
+      }
+    `}</style>
+    <div className="w-full max-w-4xl mx-auto">
+      {/* Table */}
+      <div className="w-full overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className={separator}>
+              {!singleRow && (
+                <th className="pb-2 text-center font-semibold text-gray-900 dark:text-white text-sm">
+                  Indication
+                </th>
+              )}
+              <th className="pb-2 text-center font-semibold text-gray-900 dark:text-white text-sm px-6">
+                Cases per Month
+              </th>
+              <th className="pb-2 text-center font-semibold text-gray-900 dark:text-white text-sm px-6">
+                Avg. lab cost per case ($)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.key} className={`${separator} last:border-0`}>
+                {!singleRow && (
+                  <td className="py-2 text-center text-gray-700 dark:text-white font-medium text-sm">
+                    {row.label}
+                  </td>
+                )}
+                <td className="py-2 px-6 text-center">
+                  <div className="flex justify-center">
+                    <input
+                      type="number"
+                      min={0}
+                      value={row.casesPerMonth === 0 ? '' : row.casesPerMonth}
+                      placeholder="0"
+                      onChange={(e) => update(row.key, 'casesPerMonth', Number(e.target.value))}
+                      className={inputClass}
+                    />
+                  </div>
+                </td>
+                <td className="py-2 px-6 text-center">
+                  <div className="flex justify-center">
+                    <input
+                      type="number"
+                      min={0}
+                      value={row.labCostPerCase === 0 ? '' : row.labCostPerCase}
+                      placeholder="0"
+                      onChange={(e) => update(row.key, 'labCostPerCase', Number(e.target.value))}
+                      className={inputClass}
+                    />
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       {/* Results */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-gray-200 dark:border-white/10 p-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            Monthly lab spend
+      <div className="mt-10">
+        <h3 className="text-center text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          Annual profit
+        </h3>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-gray-200 dark:border-white/15 p-6 text-center">
+            <p className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Scenario A</p>
+            <p className="text-sm text-gray-500 dark:text-white/50 mb-5">
+              Design Service and In-house printing
+            </p>
+            <p className="text-4xl font-black text-[#df7b26]">
+              {formatUSD(result.totalAnnualProfitA)}
+            </p>
           </div>
-          <div className="mt-3 text-3xl font-black text-gray-900 dark:text-white tracking-tight">
-            {formatCurrency(monthlyLab)}
+          <div className="rounded-2xl border border-[#df7b26] p-6 text-center">
+            <p className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Scenario B</p>
+            <p className="text-sm text-gray-500 dark:text-white/50 mb-5">
+              In-house Design and Printing
+            </p>
+            <p className="text-4xl font-black text-[#df7b26]">
+              {formatUSD(result.totalAnnualProfitB)}
+            </p>
           </div>
-          <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">Current workflow</div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-gray-200 dark:border-white/10 p-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            Monthly in-house cost
-          </div>
-          <div className="mt-3 text-3xl font-black text-gray-900 dark:text-white tracking-tight">
-            {formatCurrency(monthlyZylo)}
-          </div>
-          <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">With Zylo</div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-[#df7b26]/30 p-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#df7b26]">
-            Estimated monthly savings
-          </div>
-          <div className="mt-3 text-3xl font-black text-[#df7b26] tracking-tight">
-            {formatCurrency(monthlySavings)}
-          </div>
-          <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">vs. lab outsourcing</div>
-        </div>
-
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl border border-[#df7b26]/30 p-5">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#df7b26]">
-            Estimated annual savings
-          </div>
-          <div className="mt-3 text-3xl font-black text-[#df7b26] tracking-tight">
-            {formatCurrency(annualSavings)}
-          </div>
-          <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">12-month projection</div>
         </div>
       </div>
     </div>
+    </>
   );
 }

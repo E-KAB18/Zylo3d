@@ -269,13 +269,24 @@ export default function HomePage() {
                         </div>
                         <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111] p-8">
                             <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Validated FDA-cleared partners</span>
-                            <div className="flex flex-wrap gap-3 mt-6">
-                                {["Bego", "Keystone", "Medit"].map((partner) => (
-                                    <span key={partner} className="px-4 py-2 rounded-lg border border-gray-200 dark:border-white/15 text-gray-700 dark:text-gray-300 font-semibold text-sm bg-gray-50 dark:bg-white/5">
-                                        {partner}
-                                    </span>
+                            <div className="flex flex-wrap gap-3 mt-6 items-center">
+                                {[
+                                    { name: "Bego",     image: "/images/materials/Bego.png" },
+                                    { name: "Keystone", image: "/images/materials/Keystone.png" },
+                                    { name: "Medit",    image: "/images/materials/Medit.png" },
+                                ].map((partner) => (
+                                    <div key={partner.name} className="h-10 w-28 bg-white rounded-lg overflow-hidden">
+                                        <Image
+                                            src={partner.image}
+                                            alt={partner.name}
+                                            width={112}
+                                            height={40}
+                                            className="w-full h-full object-contain"
+                                            quality={100}
+                                        />
+                                    </div>
                                 ))}
-                                <span className="px-4 py-2 rounded-lg border border-[#df7b26]/40 text-[#df7b26] font-semibold text-sm bg-[#df7b26]/5">
+                                <span className="h-8 px-4 rounded-lg border border-[#df7b26]/40 text-[#df7b26] font-semibold text-sm bg-[#df7b26]/5 inline-flex items-center">
                                     Open System
                                 </span>
                             </div>

@@ -5,6 +5,36 @@ import ZyloFooter from '@/components/layout/ZyloFooter';
 import ROICalculator from '@/components/ui/ROICalculator';
 import { indicationsData, getIndicationBySlug } from './indicationsData';
 import { CALENDLY_URL } from '@/lib/constants';
+import { IndicationKey } from '@/lib/calculateROI';
+
+const SLUG_TO_ROI: Record<string, IndicationKey> = {
+  'model':                       'crown_bridge',
+  'crown':                       'crown_bridge',
+  'bridge':                      'crown_bridge',
+  'inlay':                       'crown_bridge',
+  'onlay':                       'crown_bridge',
+  'veneer':                      'crown_bridge',
+  'pediatric-crown':             'crown_bridge',
+  'denture-base':                'denture',
+  'denture-teeth':               'denture',
+  'digital-dentures':            'denture',
+  'night-guard':                 'night_guard',
+  'sports-guard':                'night_guard',
+  'sports-guards':               'night_guard',
+  'occlusal-splints':            'night_guard',
+  'surgical-guide':              'surgical_guide',
+  'surgical-guides':             'surgical_guide',
+  'all-on-x':                    'aligner',
+  'provisional-all-on-x':        'aligner',
+  'waxups-implant-provisionals': 'aligner',
+};
+
+function getRoiIndication(slug: string, name: string) {
+  return {
+    key: SLUG_TO_ROI[slug] ?? 'crown_bridge',
+    label: name,
+  };
+}
 
 export function generateStaticParams() {
   return indicationsData.map((ind) => ({ slug: ind.slug }));
@@ -255,7 +285,14 @@ export default async function IndicationPage({ params }: PageProps) {
           </div>
 
           <div data-aos="fade-up" data-aos-duration="400">
-            <ROICalculator defaults={indication.roiDefaults} />
+            <ROICalculator
+              indications={[{
+                ...getRoiIndication(slug, indication.name),
+                defaultCases: indication.roiDefaults.casesPerMonth,
+                defaultLabCost: indication.roiDefaults.labCostPerUnit,
+              }]}
+              singleRow
+            />
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
-﻿"use client";
+"use client";
 
 import { notFound } from "next/navigation";
-import { use, useState } from "react";
+import { use } from "react";
 import productsData from "@/data/productsData";
 import Header from "@/components/layout/Header";
 import ZyloFooter from "@/components/layout/ZyloFooter";
@@ -11,65 +11,8 @@ import { ArrowUpRight, CheckCircle } from "react-feather";
 import Button from "@/components/ui/Button";
 import KOLTestimonialVideo from "@/components/ui/KOLTestimonialVideo";
 import { CALENDLY_URL } from "@/lib/constants";
+import ROICalculator from "@/components/ui/ROICalculator";
 
-/* ── ROI Calculator ─────────────────────────────────── */
-function ROICalculator({ systemCost }: { systemCost: number }) {
-    const [casesPerWeek, setCasesPerWeek] = useState(25);
-    const [labCost, setLabCost] = useState(65);
-    const [inHouseCost, setInHouseCost] = useState(12);
-    const platformCost = 650;
-
-    const casesPerMonth = casesPerWeek * 4.33;
-    const monthlySavings = (labCost - inHouseCost) * casesPerMonth - platformCost;
-    const annualSavings = monthlySavings * 12;
-    const paybackMonths = monthlySavings > 0 ? Math.ceil(systemCost / monthlySavings) : 0;
-    const fmt = (n: number) => (n > 0 ? `$${Math.round(n).toLocaleString()}` : "N/A");
-
-    return (
-        <div className="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
-            <h3 className="text-gray-900 dark:text-white text-2xl font-bold mb-1">ROI Calculator</h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">
-                Estimate your savings by bringing production in-house.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-                {[
-                    { label: "Cases per week", value: casesPerWeek, setter: setCasesPerWeek, min: 1, max: 100, step: 1 },
-                    { label: "Avg. lab cost per case ($)", value: labCost, setter: setLabCost, min: 20, max: 500, step: 5 },
-                    { label: "In-house variable cost per case ($)", value: inHouseCost, setter: setInHouseCost, min: 5, max: 100, step: 1 },
-                ].map((inp) => (
-                    <div key={inp.label}>
-                        <label className="text-gray-700 dark:text-gray-300 text-sm font-medium block mb-2">{inp.label}</label>
-                        <input
-                            type="range"
-                            min={inp.min}
-                            max={inp.max}
-                            step={inp.step}
-                            value={inp.value}
-                            onChange={(e) => inp.setter(Number(e.target.value))}
-                            className="w-full accent-[#df7b26]"
-                        />
-                        <span className="text-[#df7b26] font-bold text-lg">{inp.value}</span>
-                    </div>
-                ))}
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-                {[
-                    { label: "Monthly Savings", value: fmt(monthlySavings) },
-                    { label: "Annual Profit Lift", value: fmt(annualSavings) },
-                    { label: "Payback Period", value: paybackMonths > 0 ? `${paybackMonths} months` : "N/A" },
-                ].map((stat) => (
-                    <div key={stat.label} className="bg-white dark:bg-[#111111] rounded-xl p-5 text-center border border-gray-200 dark:border-gray-700">
-                        <p className="text-[#df7b26] text-3xl font-bold mb-1">{stat.value}</p>
-                        <p className="text-gray-500 dark:text-gray-400 text-sm">{stat.label}</p>
-                    </div>
-                ))}
-            </div>
-            <p className="text-gray-400 dark:text-gray-600 text-xs mt-5">
-                Assumes ${platformCost}/mo platform cost. Hardware payback calculated against monthly savings.
-            </p>
-        </div>
-    );
-}
 
 /* ── Page ───────────────────────────────────────────── */
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -77,7 +20,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     const product = productsData.find((p) => p.slug === slug);
     if (!product) notFound();
 
-    const systemCost = parseInt(product.price.replace(/[^0-9]/g, "")) || 8900;
     const isZyloDent = slug === "zylodent";
 
     const indicationImage: Record<string, string> = {
@@ -360,35 +302,31 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="p-8 rounded-2xl bg-white dark:bg-[#111111] border border-gray-200 dark:border-gray-700">
                             <h3 className="text-gray-900 dark:text-white font-bold text-xl mb-2">Validated material portfolio</h3>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Partners include BEGO, Pro3dure, Keystone, and Pac-Dent, with indication mapping and protocol PDFs.</p>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Partners include BEGO, Pro3dure, Keystone, Pac-Dent, and Medit, with indication mapping for each validated resin.</p>
                             <div className="grid grid-cols-3 gap-3">
                                 {[
-                                    { name: "BEGO",          image: "/images/materials/Bego.png" },
-                                    { name: "Pac-Dent",      image: "/images/materials/PacDent.png" },
-                                    { name: "Pro3dure",      image: "/images/materials/Pro3dure.png" },
-                                    { name: "Keystone",      image: "/images/materials/Keystone.png" },
+                                    { name: "BEGO",      image: "/images/materials/Bego.png" },
+                                    { name: "Pac-Dent",  image: "/images/materials/PacDent.png" },
+                                    { name: "Pro3dure",  image: "/images/materials/Pro3dure.png" },
+                                    { name: "Keystone",  image: "/images/materials/Keystone.png" },
+                                    { name: "Medit",     image: "/images/materials/Medit.png" },
                                     { name: "Open mode" },
-                                    { name: "Protocol PDFs" },
                                 ].map((m) => (
                                     m.image ? (
-                                        <div
-                                            key={m.name}
-                                            className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 bg-white flex flex-col overflow-hidden"
-                                        >
+                                        <div key={m.name} className="h-16 bg-white rounded-xl overflow-hidden p-2">
                                             <Image
                                                 src={m.image}
                                                 alt={m.name}
                                                 width={174}
-                                                height={48}
-                                                className="w-full h-auto max-h-12 object-contain object-top shrink-0"
+                                                height={64}
+                                                className="w-full h-full object-contain"
                                                 quality={100}
                                             />
-                                            <div className="flex-1 min-h-0" aria-hidden="true" />
                                         </div>
                                     ) : (
                                         <div
                                             key={m.name}
-                                            className="h-16 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 text-xs font-mono text-center px-2"
+                                            className="h-12 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-400 dark:text-gray-500 text-xs font-mono text-center px-2 self-center"
                                         >
                                             {m.name}
                                         </div>
@@ -475,7 +413,15 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-3">ROI Calculator</h2>
                         <p className="text-gray-500 dark:text-gray-400">Estimate your savings by bringing production in-house.</p>
                     </div>
-                    <ROICalculator systemCost={systemCost} />
+                    <ROICalculator
+                        indications={[
+                            { key: "aligner",        label: "Aligners" },
+                            { key: "denture",        label: "Dentures" },
+                            { key: "crown_bridge",   label: "Crown & Bridge" },
+                            { key: "night_guard",    label: "Night Guards" },
+                            { key: "surgical_guide", label: "Surgical Guides" },
+                        ]}
+                    />
                 </div>
             </section>
 
