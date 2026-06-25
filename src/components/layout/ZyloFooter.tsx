@@ -84,7 +84,7 @@ export default function ZyloFooter() {
                         <h4 className="text-base font-semibold text-white mb-5">Company</h4>
                         <ul className="text-gray-400 footer-link flex flex-col gap-3 text-sm">
                             <li><Link href="/about" className="hover:text-[#df7b26] transition-colors">About</Link></li>
-                            <li><Link href="/blog" className="hover:text-[#df7b26] transition-colors">Blog</Link></li>
+                            <li><Link href="/blog" className="hover:text-[#df7b26] transition-colors">Blogs</Link></li>
                             <li><Link href="/learning" className="hover:text-[#df7b26] transition-colors">Learning</Link></li>
                             <li><Link href="/indications" className="hover:text-[#df7b26] transition-colors">Indications</Link></li>
                         </ul>

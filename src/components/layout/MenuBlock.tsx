@@ -48,15 +48,13 @@ const menuItems: MenuItem[] = [
         title: 'Company',
         subMenu: [
             { title: 'About', href: '/about' },
-            { title: 'Blog', href: '/blog' },
-            { title: 'Press', href: '/company/press' },
-            { title: 'Team', href: '/company/team' },
+            { title: 'Blogs', href: '/blog' },
         ],
     },
     { title: 'Contact', href: '/contact' },
 ];
 
-const MenuBlock: React.FC<MenuBlockProps> = ({ mobileOpen = false, toggleMobileMenu, logo = "/images/logo/logo-blue.png" }) => {
+const MenuBlock: React.FC<MenuBlockProps> = ({ mobileOpen = false, toggleMobileMenu, logo = "/images/logo/zylo-logo.webp" }) => {
     const [openSubMenu, setOpenSubMenu] = useState<Record<string, boolean>>({});
 
     const toggleSubMenu = (key: string) => {
